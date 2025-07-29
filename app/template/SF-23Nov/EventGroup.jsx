@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
-import close_img from './assets/images/img_treasureChest_black.png'
-import open_img from './assets/images/img_treasureChest.png'
-import { checkExpired, getOrdinalSuffix } from '@/service/util';
-import { t } from 'i18next'
+import { checkExpired, getPublicImage } from '@/service/util';
+import { t } from 'i18next';
+
+const close_img = getPublicImage(import.meta.url, 'img_treasureChest_black.png');
+const open_img = getPublicImage(import.meta.url, 'img_treasureChest.png');
 
 const EventGroup = ({ eventList }) => {
     const { isMobile } = RWD();

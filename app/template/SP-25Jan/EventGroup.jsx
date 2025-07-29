@@ -1,13 +1,13 @@
 import { t } from "i18next"
 import RWD from "@/service/RWD"
-import { checkExpired, datePad, formatAMPM, formatMonth, getOrdinalSuffix } from "@/service/util";
+import { checkExpired, datePad, formatAMPM, getPublicImage } from "@/service/util";
 import { Fragment, useEffect, useState, useRef } from "react";
-import i18n from "@/service/i18n";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import arrow from './assets/images/deco/arrow.svg'
 import 'swiper/css';
 import 'swiper/css/navigation';
+
+const arrow = getPublicImage(import.meta.url, 'deco/arrow.svg');
 
 const DateItem = ({ active, index, data, GMT }) => {
     const [disable, setDisable] = useState(false);

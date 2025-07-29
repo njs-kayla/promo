@@ -7,10 +7,6 @@ import "../../assets/fonts/Impact/style.css";
 import "../../assets/fonts/SSQingBoTi/style.css";
 import "../../assets/fonts/KoreanSWGI3-R/style.css";
 import "../../assets/fonts/BakbakOne/style.css";
-import bg1 from "./assets/images/banner_img/bg_1.webp";
-import bg2 from "./assets/images/banner_img/bg_2.webp";
-import mob_bg1 from "./assets/images/banner_img/mob_bg1.webp";
-import mob_bg2 from "./assets/images/banner_img/mob_bg2.webp";
 import api from "@/service/api";
 import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
@@ -24,6 +20,13 @@ import EventGroup from './EventGroup';
 import MoreInfo from '@/component/Promo/MoreInfo';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg1 = getPublicImage(import.meta.url, 'banner_img/bg_1.webp');
+const bg2 = getPublicImage(import.meta.url, 'banner_img/bg_2.webp');
+const mob_bg1 = getPublicImage(import.meta.url, 'banner_img/mob_bg1.webp');
+const mob_bg2 = getPublicImage(import.meta.url, 'banner_img/mob_bg2.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

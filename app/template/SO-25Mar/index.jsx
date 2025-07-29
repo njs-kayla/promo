@@ -6,9 +6,6 @@ import "../../assets/fonts/BebasNeue/style.css";
 import { t } from 'i18next';
 import api from "@/service/api";
 import { useEffect, useRef, useState } from 'react';
-import bg from './assets/images/bg/bg.webp';
-import mon from './assets/images/deco/mon.webp';
-import light from './assets/images/deco/light_coin.webp';
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
@@ -17,6 +14,12 @@ import { htmlImg } from '@/service/util';
 import MoreInfo from '@/component/Promo/MoreInfo';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg/bg.webp');
+const mon = getPublicImage(import.meta.url, 'deco/mon.webp');
+const light = getPublicImage(import.meta.url, 'deco/light_coin.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

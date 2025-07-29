@@ -1,9 +1,12 @@
-import rp1 from './assets/images/redpacket/1.webp';
-import rp2 from './assets/images/redpacket/2.webp';
-import rp3 from './assets/images/redpacket/3.webp';
-import rp4 from './assets/images/redpacket/4.webp';
-import rp5 from './assets/images/redpacket/5.webp';
-import rp6 from './assets/images/redpacket/6.webp';
+import { getPublicImage } from '@/service/util';
+
+const rp1 = getPublicImage(import.meta.url, 'redpacket/1.webp');
+const rp2 = getPublicImage(import.meta.url, 'redpacket/2.webp');
+const rp3 = getPublicImage(import.meta.url, 'redpacket/3.webp');
+const rp4 = getPublicImage(import.meta.url, 'redpacket/4.webp');
+const rp5 = getPublicImage(import.meta.url, 'redpacket/5.webp');
+const rp6 = getPublicImage(import.meta.url, 'redpacket/6.webp');
+
 
 const getRandomValue = (min, max) => {
     const rand = Math.random();

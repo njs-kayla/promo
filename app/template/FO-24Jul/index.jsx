@@ -2,10 +2,6 @@ import './assets/scss/app.scss';
 import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/BangoPro/style.css";
 import "../../assets/fonts/Mada/style.css"
-import bg from "./assets/images/banner_img/bg.webp";
-import role1 from "./assets/images/deco/role_1.webp";
-import role2 from "./assets/images/deco/role_2.webp";
-import sparkle from './assets/images/deco/sparkle.webp';
 import api from "@/service/api";
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -14,6 +10,13 @@ import DateHeading from './DateHeading';
 import MoreBtn from '@/component/Promo/MoreBtn';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const role1 = getPublicImage(import.meta.url, 'deco/role_1.webp');
+const role2 = getPublicImage(import.meta.url, 'deco/role_2.webp');
+const sparkle = getPublicImage(import.meta.url, 'deco/sparkle.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

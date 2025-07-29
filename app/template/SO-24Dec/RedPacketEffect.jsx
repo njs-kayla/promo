@@ -1,8 +1,10 @@
-import redpacket1 from './assets/images/deco/img_RedPacket_1.webp';
-import redpacket2 from './assets/images/deco/img_RedPacket_2.webp';
-import redpacket3 from './assets/images/deco/img_RedPacket_3.webp';
-import redpacket4 from './assets/images/deco/img_RedPacket_4.webp';
 import { useEffect, useRef } from 'react';
+import { getPublicImage } from '@/service/util';
+
+const redpacket1 = getPublicImage(import.meta.url, 'deco/img_RedPacket_1.webp');
+const redpacket2 = getPublicImage(import.meta.url, 'deco/img_RedPacket_2.webp');
+const redpacket3 = getPublicImage(import.meta.url, 'deco/img_RedPacket_3.webp');
+const redpacket4 = getPublicImage(import.meta.url, 'deco/img_RedPacket_4.webp');
 
 
 const RedPacketEffect = () => {

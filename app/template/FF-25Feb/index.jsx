@@ -3,7 +3,7 @@ import "../../assets/fonts/NotoSansTamil/style.css";
 import "../../assets/fonts/BalooBhai2/style.css";
 import "../../assets/fonts/SFProDisplay/style.css";
 import "../../assets/fonts/Impact/style.css";
-import bg from "./assets/images/banner_img/bg.webp";
+import { getPublicImage } from '@/service/util';
 import api from "@/service/api";
 import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
@@ -15,6 +15,8 @@ import EventGroup from './EventGroup';
 import MoreInfo from '@/component/Promo/MoreInfo';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

@@ -2,9 +2,6 @@ import './assets/scss/app.scss';
 import "../../assets/fonts/Kanit/style.css";
 import api from "@/service/api";
 import { useEffect, useRef, useState } from 'react';
-import bg from './assets/images/bg/bg.webp';
-import char1 from './assets/images/deco/char01.webp'
-import char2 from './assets/images/deco/char02.webp'
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
@@ -15,6 +12,11 @@ import Snow from './Snow'
 import { useSelector } from 'react-redux';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg/bg.webp');
+const char1 = getPublicImage(import.meta.url, 'deco/char01.webp');
+const char2 = getPublicImage(import.meta.url, 'deco/char02.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

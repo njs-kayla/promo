@@ -1,5 +1,4 @@
-import { datePad } from '@/service/util';
-import { formatAMPM, formatMonth, getOrdinalSuffix, transformSa, formatTimeIn } from '@/service/util';
+import { formatAMPM, formatMonth, getOrdinalSuffix, transformSa } from '@/service/util';
 import i18n from '@/service/i18n';
 
 const DateHeading = ({ dateData, GMT }) => {

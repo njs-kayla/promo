@@ -4,19 +4,20 @@ import "../../assets/fonts/BalooBhai2/style.css";
 import "../../assets/fonts/BaiJamjuree/style.css";
 import "../../assets/fonts/Athiti/style.css";
 import "../../assets/fonts/roboto/style.css";
-import bg from "./assets/images/banner_img/bg.webp";
-import bg_mb from './assets/images/banner_img/mb_bg.webp';
 import api from "@/service/api";
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import RWD from '@/service/RWD';
 import DateHeading from './DateHeading';
 import { t } from "i18next"
 import MixBlock from './MixBlock';
-import EventGroup from './EventGroup';
 import MoreInfo from '@/component/Promo/MoreInfo';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const bg_mb = getPublicImage(import.meta.url, 'banner_img/mb_bg.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

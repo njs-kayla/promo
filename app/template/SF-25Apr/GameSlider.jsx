@@ -5,7 +5,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import { useEffect, useState } from 'react';
 import api from "@/service/api";
-import arrow from './assets/images/deco/target.svg';
+import { getPublicImage } from '@/service/util';
+
+const arrow = getPublicImage(import.meta.url, 'deco/target.svg');
+
 
 const GameSlider = ({ htmlStr }) => {
     if (!htmlStr) return null;

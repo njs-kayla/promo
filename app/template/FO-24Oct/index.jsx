@@ -3,14 +3,9 @@ import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/poppins/style.css";
 import "../../assets/fonts/AlibabaSansThai/style.css";
 import "../../assets/fonts/HokubaGrabs/style.css";
-import bg from "./assets/images/banner_img/bg.webp";
-import bg_raja from "./assets/images/banner_img/bg_raja.webp";
-import dragon from './assets/images/deco/dragon.webp';
-import door from './assets/images/deco/door.webp';
 import api from "@/service/api";
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { t } from 'i18next';
-import i18n from '@/service/i18n';
 import { useSelector } from 'react-redux';
 import { htmlImg } from '@/service/util';
 import RWD from '@/service/RWD';
@@ -21,6 +16,12 @@ import MixTable from '@/component/Promo/MixTable';
 import EventGroup from './EventGroup';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const bg_raja = getPublicImage(import.meta.url, 'banner_img/bg_raja.webp');
+const dragon = getPublicImage(import.meta.url, 'deco/dragon.webp');
+const door = getPublicImage(import.meta.url, 'deco/door.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

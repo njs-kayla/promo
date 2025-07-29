@@ -6,12 +6,6 @@ import '../../assets/fonts/PubgSans/style.css';
 import '../../assets/fonts/KoreanSWGI3-R/style.css';
 import api from "@/service/api";
 import { useEffect, useRef, useState } from 'react';
-import bg from './assets/images/bg/bg.webp';
-import tag_cn from './assets/images/deco/img_tag.webp'
-import fox from './assets/images/deco/img_char.webp';
-import redpacket from './assets/images/deco/img_redpacket.webp';
-import char1 from './assets/images/deco/img_char_1.webp';
-import char2 from './assets/images/deco/img_char_2.webp';
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
@@ -21,6 +15,15 @@ import { mergedArray } from '@/service/util';
 import { useSelector } from 'react-redux';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg/bg.webp');
+const tag_cn = getPublicImage(import.meta.url, 'deco/img_tag.webp');
+const fox = getPublicImage(import.meta.url, 'deco/img_char.webp');
+const redpacket = getPublicImage(import.meta.url, 'deco/img_redpacket.webp');
+const char1 = getPublicImage(import.meta.url, 'deco/img_char_1.webp');
+const char2 = getPublicImage(import.meta.url, 'deco/img_char_2.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

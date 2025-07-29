@@ -1,10 +1,6 @@
 import './assets/scss/app.scss';
 import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/Anton/style.css";
-import titleImg from './assets/images/deco/title.webp';
-import wall from './assets/images/deco/pc_wall.webp';
-import light_L from './assets/images/deco/light_L.webp';
-import light_R from './assets/images/deco/light_R.webp';
 import api from "@/service/api";
 import { Fragment, useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
@@ -16,6 +12,12 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import MoreInfo from '@/component/Promo/MoreInfo';
 import { htmlImg } from '@/service/util';
+import { getPublicImage } from '@/service/util';
+
+
+const wall = getPublicImage(import.meta.url, 'deco/pc_wall.webp');
+const light_L = getPublicImage(import.meta.url, 'deco/light_L.webp');
+const light_R = getPublicImage(import.meta.url, 'deco/light_R.webp');
 
 
 const TemplateComponent = ({ pageData }) => {

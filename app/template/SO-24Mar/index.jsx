@@ -4,9 +4,6 @@ import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/poppins/style.css";
 import "../../assets/fonts/aBlackLives/style.css";
 import api from "@/service/api";
-import bg from './assets/images/bg.webp';
-import coin_L from './assets/images/img_coin_L.webp';
-import coin_R from './assets/images/img_coin_R.webp';
 import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
@@ -15,6 +12,12 @@ import DateHeading from './DateHeading';
 import TermsConditions from '@/component/Promo/TermsConditions';
 import PointTable from '@/component/Promo/PointTable';
 import { useSelector } from 'react-redux';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg.webp');
+const coin_L = getPublicImage(import.meta.url, 'img_coin_L.webp');
+const coin_R = getPublicImage(import.meta.url, 'img_coin_R.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

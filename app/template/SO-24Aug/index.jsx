@@ -1,19 +1,20 @@
 import './assets/scss/app.scss';
 import api from "@/service/api";
 import { useEffect, useRef, useState } from 'react';
-import bg from './assets/images/bg/bg.webp';
-import tag_cn from './assets/images/deco/img_tag.webp';
-import red_packet from './assets/images/deco/img_red_packet.webp';
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
 import PointTable from './PointTable';
 import FireflyEffect from './FireflyEffect';
-import { mergedArray } from '@/service/util';
+import { mergedArray, getPublicImage } from '@/service/util';
 import { useSelector } from 'react-redux';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { t } from "i18next"
+import { t } from "i18next";
+
+const bg = getPublicImage(import.meta.url, 'bg/bg.webp');
+const tag_cn = getPublicImage(import.meta.url, 'deco/img_tag.webp');
+const red_packet = getPublicImage(import.meta.url, 'deco/img_red_packet.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

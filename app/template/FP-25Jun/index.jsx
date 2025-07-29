@@ -15,10 +15,12 @@ import { t } from "i18next"
 import MixTable from '@/component/Promo/MixTable';
 import EventGroup from './EventGroup';
 import MoreInfo from '@/component/Promo/MoreInfo';
-import fg_L from './assets/images/deco/pc_fg_L.webp';
-import fg_R from './assets/images/deco/pc_fg_R.webp';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const fg_L = getPublicImage(import.meta.url, 'deco/pc_fg_L.webp');
+const fg_R = getPublicImage(import.meta.url, 'deco/pc_fg_R.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

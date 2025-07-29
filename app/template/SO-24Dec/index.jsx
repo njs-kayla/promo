@@ -2,12 +2,6 @@ import './assets/scss/app.scss';
 import "../../assets/fonts/Kanit/style.css";
 import api from "@/service/api";
 import { useEffect, useRef, useState } from 'react';
-import bg from './assets/images/bg/bg.webp';
-import fox from './assets/images/deco/fox.webp';
-import civet from './assets/images/deco/civet.webp';
-import peo_L from './assets/images/deco/peo_L.webp';
-import peo_R from './assets/images/deco/peo_R.webp';
-import BAMAKO_bg from './assets/images/deco/BAMAKO_bg.webp';
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
@@ -20,6 +14,14 @@ import RedPacketEffect from './RedPacketEffect';
 import MoreInfo from '@/component/Promo/MoreInfo';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg/bg.webp');
+const fox = getPublicImage(import.meta.url, 'deco/fox.webp');
+const civet = getPublicImage(import.meta.url, 'deco/civet.webp');
+const peo_L = getPublicImage(import.meta.url, 'deco/peo_L.webp');
+const peo_R = getPublicImage(import.meta.url, 'deco/peo_R.webp');
+const BAMAKO_bg = getPublicImage(import.meta.url, 'deco/BAMAKO_bg.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

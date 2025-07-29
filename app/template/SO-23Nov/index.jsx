@@ -3,17 +3,20 @@ import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/agencyfb/style.css";
 import "../../assets/fonts/MarkerFelt/style.css";
 import api from "@/service/api";
-import bg from './assets/images/bg.webp'
-import mob_bg from './assets/images/mob_bg.webp'
-import p1 from './assets/images/deco/p1.webp';
-import p2 from './assets/images/deco/p2.webp';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
-import exclusive from './assets/images/banner_img/exclusive.webp'
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
 import { mergedArray } from '@/service/util';
 import { t } from 'i18next';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg.webp');
+const mob_bg = getPublicImage(import.meta.url, 'mob_bg.webp');
+const p1 = getPublicImage(import.meta.url, 'deco/p1.webp');
+const p2 = getPublicImage(import.meta.url, 'deco/p2.webp');
+const exclusive = getPublicImage(import.meta.url, 'banner_img/exclusive.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

@@ -6,8 +6,6 @@ import bubbles from './assets/js/bubbles'
 import api from "@/service/api";
 import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
-import bg from './assets/images/bg/img_webBG.webp';
-import dragon from './assets/images/deco/img_DrgonKing.webp'
 import EventGroup from './EventGroup';
 import CurrTable from '@/component/Promo/CurrTable';
 import DateHeading from './DateHeading';
@@ -16,6 +14,11 @@ import { htmlImg } from '@/service/util';
 import { useSelector } from 'react-redux';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg/img_webBG.webp');
+const dragon = getPublicImage(import.meta.url, 'deco/img_DrgonKing.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

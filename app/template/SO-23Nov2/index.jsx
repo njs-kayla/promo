@@ -1,16 +1,16 @@
 import './assets/scss/app.scss';
 import "../../assets/fonts/poppins/style.css";
 import api from "@/service/api";
-import coin_l from './assets/images/deco/coin_l.webp';
-import coin_r from './assets/images/deco/coin_r.webp';
-import coin_d from './assets/images/deco/coin_d.webp';
-import { useEffect, useRef, useState } from 'react';
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
-import { mergedArray } from '@/service/util';
+import { mergedArray, getPublicImage } from '@/service/util';
 import { t } from 'i18next';
 import { useSelector } from 'react-redux';
+
+const coin_l = getPublicImage(import.meta.url, 'deco/coin_l.webp');
+const coin_r = getPublicImage(import.meta.url, 'deco/coin_r.webp');
+const coin_d = getPublicImage(import.meta.url, 'deco/coin_d.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

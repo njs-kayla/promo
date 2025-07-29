@@ -6,9 +6,6 @@ import "../../assets/fonts/NotoSerifTamil/style.css";
 import { t } from 'i18next';
 import api from "@/service/api";
 import { useEffect, useState } from 'react';
-import bg from './assets/images/bg/bg.webp';
-import noCharBg from './assets/images/bg/no_char_bg.webp'
-import peo from './assets/images/deco/peo.webp'
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
@@ -20,6 +17,13 @@ import ExpBox from './expBox';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import parse, { domToReact } from 'html-react-parser';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg/bg.webp');
+const noCharBg = getPublicImage(import.meta.url, 'bg/no_char_bg.webp');
+const peo = getPublicImage(import.meta.url, 'deco/peo.webp');
+
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

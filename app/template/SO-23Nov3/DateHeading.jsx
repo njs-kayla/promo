@@ -1,5 +1,5 @@
 import RWD from '@/service/RWD';
-import { datePad, formatMonth } from '@/service/util';
+import { formatMonth } from '@/service/util';
 
 const DateHeading = ({ dateData }) => {
     const { isMobile } = RWD()

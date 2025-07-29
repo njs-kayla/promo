@@ -3,14 +3,8 @@ import "../../assets/fonts/Kanit/style.css";
 import "../../assets/fonts/poppins/style.css";
 import "../../assets/fonts/NotoSansTamil/style.css";
 import api from "@/service/api";
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { t } from "i18next"
-import bg from './assets/images/bg/bg.webp';
-import mob_bg from './assets/images/bg/mob_bg.webp';
-import exp from './assets/images/deco/Excl.webp';
-import rich from './assets/images/deco/riches.webp';
-import coin_L from './assets/images/deco/coin_l.webp';
-import coin_R from './assets/images/deco/coin_r.webp';
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
@@ -20,8 +14,17 @@ import { htmlImg } from '@/service/util';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import MoreInfo from '@/component/Promo/MoreInfo';
-import peo from './assets/images/deco/peo.webp';
 import i18n from '@/service/i18n';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg/bg.webp');
+const mob_bg = getPublicImage(import.meta.url, 'bg/mob_bg.webp');
+const exp = getPublicImage(import.meta.url, 'deco/Excl.webp');
+const rich = getPublicImage(import.meta.url, 'deco/riches.webp');
+const coin_L = getPublicImage(import.meta.url, 'deco/coin_l.webp');
+const coin_R = getPublicImage(import.meta.url, 'deco/coin_r.webp');
+const peo = getPublicImage(import.meta.url, 'deco/peo.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

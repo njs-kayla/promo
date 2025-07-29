@@ -2,19 +2,18 @@ import './assets/scss/app.scss';
 import '../../assets/fonts/roboto/style.css';
 import '../../assets/fonts/Barlow/style.css';
 import api from "@/service/api";
-import { useEffect, useRef, useState } from 'react';
-import bg from './assets/images/bg/bg.webp';
-import bg_2 from './assets/images/bg/pc_bg.webp';
+import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
 import DateHeading from './DateHeading';
 import MoreBtn from '@/component/Promo/MoreBtn';
 import BlossomEffect from './BlossomEffect';
 import EventGroup from './EventGroup';
-import PointTable from '@/component/Promo/PointTable'
-import { useSelector } from 'react-redux';
-import i18n from '@/service/i18n';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import PointTable from '@/component/Promo/PointTable';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg/bg.webp');
+const bg_2 = getPublicImage(import.meta.url, 'bg/pc_bg.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

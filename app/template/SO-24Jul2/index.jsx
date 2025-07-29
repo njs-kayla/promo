@@ -4,10 +4,6 @@ import "../../assets/fonts/Kanit/style.css";
 import "../../assets/fonts/DoHyeon/style.css";
 import "../../assets/fonts/Dubai/style.css";
 import { t } from "i18next";
-import bg from "./assets/images/banner_img/bg.webp";
-import role1 from "./assets/images/deco/role_1.webp";
-import role2 from "./assets/images/deco/role_2.webp";
-import exclusive from "./assets/images/deco/img_exclusive.webp";
 import api from "@/service/api";
 import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
@@ -16,7 +12,13 @@ import DateHeading from './DateHeading';
 import AOS from 'aos';
 import ReactWOW from 'react-wow';
 import 'aos/dist/aos.css';
-import '../../../node_modules/animate.css'
+import '../../../node_modules/animate.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const role1 = getPublicImage(import.meta.url, 'deco/role_1.webp');
+const role2 = getPublicImage(import.meta.url, 'deco/role_2.webp');
+const exclusive = getPublicImage(import.meta.url, 'deco/img_exclusive.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

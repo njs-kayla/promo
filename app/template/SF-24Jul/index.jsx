@@ -2,13 +2,11 @@ import './assets/scss/app.scss';
 import "../../assets/fonts/Helvetica/style.css";
 import "../../assets/fonts/agencyfb/style.css";
 import "../../assets/fonts/roboto/style.css";
-import bg from './assets/images/banner_img/bn_bg.webp';
-import dragon from './assets/images/deco/dragon.webp';
 import { useEffect, useState, useRef } from 'react';
 import api from '@/service/api';
 import RWD from '@/service/RWD';
 import CurrTable from './CurrTable';
-import { htmlImg, mergedArray } from '@/service/util';
+import { htmlImg, getPublicImage } from '@/service/util';
 import MoreBtn from '@/component/Promo/MoreBtn';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
@@ -17,6 +15,9 @@ import Water from './Water';
 import { useSelector } from 'react-redux';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bn_bg.webp');
+const dragon = getPublicImage(import.meta.url, 'deco/dragon.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

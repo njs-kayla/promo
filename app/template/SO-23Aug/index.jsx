@@ -4,18 +4,19 @@ import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/poppins/style.css";
 import "../../assets/fonts/agencyfb/style.css";
 import api from "@/service/api";
-import peo from './assets/images/peo.webp';
-import webThunder from './assets/images/thunder.webp';
-import mobThunder from './assets/images/mob_thunder.webp';
-import bg from './assets/images/bg.webp';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import Table from './Table'
 import DateHeading from './DateHeading';
 import MoreBtn from '@/component/Promo/MoreBtn';
-import PointTable from '@/component/Promo/PointTable';
 import { useSelector } from 'react-redux';
+import { getPublicImage } from '@/service/util';
+
+const peo = getPublicImage(import.meta.url, 'peo.webp');
+const webThunder = getPublicImage(import.meta.url, 'thunder.webp');
+const mobThunder = getPublicImage(import.meta.url, 'mob_thunder.webp');
+const bg = getPublicImage(import.meta.url, 'bg.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

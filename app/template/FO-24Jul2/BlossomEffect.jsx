@@ -1,6 +1,7 @@
-import flower1 from './assets/images/deco/flower-1.webp';
-import flower2 from './assets/images/deco/flower-2.webp';
-import flower3 from './assets/images/deco/flower-3.webp';
+import { getPublicImage } from '@/service/util';
+const flower1 = getPublicImage(import.meta.url, 'deco/flower-1.webp');
+const flower2 = getPublicImage(import.meta.url, 'deco/flower-2.webp');
+const flower3 = getPublicImage(import.meta.url, 'deco/flower-3.webp');
 
 
 const BlossomEffect = () => {

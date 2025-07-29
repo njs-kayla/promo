@@ -2,19 +2,22 @@ import './assets/scss/app.scss';
 import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/Montserrat/style.css";
 import "../../assets/fonts/Magra/style.css";
-import bg from "./assets/images/banner_img/bg.webp";
-import bg_mob from "./assets/images/banner_img/mobile_bg.webp";
-import slot from './assets/images/deco/slot.png';
-import light from './assets/images/deco/sparkle_light.webp';
-import light_mob from './assets/images/deco/mobile_sparkle_light.webp';
-import role1 from './assets/images/deco/role_Left.webp';
-import role2 from './assets/images/deco/role_Right.webp';
 import api from "@/service/api";
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
 import DateHeading from './DateHeading';
 import PointTable from '@/component/Promo/PointTable';
 import MoreBtn from '@/component/Promo/MoreBtn';
+
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const bg_mob = getPublicImage(import.meta.url, 'banner_img/mobile_bg.webp');
+const slot = getPublicImage(import.meta.url, 'deco/slot.png');
+const light = getPublicImage(import.meta.url, 'deco/sparkle_light.webp');
+const light_mob = getPublicImage(import.meta.url, 'deco/mobile_sparkle_light.webp');
+const role1 = getPublicImage(import.meta.url, 'deco/role_Left.webp');
+const role2 = getPublicImage(import.meta.url, 'deco/role_Right.webp');
 
 
 const TemplateComponent = ({ pageData }) => {

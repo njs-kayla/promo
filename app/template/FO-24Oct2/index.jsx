@@ -2,14 +2,16 @@ import './assets/scss/app.scss';
 import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/FugazOne/style.css";
 import "../../assets/fonts/SSQingBoTi/style.css";
-import bg from "./assets/images/banner_img/bg.webp";
-import coin from './assets/images/deco/coin.webp'
 import api from "@/service/api";
-import { useEffect, useState, useRef } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
 import DateHeading from './DateHeading';
-import MoreBtn from '@/component/Promo/MoreBtn'
+import MoreBtn from '@/component/Promo/MoreBtn';
+
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const coin = getPublicImage(import.meta.url, 'deco/coin.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

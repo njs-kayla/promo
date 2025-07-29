@@ -2,19 +2,22 @@ import './assets/scss/app.scss';
 import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/BangoPro/style.css";
 import "../../assets/fonts/BoonTook-Regular/style.css"
-import bg from "./assets/images/banner_img/bg.webp";
-import fox from "./assets/images/deco/fox.webp";
-import chick from "./assets/images/deco/chick.webp";
-import frog from "./assets/images/deco/frog.webp";
-import rabbit from "./assets/images/deco/rabbit.webp";
-import role1 from "./assets/images/deco/role_1.webp";
-import role2 from "./assets/images/deco/role_2.webp";
-import role3 from "./assets/images/deco/role_3.webp";
 import api from "@/service/api";
 import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
 import DateHeading from './DateHeading';
 import MoreBtn from '@/component/Promo/MoreBtn'
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const fox = getPublicImage(import.meta.url, 'deco/fox.webp');
+const chick = getPublicImage(import.meta.url, 'deco/chick.webp');
+const frog = getPublicImage(import.meta.url, 'deco/frog.webp');
+const rabbit = getPublicImage(import.meta.url, 'deco/rabbit.webp');
+const role1 = getPublicImage(import.meta.url, 'deco/role_1.webp');
+const role2 = getPublicImage(import.meta.url, 'deco/role_2.webp');
+const role3 = getPublicImage(import.meta.url, 'deco/role_3.webp');
+
 
 const RolesComponent = ({ animationPlay }) => {
     return (

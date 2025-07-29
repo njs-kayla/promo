@@ -4,20 +4,21 @@ import "../../assets/fonts/Gurajada/style.css";
 import "../../assets/fonts/AlibabaSansThai/style.css";
 import "../../assets/fonts/roboto/style.css";
 import api from "@/service/api";
-import { useEffect, useRef, useState } from 'react';
-import bg from './assets/images/bg/bg.webp';
-import peo from './assets/images/deco/web_role.webp'
-import coin from './assets/images/deco/web_coin.webp';
-import coin2 from './assets/images/deco/coin2.webp'
-import fire from './assets/images/deco/web_fire.webp'
+import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
 import MoreBtn from '@/component/Promo/MoreBtn';
 import { mergedArray, htmlImg } from '@/service/util';
-import { useSelector } from 'react-redux';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg/bg.webp');
+const peo = getPublicImage(import.meta.url, 'deco/web_role.webp');
+const coin = getPublicImage(import.meta.url, 'deco/web_coin.webp');
+const coin2 = getPublicImage(import.meta.url, 'deco/coin2.webp');
+const fire = getPublicImage(import.meta.url, 'deco/web_fire.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

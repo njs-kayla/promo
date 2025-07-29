@@ -1,11 +1,13 @@
 import { Fragment, useEffect, useState } from "react";
 import RWD from "@/service/RWD";
 import { DropDown } from "@/component/Promo/DropDown";
-import { getCurrByLang } from '@/service/util';
-import rank_1st from './assets/images/deco/mb/rank_1st.webp';
-import rank_2nd from './assets/images/deco/mb/rank_2nd.webp';
-import rank_3rd from './assets/images/deco/mb/rank_3rd.webp';
-import diamond from './assets/images/deco/mb/diamond.webp';
+import { getCurrByLang, getPublicImage } from '@/service/util';
+
+const rank_1st = getPublicImage(import.meta.url, 'deco/mb/rank_1st.webp');
+const rank_2nd = getPublicImage(import.meta.url, 'deco/mb/rank_2nd.webp');
+const rank_3rd = getPublicImage(import.meta.url, 'deco/mb/rank_3rd.webp');
+const diamond = getPublicImage(import.meta.url, 'deco/mb/diamond.webp');
+
 
 const CustomTable = ({ htmlString, type = "column" }) => {
     const [headingElem, setHeadingElem] = useState(null);

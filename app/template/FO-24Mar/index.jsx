@@ -2,15 +2,18 @@ import './assets/scss/app.scss';
 import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/Sekate/style.css";
 import api from "@/service/api";
-import bg from './assets/images/banner_img/bg.webp';
-import light from './assets/images/deco/light.webp';
-import coin from './assets/images/deco/coin.webp';
 import { useEffect, useRef, useState } from 'react';
 import RWD from '@/service/RWD';
 import MoblieTable from './MobileTable'
 import DateHeading from './DateHeading';
 import PointTable from '@/component/Promo/PointTable';
 import TermsConditions from '@/component/Promo/TermsConditions';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const light = getPublicImage(import.meta.url, 'deco/light.webp');
+const coin = getPublicImage(import.meta.url, 'deco/coin.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

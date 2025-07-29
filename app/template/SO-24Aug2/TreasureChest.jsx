@@ -1,6 +1,9 @@
-import box from './assets/images/deco/img_box.webp';
 import i18n from '@/service/i18n';
-import { t } from "i18next"
+import { t } from "i18next";
+import { getPublicImage } from '@/service/util';
+
+const box = getPublicImage(import.meta.url, 'deco/img_box.webp');
+
 
 const TreasureChest = ({ data }) => {
     return (

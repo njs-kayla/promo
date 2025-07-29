@@ -2,15 +2,16 @@ import './assets/scss/app.scss';
 import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/AlibabaSansThai/style.css"
 import "../../assets/fonts/KurriIslandPERSONAL/style.css";
-import bg from "./assets/images/banner_img/bg.webp"
 import api from "@/service/api";
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
 import DateHeading from './DateHeading';
 import PointTable from '@/component/Promo/PointTable';
 import TermsConditions from '@/component/Promo/TermsConditions';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
 
 
 const TemplateComponent = ({ pageData }) => {

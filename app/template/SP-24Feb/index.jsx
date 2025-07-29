@@ -4,14 +4,8 @@ import "../../assets/fonts/agencyfb/style.css";
 import "../../assets/fonts/poppins/style.css";
 import api from "@/service/api";
 import bgVideo from './assets/images/banner_img/index_walter.mp4';
-import coin_l from './assets/images/deco/coin_l.webp';
-import coin_r from './assets/images/deco/coin_r.webp';
-import dino from './assets/images/deco/dino.webp';
-import rocketman from './assets/images/deco/rocketman.webp';
 import { useEffect, useRef, useState } from 'react';
 import RWD from '@/service/RWD';
-import tag_cn from './assets/images/banner_img/icon_cn.webp'
-import tag_en from './assets/images/banner_img/icon_en.webp'
 import i18n from '@/service/i18n';
 import EventGroup from './EventGroup';
 import CurrTable from '@/component/Promo/CurrTable';
@@ -19,6 +13,15 @@ import DateHeading from './DateHeading';
 import MoreBtn from '@/component/Promo/MoreBtn';
 import PointTable from '@/component/Promo/PointTable';
 import { useSelector } from 'react-redux';
+import { getPublicImage } from '@/service/util';
+
+const tag_cn = getPublicImage(import.meta.url, 'banner_img/icon_cn.webp');
+const tag_en = getPublicImage(import.meta.url, 'banner_img/icon_en.webp');
+const coin_l = getPublicImage(import.meta.url, 'deco/coin_l.webp');
+const coin_r = getPublicImage(import.meta.url, 'deco/coin_r.webp');
+const dino = getPublicImage(import.meta.url, 'deco/dino.webp');
+const rocketman = getPublicImage(import.meta.url, 'deco/rocketman.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

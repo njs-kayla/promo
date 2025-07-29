@@ -5,8 +5,6 @@ import "../../assets/fonts/ArchivoNarrow/style.css";
 import "../../assets/fonts/poppins/style.css";
 import "../../assets/fonts/SSQingBoTi/style.css";
 import "../../assets/fonts/KoreanSWGI3-R/style.css";
-import bg from "./assets/images/banner_img/bg.webp";
-import titleBar from './assets/images/deco/img_char_playwin.webp';
 import api from "@/service/api";
 import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
@@ -19,6 +17,11 @@ import EventGroup from './EventGroup';
 import MoreInfo from '@/component/Promo/MoreInfo';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const titleBar = getPublicImage(import.meta.url, 'deco/img_char_playwin.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

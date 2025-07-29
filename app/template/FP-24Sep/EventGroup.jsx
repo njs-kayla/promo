@@ -1,15 +1,15 @@
 
 import RWD from "@/service/RWD"
-import { checkExpired, formatAMPM } from "@/service/util";
+import { checkExpired, getPublicImage } from "@/service/util";
 import { useEffect, useState } from "react";
-import i18n from '@/service/i18n';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import bg from './assets/images/deco/time_area.webp'
-import bg_now from './assets/images/deco/time_area_now.webp';
-import { t } from "i18next"
+import { t } from "i18next";
+
+const bg = getPublicImage(import.meta.url, 'deco/time_area.webp');
+const bg_now = getPublicImage(import.meta.url, 'deco/time_area_now.webp');
 
 const EventGroup = ({ eventList, themeType }) => {
     const { isMobile } = RWD();

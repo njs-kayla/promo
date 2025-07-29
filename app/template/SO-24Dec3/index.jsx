@@ -2,9 +2,8 @@ import './assets/scss/app.scss';
 import "../../assets/fonts/Kanit/style.css";
 import "../../assets/fonts/poppins/style.css";
 import api from "@/service/api";
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { t } from "i18next"
-import bg from './assets/images/bg/bg.webp';
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
@@ -16,7 +15,11 @@ import { htmlImg } from '@/service/util';
 import Redpackets from './Redpacket';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import MoreInfo from '@/component/Promo/MoreInfo'
+import MoreInfo from '@/component/Promo/MoreInfo';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg/bg.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

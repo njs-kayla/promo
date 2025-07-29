@@ -2,14 +2,16 @@
 import RWD from "@/service/RWD"
 import { checkExpired, formatAMPM, formatMonth } from "@/service/util";
 import { useEffect, useState } from "react";
-import i18n from '@/service/i18n';
-import dice from './assets/images/deco/dice.webp';
+import { getPublicImage } from '@/service/util';
+
+const dice = getPublicImage(import.meta.url, 'deco/dice.webp');
+
+
 
 
 const EventGroup = ({ eventList, GMT }) => {
     const { isMobile } = RWD();
     const [activeEvent, setActiveEvent] = useState(null);
-    const [headingElem, setHeadingElem] = useState(null);
 
     useEffect(() => {
         init()

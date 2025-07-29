@@ -1,9 +1,10 @@
 
 import RWD from "@/service/RWD"
-import { checkExpired, formatAMPM } from "@/service/util";
+import { checkExpired, formatAMPM, getPublicImage } from "@/service/util";
 import { useEffect, useState } from "react";
-import light from './assets/images/deco/light_mini.webp';
 import i18n from '@/service/i18n';
+
+const light = getPublicImage(import.meta.url, 'deco/light_mini.webp');
 
 const EventGroup = ({ eventList }) => {
     const { isMobile } = RWD();

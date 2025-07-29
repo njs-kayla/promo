@@ -1,4 +1,3 @@
-import { datePad } from '@/service/util';
 import { formatAMPM, formatMonth, getOrdinalSuffix } from '@/service/util';
 import i18n from '@/service/i18n';
 

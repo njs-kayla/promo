@@ -3,14 +3,8 @@ import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/ProtestRiot/style.css";
 import "../../assets/fonts/poppins/style.css";
 import api from "@/service/api";
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
-import tag_cn from './assets/images/banner_img/icon_cn.webp'
-import tag_en from './assets/images/banner_img/icon_en.webp'
-import bg from './assets/images/banner_img/bg.webp';
-import light from "./assets/images/deco/img_light.webp";
-import cloud_L from "./assets/images/deco/img_cloud_L.webp";
-import cloud_R from "./assets/images/deco/img_cloud_R.webp";
 import i18n from '@/service/i18n';
 import EventGroup from './EventGroup';
 import CurrTable from './CurrTable';
@@ -20,6 +14,15 @@ import PointTable from '@/component/Promo/PointTable';
 import { useSelector } from 'react-redux';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const tag_cn = getPublicImage(import.meta.url, 'banner_img/icon_cn.webp');
+const tag_en = getPublicImage(import.meta.url, 'banner_img/icon_en.webp');
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const light = getPublicImage(import.meta.url, 'deco/img_light.webp');
+const cloud_L = getPublicImage(import.meta.url, 'deco/img_cloud_L.webp');
+const cloud_R = getPublicImage(import.meta.url, 'deco/img_cloud_R.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

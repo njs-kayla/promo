@@ -1,12 +1,11 @@
-import { t } from "i18next"
 import RWD from "@/service/RWD"
-import { checkExpired, datePad, formatAMPM, formatMonth, getOrdinalSuffix, transformSa } from "@/service/util";
+import { checkExpired, datePad, formatAMPM } from "@/service/util";
 import { Fragment, useEffect, useState } from "react";
-import i18n from "@/service/i18n";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+
 const DateItem = ({ active, index, data }) => {
     const { isMobile } = RWD()
     const [disable, setDisable] = useState(false)

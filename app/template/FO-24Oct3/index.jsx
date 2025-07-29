@@ -2,15 +2,18 @@ import './assets/scss/app.scss';
 import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/Sekate/style.css";
 import "../../assets/fonts/SSQingBoTi/style.css";
-import front from './assets/images/deco/banner_front.webp';
-import center from './assets/images/deco/banner_center.webp';
-import mouse from './assets/images/deco/mouse.webp';
 import api from "@/service/api";
 import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import RWD from '@/service/RWD';
 import DateHeading from './DateHeading';
-import MoreBtn from '@/component/Promo/MoreBtn'
+import MoreBtn from '@/component/Promo/MoreBtn';
+import { getPublicImage } from '@/service/util';
+
+const front = getPublicImage(import.meta.url, 'deco/banner_front.webp');
+const center = getPublicImage(import.meta.url, 'deco/banner_center.webp');
+const mouse = getPublicImage(import.meta.url, 'deco/mouse.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

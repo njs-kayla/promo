@@ -3,20 +3,23 @@ import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/poppins/style.css";
 import "../../assets/fonts/agencyfb/style.css";
 import api from "@/service/api";
-import coin from './assets/images/deco/coin.webp';
-import peo_b from './assets/images/deco/peo_b.webp';
-import peo_g from './assets/images/deco/peo_g.webp';
-import bg from './assets/images/bg.webp'
 import { useEffect, useRef, useState } from 'react';
 import RWD from '@/service/RWD';
-import tag_cn from './assets/images/banner_img/icon_cn.webp'
-import tag_en from './assets/images/banner_img/icon_en.webp'
 import i18n from '@/service/i18n';
 import EventGroup from './EventGroup';
 import CurrTable from '@/component/Promo/CurrTable';
 import DateHeading from './DateHeading';
 import MoreBtn from '@/component/Promo/MoreBtn';
 import PointTable from '@/component/Promo/PointTable';
+import { getPublicImage } from '@/service/util';
+
+const tag_cn = getPublicImage(import.meta.url, 'banner_img/icon_cn.webp');
+const tag_en = getPublicImage(import.meta.url, 'banner_img/icon_en.webp');
+const coin = getPublicImage(import.meta.url, 'deco/coin.webp');
+const peo_b = getPublicImage(import.meta.url, 'deco/peo_b.webp');
+const peo_g = getPublicImage(import.meta.url, 'deco/peo_g.webp');
+const bg = getPublicImage(import.meta.url, 'bg.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

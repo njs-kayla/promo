@@ -1,10 +1,13 @@
 import { t } from "i18next"
 import RWD from "@/service/RWD"
-import { checkExpired, datePad, formatAMPM, formatMonth, getOrdinalSuffix } from "@/service/util";
+import { checkExpired, datePad, formatMonth } from "@/service/util";
 import { Fragment, useEffect, useState } from "react";
 import i18n from "@/service/i18n";
-import img from "./assets/images/deco/round_default.webp"
-import img_active from "./assets/images/deco/round.webp"
+import { getPublicImage } from '@/service/util';
+
+const img = getPublicImage(import.meta.url, 'deco/round_default.webp');
+const img_active = getPublicImage(import.meta.url, 'deco/round.webp');
+
 
 const DateItem = ({ active, index, data, changeTab }) => {
 

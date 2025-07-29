@@ -5,14 +5,6 @@ import "../../assets/fonts/BangoPro/style.css";
 import "../../assets/fonts/Anton/style.css";
 import "../../assets/fonts/GemunuLibre-ExtraBold/style.css";
 import "../../assets/fonts/BoonTook-Regular/style.css";
-import bg from './assets/images/bg.webp';
-import rabbit from './assets/images/deco/rabbit.webp';
-import chick from './assets/images/deco/chick.webp';
-import frog from './assets/images/deco/frog.webp';
-import fox from './assets/images/deco/fox.webp';
-import heart from './assets/images/deco/heart.webp';
-import bomb from './assets/images/deco/bomb.webp';
-import plum from './assets/images/deco/plum.webp';
 import { useEffect, useState } from 'react';
 import api from '@/service/api';
 import RWD from '@/service/RWD';
@@ -22,6 +14,17 @@ import MoreBtn from '@/component/Promo/MoreBtn';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
 import PointTable from '@/component/Promo/PointTable';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg.webp');
+const rabbit = getPublicImage(import.meta.url, 'deco/rabbit.webp');
+const chick = getPublicImage(import.meta.url, 'deco/chick.webp');
+const frog = getPublicImage(import.meta.url, 'deco/frog.webp');
+const fox = getPublicImage(import.meta.url, 'deco/fox.webp');
+const heart = getPublicImage(import.meta.url, 'deco/heart.webp');
+const bomb = getPublicImage(import.meta.url, 'deco/bomb.webp');
+const plum = getPublicImage(import.meta.url, 'deco/plum.webp');
+
 
 const RolesComponent = ({ animationPlay }) => {
     return (

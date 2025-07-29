@@ -4,13 +4,6 @@ import "../../assets/fonts/Akshar/style.css";
 import "../../assets/fonts/AlumniSans/style.css";
 import api from "@/service/api";
 import { useEffect, useRef, useState } from 'react';
-import bg from './assets/images/bg/bg.webp';
-import helloween_bg from './assets/images/bg/helloween_bg.webp';
-import excu from "./assets/images/deco/excu.webp";
-import excu_th from "./assets/images/deco/excu_thi.webp";
-import hw_excu from "./assets/images/deco/img_tag.webp";
-import peo from "./assets/images/deco/peo.webp";
-import hw_peo from "./assets/images/deco/img_cha.webp";
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
@@ -20,6 +13,15 @@ import { useSelector } from 'react-redux';
 import i18n from '@/service/i18n';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg/bg.webp');
+const helloween_bg = getPublicImage(import.meta.url, 'bg/helloween_bg.webp');
+const excu = getPublicImage(import.meta.url, 'deco/excu.webp');
+const excu_th = getPublicImage(import.meta.url, 'deco/excu_thi.webp');
+const hw_excu = getPublicImage(import.meta.url, 'deco/img_tag.webp');
+const peo = getPublicImage(import.meta.url, 'deco/peo.webp');
+const hw_peo = getPublicImage(import.meta.url, 'deco/img_cha.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

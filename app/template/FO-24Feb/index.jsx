@@ -6,13 +6,16 @@ import "../../assets/fonts/CocogooseCompressedTrial/style.css";
 import "../../assets/fonts/KoreanSWGI3-R/style.css";
 import "../../assets/fonts/TeXGyreAdventor/style.css";
 import api from "@/service/api";
-import bg from './assets/images/banner_img/bg.webp';
-import sparkle from './assets/images/deco/sparkle.webp';
 import { useEffect, useState } from 'react';
 import contentFadeOut from './contentFadeOut';
 import RWD from '@/service/RWD';
 import DateHeading from './DateHeading';
 import TermsConditions from '@/component/Promo/TermsConditions';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const sparkle = getPublicImage(import.meta.url, 'deco/sparkle.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

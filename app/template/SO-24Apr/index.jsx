@@ -1,16 +1,18 @@
 import './assets/scss/app.scss';
 import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/Akshar/style.css";
-import bg from "./assets/images/web.webp";
-import Captain_b from "./assets/images/Captain_b.webp";
-import Captain_m from "./assets/images/Captain_m.webp";
-import wave from "./assets/images/element.webp";
 import api from "@/service/api";
 import { useEffect,  useState } from 'react';
 import RWD from '@/service/RWD';
 import MoreBtn from '@/component/Promo/MoreBtn'
 import ReactWOW from 'react-wow';
-import '../../../node_modules/animate.css'
+import '../../../node_modules/animate.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'web.webp');
+const Captain_b = getPublicImage(import.meta.url, 'Captain_b.webp');
+const Captain_m = getPublicImage(import.meta.url, 'Captain_m.webp');
+const wave = getPublicImage(import.meta.url, 'element.webp');
 
 
 const TemplateComponent = ({ pageData }) => {

@@ -1,5 +1,7 @@
-import flower from './assets/images/deco/flower.webp';
 import RWD from '@/service/RWD';
+import { getPublicImage } from '@/service/util';
+
+const flower = getPublicImage(import.meta.url, 'deco/flower.webp');
 
 const BlossomEffect = () => {
     const { isMobile } = RWD()

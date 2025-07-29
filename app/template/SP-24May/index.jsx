@@ -5,13 +5,6 @@ import "../../assets/fonts/poppins/style.css";
 import api from "@/service/api";
 import { useEffect, useRef, useState } from 'react';
 import RWD from '@/service/RWD';
-import tag_cn from './assets/images/banner_img/icon_cn.webp'
-import tag_en from './assets/images/banner_img/icon_en.webp'
-import bg from './assets/images/banner_img/bg.webp';
-import house from './assets/images/banner_img/house.webp';
-import peo from './assets/images/banner_img/peo.webp';
-import peo2 from './assets/images/banner_img/peo2.webp';
-import title from './assets/images/banner_img/title.webp';
 import i18n from '@/service/i18n';
 import EventGroup from './EventGroup';
 import CurrTable from '@/component/Promo/CurrTable';
@@ -21,6 +14,16 @@ import PointTable from '@/component/Promo/PointTable';
 import { useSelector } from 'react-redux';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const tag_cn = getPublicImage(import.meta.url, 'banner_img/icon_cn.webp');
+const tag_en = getPublicImage(import.meta.url, 'banner_img/icon_en.webp');
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const house = getPublicImage(import.meta.url, 'banner_img/house.webp');
+const peo = getPublicImage(import.meta.url, 'banner_img/peo.webp');
+const peo2 = getPublicImage(import.meta.url, 'banner_img/peo2.webp');
+const title = getPublicImage(import.meta.url, 'banner_img/title.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

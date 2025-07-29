@@ -4,10 +4,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/grid';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
-import { checkExpired, getOrdinalSuffix } from '@/service/util';
-import bg from './assets/images/bg/img_dateBG.webp'
+import { checkExpired, getOrdinalSuffix, getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg/img_dateBG.webp');
+
 
 const EventGroup = ({ eventList }) => {
     const { isMobile } = RWD();

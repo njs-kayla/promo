@@ -1,12 +1,8 @@
 import './assets/scss/app.scss';
 import "../../assets/fonts/HemiHeadRg/style.css";
 import "../../assets/fonts/roboto/style.css";
-import bg from "./assets/images/banner_img/pc_bg.webp";
-import bg_mb from './assets/images/banner_img/mb_bg.webp';
-import bg_ali88 from './assets/images/banner_img/pc_bg_ali88.webp';
-import bg_mb_ali88 from './assets/images/banner_img/mb_bg_ali88.webp';
 import api from "@/service/api";
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import RWD from '@/service/RWD';
 import DateHeading from './DateHeading';
@@ -15,6 +11,13 @@ import MixBlock from './MixBlock';
 import MoreInfo from '@/component/Promo/MoreInfo';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/pc_bg.webp');
+const bg_mb = getPublicImage(import.meta.url, 'banner_img/mb_bg.webp');
+const bg_ali88 = getPublicImage(import.meta.url, 'banner_img/pc_bg_ali88.webp');
+const bg_mb_ali88 = getPublicImage(import.meta.url, 'banner_img/mb_bg_ali88.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

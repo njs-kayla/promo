@@ -1,4 +1,3 @@
-import { useEffect, useState, useRef } from 'react';
 import i18n from "@/service/i18n";
 
 const MixBlock = ({data}) => {

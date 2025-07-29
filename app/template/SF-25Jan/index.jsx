@@ -6,8 +6,6 @@ import "../../assets/fonts/poppins/style.css";
 import "../../assets/fonts/Impact/style.css";
 import "../../assets/fonts/SSQingBoTi/style.css";
 import "../../assets/fonts/KoreanSWGI3-R/style.css";
-import bg from "./assets/images/banner_img/bg.webp";
-import dragon from './assets/images/deco/dragon.webp'
 import api from "@/service/api";
 import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
@@ -21,10 +19,15 @@ import EventGroup from './EventGroup';
 import MoreInfo from '@/component/Promo/MoreInfo';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import coin1 from './assets/images/deco/coin_1.webp';
-import coin2 from './assets/images/deco/coin_2.webp';
-import coin3 from './assets/images/deco/coin_3.webp';
-import chest from './assets/images/deco/img_chest.webp';
+import { getPublicImage } from '@/service/util';
+
+const coin1 = getPublicImage(import.meta.url, 'deco/coin_1.webp');
+const coin2 = getPublicImage(import.meta.url, 'deco/coin_2.webp');
+const coin3 = getPublicImage(import.meta.url, 'deco/coin_3.webp');
+const chest = getPublicImage(import.meta.url, 'deco/img_chest.webp');
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const dragon = getPublicImage(import.meta.url, 'deco/dragon.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

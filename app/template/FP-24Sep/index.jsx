@@ -4,9 +4,7 @@ import '../../assets/fonts/KabelC/style.css'
 import '../../assets/fonts/Impact/style.css'
 import "../../assets/fonts/FugazOne/style.css";
 import api from "@/service/api";
-import { useEffect, useRef, useState } from 'react';
-import bg from './assets/images/bg/bg.webp';
-import bg_mb from './assets/images/bg/mb_bg.webp';
+import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
@@ -16,7 +14,11 @@ import MoreBtn from '@/component/Promo/MoreBtn'
 import { mergedArray } from '@/service/util';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { t } from "i18next"
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg/bg.webp');
+const bg_mb = getPublicImage(import.meta.url, 'bg/mb_bg.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

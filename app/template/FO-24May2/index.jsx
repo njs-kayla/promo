@@ -3,18 +3,20 @@ import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/CarterOne/style.css";
 import "../../assets/fonts/Mukta-Extra/style.css";
 import "../../assets/fonts/BoonTook-Regular/style.css";
-import bg from "./assets/images/banner_img/bg.webp";
-import monkey from './assets/images/deco/monkey.webp';
 import api from "@/service/api";
 import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
 import DateHeading from './DateHeading';
-import TermsConditions from '@/component/Promo/TermsConditions';
-import { t } from "i18next"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ReactWOW from 'react-wow';
-import MoreBtn from '@/component/Promo/MoreBtn'
+import MoreBtn from '@/component/Promo/MoreBtn';
+
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const monkey = getPublicImage(import.meta.url, 'deco/monkey.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

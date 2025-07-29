@@ -2,7 +2,10 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { Stage } from '@pixi/react';
 import * as PIXI from 'pixi.js';
-import bubble from './assets/images/deco/bg_bubble.webp'
+import { getPublicImage } from '@/service/util';
+
+const bubble = getPublicImage(import.meta.url, 'deco/bg_bubble.webp');
+
 
 // 向量類
 class Vector {

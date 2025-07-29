@@ -2,18 +2,20 @@ import './assets/scss/app.scss';
 import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/BerlinSansFBDemi/style.css";
 import "../../assets/fonts/Belanosima/style.css";
-import bg from "./assets/images/banner_img/bg.webp";
-import yeti from './assets/images/yeti.webp';
-import penguin from './assets/images/penguin.webp'
-import content from './assets/images/banner_img/content_bg.webp'
 import api from "@/service/api";
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import RWD from '@/service/RWD';
 import DateHeading from './DateHeading';
 import MoreBtn from '@/component/Promo/MoreBtn';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const yeti = getPublicImage(import.meta.url, 'yeti.webp');
+const penguin = getPublicImage(import.meta.url, 'penguin.webp');
+const content = getPublicImage(import.meta.url, 'banner_img/content_bg.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

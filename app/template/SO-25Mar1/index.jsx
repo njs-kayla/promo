@@ -6,23 +6,24 @@ import '../../assets/fonts/BebasNeue/style.css';
 import '../../assets/fonts/PubgSans/style.css';
 import '../../assets/fonts/DoHyeon/style.css';
 import api from "@/service/api";
-import { useEffect, useRef, useState } from 'react';
-import bg from './assets/images/bg/bg.webp';
+import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
 import MbEventGroup from './MbEventGroup';
-import MoreBtn from '@/component/Promo/MoreBtn';
 import MoreInfo from '@/component/Promo/MoreInfo'
 import { mergedArray } from '@/service/util';
-import fox from './assets/images/deco/peo_r.webp';
-import cat from './assets/images/deco/peo_l.webp';
-import tag from './assets/images/deco/tag.webp'
 import { useSelector } from 'react-redux';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import CoinEffect from './CoinEffect';
 import { t } from 'i18next';
+import { getPublicImage } from '@/service/util';
+
+const fox = getPublicImage(import.meta.url, 'deco/peo_r.webp');
+const cat = getPublicImage(import.meta.url, 'deco/peo_l.webp');
+const tag = getPublicImage(import.meta.url, 'deco/tag.webp');
+const bg = getPublicImage(import.meta.url, 'bg/bg.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

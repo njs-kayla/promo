@@ -1,5 +1,5 @@
-import { checkExpired, formatMonth} from "@/service/util";
-import activeImg from './assets/images/deco/pc_time.webp'
+import { checkExpired, formatMonth, getPublicImage } from "@/service/util";
+const activeImg = getPublicImage(import.meta.url, 'deco/pc_time.webp');
 
 
 const Tournament = ({ eventList }) => {

@@ -1,7 +1,6 @@
 import i18n from '@/service/i18n';
 import { formatAMPM, formatMonth, getOrdinalSuffix } from '@/service/util';
 import RWD from '@/service/RWD';
-import arrow from './assets/images/deco/arrow.svg';
 
 const DateHeading = ({ dateData }) => {
     const { startDate } = dateData.startGroup[0]

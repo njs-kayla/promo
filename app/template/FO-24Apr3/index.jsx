@@ -1,20 +1,21 @@
 import './assets/scss/app.scss';
 import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/BMHANNA/style.css";
-import "../../assets/fonts/RodfatTwoDemo/style.css"
-import banner from "./assets/images/web_bg.webp";
-import cat from "./assets/images/deco/cat.webp";
-import cowboy_L from "./assets/images/deco/cowboy_L.webp";
-import cowboy_R from "./assets/images/deco/cowboy_R.webp";
-import sparkles from "./assets/images/deco/sparkles.webp"
-
+import "../../assets/fonts/RodfatTwoDemo/style.css";
+import { getPublicImage } from '@/service/util';
 import api from "@/service/api";
-import { useEffect, useState, Fragment } from 'react';
+import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
 import DateHeading from './DateHeading';
 import { t } from "i18next"
 import ReactWOW from 'react-wow';
 import '../../../node_modules/animate.css'
+
+const banner = getPublicImage(import.meta.url, 'web_bg.webp');
+const cat = getPublicImage(import.meta.url, 'deco/cat.webp');
+const cowboy_L = getPublicImage(import.meta.url, 'deco/cowboy_L.webp');
+const cowboy_R = getPublicImage(import.meta.url, 'deco/cowboy_R.webp');
+const sparkles = getPublicImage(import.meta.url, 'deco/sparkles.webp');
 
 
 const TemplateComponent = ({ pageData }) => {

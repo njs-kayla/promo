@@ -3,7 +3,10 @@ import RWD from "@/service/RWD"
 import { checkExpired, formatAMPM } from "@/service/util";
 import { useEffect, useState } from "react";
 import i18n from '@/service/i18n';
-import tire from './assets/images/deco/img_tire.webp'
+import { getPublicImage } from '@/service/util';
+
+const tire = getPublicImage(import.meta.url, 'deco/img_tire.webp');
+
 
 const EventGroup = ({ eventList, GMT }) => {
     const { isMobile } = RWD();

@@ -1,21 +1,24 @@
 import RWD from '@/service/RWD';
-import coin1 from './assets/images/coin/coin1.webp';
-import coin2 from './assets/images/coin/coin2.webp';
-import coin3 from './assets/images/coin/coin3.webp';
-import coin4 from './assets/images/coin/coin4.webp';
-import coin5 from './assets/images/coin/coin5.webp';
-import coin6 from './assets/images/coin/coin6.webp';
-import coin7 from './assets/images/coin/coin7.webp';
-import coin8 from './assets/images/coin/coin8.webp';
-import coin9 from './assets/images/coin/coin9.webp';
-import coin10 from './assets/images/coin/coin10.webp';
-import coin11 from './assets/images/coin/coin11.webp';
-import coin12 from './assets/images/coin/coin12.webp';
-import coin13 from './assets/images/coin/coin13.webp';
-import coin14 from './assets/images/coin/coin14.webp';
-import coin15 from './assets/images/coin/coin15.webp';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { getPublicImage } from '@/service/util';
+
+const coin1 = getPublicImage(import.meta.url, 'coin/coin1.webp');
+const coin2 = getPublicImage(import.meta.url, 'coin/coin2.webp');
+const coin3 = getPublicImage(import.meta.url, 'coin/coin3.webp');
+const coin4 = getPublicImage(import.meta.url, 'coin/coin4.webp');
+const coin5 = getPublicImage(import.meta.url, 'coin/coin5.webp');
+const coin6 = getPublicImage(import.meta.url, 'coin/coin6.webp');
+const coin7 = getPublicImage(import.meta.url, 'coin/coin7.webp');
+const coin8 = getPublicImage(import.meta.url, 'coin/coin8.webp');
+const coin9 = getPublicImage(import.meta.url, 'coin/coin9.webp');
+const coin10 = getPublicImage(import.meta.url, 'coin/coin10.webp');
+const coin11 = getPublicImage(import.meta.url, 'coin/coin11.webp');
+const coin12 = getPublicImage(import.meta.url, 'coin/coin12.webp');
+const coin13 = getPublicImage(import.meta.url, 'coin/coin13.webp');
+const coin14 = getPublicImage(import.meta.url, 'coin/coin14.webp');
+const coin15 = getPublicImage(import.meta.url, 'coin/coin15.webp');
+
 
 const coins = [coin1, coin2, coin3, coin4, coin5, coin6, coin7, coin8, coin9, coin10, coin11, coin12, coin13, coin14, coin15];
 

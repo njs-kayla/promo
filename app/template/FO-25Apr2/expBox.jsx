@@ -1,5 +1,7 @@
 import i18n from '@/service/i18n';
-import coin from './assets/images/deco/FS_coin.webp';
+import { getPublicImage } from '@/service/util';
+const coin = getPublicImage(import.meta.url, 'deco/FS_coin.webp');
+
 
 const ExpBox = ({ data }) => {
     const targetData = data[i18n.language];

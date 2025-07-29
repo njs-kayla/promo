@@ -1,9 +1,7 @@
 import './assets/scss/app.scss';
 import "../../assets/fonts/Sansita/style.css";
 import api from "@/service/api";
-import bg from './assets/images/banner_img/bg.webp';
-import bg_deco from './assets/images/banner_img/title_character.webp';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import CurrTable from '@/component/Promo/CurrTable';
@@ -11,7 +9,12 @@ import DateHeading from './DateHeading';
 import MoreBtn from '@/component/Promo/MoreBtn';
 import PointTable from '@/component/Promo/PointTable';
 import { useSelector } from 'react-redux';
-import Firework from './assets/js/firework'
+import Firework from './assets/js/firework';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const bg_deco = getPublicImage(import.meta.url, 'banner_img/title_character.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

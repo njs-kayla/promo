@@ -4,17 +4,19 @@ import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/poppins/style.css";
 import "../../assets/fonts/JetBrainsMono/style.css";
 import api from "@/service/api";
-import bg from './assets/images/bg.webp';
-import role1 from './assets/images/p1.webp';
-import role2 from './assets/images/p2.webp';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import Table from './Table'
 import DateHeading from './DateHeading';
 import MoreBtn from '@/component/Promo/MoreBtn';
 import PointTable from '@/component/Promo/PointTable';
-import { useSelector } from 'react-redux';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg.webp');
+const role1 = getPublicImage(import.meta.url, 'p1.webp');
+const role2 = getPublicImage(import.meta.url, 'p2.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

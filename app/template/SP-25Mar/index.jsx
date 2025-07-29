@@ -5,13 +5,8 @@ import "../../assets/fonts/ArchivoNarrow/style.css";
 import "../../assets/fonts/poppins/style.css";
 import "../../assets/fonts/SSQingBoTi/style.css";
 import "../../assets/fonts/KoreanSWGI3-R/style.css";
-import bg from "./assets/images/banner_img/bg.webp";
-import fox from './assets/images/deco/peo_b.webp';
-import fox_m from './assets/images/deco/peo_mob.webp';
-import deco_l from './assets/images/deco/wa_l.webp';
-import deco_r from './assets/images/deco/wa_r.webp';
 import api from "@/service/api";
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import RWD from '@/service/RWD';
 import DateHeading from './DateHeading';
@@ -21,6 +16,13 @@ import EventGroup from './EventGroup';
 import MoreInfo from '@/component/Promo/MoreInfo';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const fox = getPublicImage(import.meta.url, 'deco/peo_b.webp');
+const fox_m = getPublicImage(import.meta.url, 'deco/peo_mob.webp');
+const deco_l = getPublicImage(import.meta.url, 'deco/wa_l.webp');
+const deco_r = getPublicImage(import.meta.url, 'deco/wa_r.webp');
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

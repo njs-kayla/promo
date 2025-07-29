@@ -2,11 +2,6 @@ import './assets/scss/app.scss';
 import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/KohinoorBangla/style.css";
 import "../../assets/fonts/BebasNeue/style.css"
-import bg from "./assets/images/banner_img/bg.webp";
-import typeA_role from './assets/images/deco/typeA_role.webp';
-import role from './assets/images/deco/role.webp';
-import coin from './assets/images/deco/coin.webp';
-import coinA from './assets/images/deco/typeA_deco.webp'
 import api from "@/service/api";
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -16,6 +11,14 @@ import MoreBtn from '@/component/Promo/MoreBtn';
 import Coins from './Coins';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const typeA_role = getPublicImage(import.meta.url, 'deco/typeA_role.webp');
+const role = getPublicImage(import.meta.url, 'deco/role.webp');
+const coin = getPublicImage(import.meta.url, 'deco/coin.webp');
+const coinA = getPublicImage(import.meta.url, 'deco/typeA_deco.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

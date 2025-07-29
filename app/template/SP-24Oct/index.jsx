@@ -5,11 +5,6 @@ import "../../assets/fonts/ArchivoNarrow/style.css";
 import "../../assets/fonts/Bronco/style.css";
 import "../../assets/fonts/SSQingBoTi/style.css";
 import "../../assets/fonts/KoreanSWGI3-R/style.css";
-import bg from "./assets/images/banner_img/bg.webp";
-import titleBar from './assets/images/deco/img_char_playwin.webp';
-import coin from './assets/images/deco/img_coin.webp';
-import smoke_L from './assets/images/deco/smoke-L.webp';
-import smoke_R from './assets/images/deco/smoke-R.webp';
 import api from "@/service/api";
 import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
@@ -21,6 +16,14 @@ import EventGroup from './EventGroup';
 import MoreBtn from '@/component/Promo/MoreBtn';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const titleBar = getPublicImage(import.meta.url, 'deco/img_char_playwin.webp');
+const coin = getPublicImage(import.meta.url, 'deco/img_coin.webp');
+const smoke_L = getPublicImage(import.meta.url, 'deco/smoke-L.webp');
+const smoke_R = getPublicImage(import.meta.url, 'deco/smoke-R.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD();

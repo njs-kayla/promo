@@ -1,6 +1,5 @@
 import './assets/scss/app.scss';
 import "../../assets/fonts/poppins/style.css";
-import bg from "./assets/images/bg/img_TopBG.webp"
 import { useEffect, useState } from 'react';
 import api from '@/service/api';
 import RWD from '@/service/RWD';
@@ -11,6 +10,10 @@ import MoreBtn from '@/component/Promo/MoreBtn';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
 import PointTable from '@/component/Promo/PointTable';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'bg/img_TopBG.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

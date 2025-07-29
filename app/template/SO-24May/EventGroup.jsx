@@ -2,7 +2,10 @@ import { t } from "i18next"
 import RWD from "@/service/RWD"
 import { checkExpired, datePad, formatAMPM, formatMonth, getOrdinalSuffix } from "@/service/util";
 import { Fragment, useEffect, useState } from "react";
-import dia from './assets/images/dia.webp'
+import { getPublicImage } from '@/service/util';
+
+const dia = getPublicImage(import.meta.url, 'dia.webp');
+
 
 const DateItem = ({ active, index, data }) => {
     const { isMobile } = RWD()

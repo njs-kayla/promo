@@ -1,11 +1,9 @@
 
 import RWD from "@/service/RWD"
-import { checkExpired, formatAMPM, getOrdinalSuffix, formatMonth } from "@/service/util";
+import { checkExpired, formatAMPM, formatMonth } from "@/service/util";
 import { useEffect, useState } from "react";
-import i18n from '@/service/i18n';
 
 const EventGroup = ({ eventList, GMT }) => {
-    const { isMobile } = RWD();
     const [activeEvent, setActiveEvent] = useState(null);
 
     useEffect(() => {

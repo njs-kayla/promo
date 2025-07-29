@@ -2,18 +2,20 @@ import './assets/scss/app.scss';
 import "../../assets/fonts/poppins/style.css";
 import "../../assets/fonts/agencyfb/style.css";
 import api from "@/service/api";
-import coin_l from './assets/images/deco/coin_l.webp';
-import coin_r from './assets/images/deco/coin_r.webp';
-import kv1_bg from './assets/images/banner_img/kv1_bg.webp';
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import RWD from '@/service/RWD';
 import EventGroup from './EventGroup';
 import DateHeading from './DateHeading';
 import { mergedArray } from '@/service/util';
 import { t } from 'i18next';
-import { useSelector } from 'react-redux';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const coin_l = getPublicImage(import.meta.url, 'deco/coin_l.webp');
+const coin_r = getPublicImage(import.meta.url, 'deco/coin_r.webp');
+const kv1_bg = getPublicImage(import.meta.url, 'banner_img/kv1_bg.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()

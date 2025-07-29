@@ -1,12 +1,6 @@
 import './assets/scss/app.scss';
 import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/DINCondensed/style.css";
-import bg from "./assets/images/banner_img/bg.webp";
-import coin_L_1 from './assets/images/deco/coin_L_1.webp'
-import coin_L_2 from './assets/images/deco/coin_L_2.webp'
-import coin_R_1 from './assets/images/deco/coin_R_1.webp'
-import coin_R_2 from './assets/images/deco/coin_R_2.webp'
-import sparkle from './assets/images/deco/sparkle.webp'
 import api from "@/service/api";
 import { useEffect, useState } from 'react';
 import RWD from '@/service/RWD';
@@ -14,6 +8,15 @@ import DateHeading from './DateHeading';
 import MoreBtn from '@/component/Promo/MoreBtn'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bg.webp');
+const coin_L_1 = getPublicImage(import.meta.url, 'deco/coin_L_1.webp');
+const coin_L_2 = getPublicImage(import.meta.url, 'deco/coin_L_2.webp');
+const coin_R_1 = getPublicImage(import.meta.url, 'deco/coin_R_1.webp');
+const coin_R_2 = getPublicImage(import.meta.url, 'deco/coin_R_2.webp');
+const sparkle = getPublicImage(import.meta.url, 'deco/sparkle.webp');
+
 
 
 const TemplateComponent = ({ pageData }) => {

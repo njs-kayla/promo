@@ -3,8 +3,6 @@ import "../../assets/fonts/Helvetica/style.css";
 import "../../assets/fonts/roboto/style.css";
 import "../../assets/fonts/agencyfb/style.css";
 import "../../assets/fonts/roboto/style.css";
-import bg from './assets/images/banner_img/bn_bg.webp';
-import cursor from './assets/images/deco/mark.webp'
 import { useEffect, useState, useRef } from 'react';
 import api from '@/service/api';
 import RWD from '@/service/RWD';
@@ -17,6 +15,11 @@ import PointTable from '@/component/Promo/PointTable';
 import { useSelector } from 'react-redux';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { getPublicImage } from '@/service/util';
+
+const bg = getPublicImage(import.meta.url, 'banner_img/bn_bg.webp');
+const cursor = getPublicImage(import.meta.url, 'deco/mark.webp');
+
 
 const TemplateComponent = ({ pageData }) => {
     const { isMobile } = RWD()
