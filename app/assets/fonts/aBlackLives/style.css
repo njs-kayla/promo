@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'a Black Lives';
+    src: url('./aBlackLives.woff2') format('woff2'),
+        url('./aBlackLives.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+

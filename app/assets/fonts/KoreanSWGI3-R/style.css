@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'KoreanSWGI3-R';
+    src: url('./KoreanSWGI3-R.eot');
+    src: url('./KoreanSWGI3-R.eot?#iefix') format('embedded-opentype'),
+        url('./KoreanSWGI3-R.woff2') format('woff2'),
+        url('./KoreanSWGI3-R.ttf') format('truetype'),
+        url('./KoreanSWGI3-R.svg#KoreanSWGI3-R') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

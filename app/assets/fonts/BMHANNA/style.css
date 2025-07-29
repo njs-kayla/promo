@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'BM HANNA';
+    src: url('./BMHANNA.woff2') format('woff2'),
+        url('./BMHANNA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

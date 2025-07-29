@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "SpicyRice";
+    src: url("./SpicyRice-Regular.eot");
+    src: url("./SpicyRice-Regular.eot?#iefix") format("embedded-opentype"),
+        url("./SpicyRice-Regular.woff2") format("woff2"),
+        url("./SpicyRice-Regular.ttf") format("truetype"),
+        url("./SpicyRice-Regular.svg#spicyrice") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

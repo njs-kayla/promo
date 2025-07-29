@@ -1,0 +1,1084 @@
+/* footer */
+footer {
+    @include flex(center);
+    background: #502A06A6;
+    height: 48px;
+    z-index: 5;
+    position: relative;
+
+    @at-root .mobile #{&} {
+        position: static;
+    }
+}
+
+.copy-right {
+    color: rgba(255, 255, 255, 0.8);
+    @include font-size(14);
+
+    @at-root .mobile #{&} {
+        @include font-size(13);
+    }
+}
+
+header {
+
+    &.SG {
+        background: #47100a67;
+        box-shadow: 0px 1px 6px #0000004d;
+    }
+}
+
+body {
+    padding-top: 0;
+}
+
+/* banner */
+.banner {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.bn-bg {
+    width: 100%;
+}
+
+.title-area {
+    @include absolute(35%, 50%);
+    transform: translateX(-50%);
+    width: 68%;
+    z-index: 10;
+}
+
+.bn-title {
+    width: 100%;
+    @include absolute(23%, 0);
+
+    img {
+        width: 50%;
+        margin: auto;
+    }
+}
+
+.bonus {
+    width: 100%;
+    position: relative;
+    animation: shakeY 4s 2s ease-in-out infinite;
+
+    img {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+.won {
+    width: 15.5%;
+    @include absolute(4%, null, 17%);
+
+    img {
+        width: 100%;
+    }
+
+    @at-root .zh-CN #{&} {
+        @include absolute(5%, null, 15%);
+    }
+
+    @at-root .id-ID #{&} {
+        @include absolute(4%, null, 9%);
+    }
+
+    @at-root .th-TH #{&} {
+        @include absolute(5%, null, 8%);
+    }
+}
+
+.bn-tag {
+    display: none;
+}
+
+.typeA {
+    .won {
+        @at-root .id-ID #{&} {
+            @include absolute(8%, null, 20%);
+        }
+    }
+}
+
+.typeB {
+    .bn-title {
+        @include absolute(12%, 0);
+
+    }
+
+    .bonus {
+        img {
+            width: 72%;
+            margin-top: 2%;
+        }
+    }
+
+    .won {
+        display: none;
+    }
+
+    [class^='coin-'] {
+        display: none;
+    }
+
+    .banner {
+        position: relative;
+
+        &::after {
+            content: "";
+            background: url(/template/SO-24Aug2/bg/red_packet.webp) no-repeat;
+            @include absolute(10%, 50%);
+            transform: translateX(-50%);
+            background-size: 100% 100%;
+            background-position: center;
+            width: 90%;
+            height: 70vh;
+            z-index: 2;
+        }
+
+        @at-root .mobile #{&} {
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .bn-tag {
+        display: block;
+        @include absolute(15%, 68%);
+        width: 13%;
+
+        img {
+            width: 100%;
+            animation: uptodown 0.8s ease-in-out alternate infinite;
+        }
+    }
+
+    .points-block table {
+        td {
+            &[rowspan] {
+                padding: 0 15px;
+                line-height: 30px;
+            }
+        }
+        tr {
+            td[rowspan] {
+                color: #fff !important;
+            }
+            &:hover {
+                td[rowspan] {
+                    color: #fff !important;
+                }
+            }
+        }
+
+        @at-root .mobile #{&} {
+            table-layout: fixed;
+
+            tr+tr {
+                border-top: 0.5px solid #ffffff87;
+            }
+
+            thead {
+                tr {
+                    th {
+                        &:nth-child(1) {
+                            width: 20%;
+                        }
+                    }
+                }
+            }
+
+            td {
+                padding: 0 10px;
+                line-height: 25px;
+
+                &[rowspan] {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+}
+.typeC {
+    .bn-date {
+        @include absolute(76%, 0);
+    }
+    .bn-title {
+        @include absolute(8%, 0);
+        img {
+            width: 36%;
+        }
+
+    }
+    .bonus {
+        img {
+            width: 68%;
+        }
+    }
+    .won {
+        @include absolute(-62%, null, 9%);
+        width: 18%;
+    }
+    .title-area {
+        top: 40%;
+    }
+    [class^='coin-'] {
+        display: none;
+    }
+    .char-1 {
+        @include absolute(20%, 16%);
+        width: 15%;
+        img {
+            width: 100%;
+        }
+    }
+    .char-2 {
+        @include absolute(40%, null, 19%);
+        width: 14%;
+        img {
+            width: 100%;
+        }
+    }
+    .red_packet {
+        @include absolute(-8%, 0);
+    }
+    .index {
+        margin-top: -3%;
+    }
+    .points-block table {
+        td {
+            &[rowspan] {
+                padding: 0 15px;
+                line-height: 30px;
+            }
+        }
+        tr {
+            td[rowspan] {
+                color: #fff !important;
+            }
+            &:hover {
+                td[rowspan] {
+                    color: #fff !important;
+                }
+            }
+        }
+
+        @at-root .mobile #{&} {
+            table-layout: fixed;
+
+            tr+tr {
+                border-top: 0.5px solid #ffffff87;
+            }
+
+            thead {
+                tr {
+                    th {
+                        &:nth-child(1) {
+                            width: 20%;
+                        }
+                    }
+                }
+            }
+
+            td {
+                padding: 0 10px;
+                line-height: 25px;
+
+                &[rowspan] {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+.RPLAY {
+    .title-area {
+        top: 36%;
+        width: 52%;
+    }
+    .won {
+        width: 20%;
+        top: 10% !important;
+        right: 20% !important;
+    }
+}
+.fox {
+    @include absolute(9%, 11%);
+    width: 22%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.bn-date {
+    text-align: center;
+    @include absolute(71%, 0);
+    color: #fff;
+    font-weight: bold;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue';
+    font-weight: 400;
+
+    .date {
+        line-height: 32px;
+        font-size: 32px;
+        filter: drop-shadow(0px 2px 0px #240F00) drop-shadow(0px -1px 5px #FF9900B2);
+        background: linear-gradient(180deg, #FFF72E 0%, #FF7A00 100%);
+        background-clip: text;
+        color: transparent;
+        display: block;
+        margin-bottom: 8px;
+        clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%);
+        transform: translate(0, 50%);
+        animation: open-t 0.5s 1.8s ease-out forwards;
+    }
+
+    .time {
+        display: block;
+        font-size: 28px;
+        font-weight: normal;
+        line-height: 30px;
+        color: #FF6937;
+        text-shadow: 0px 3px 0px #240F00;
+        clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%);
+        transform: translate(0, -50%);
+        animation: open-b 0.5s 1.8s ease-out forwards;
+    }
+
+    .ordinal {
+        font-size: 22px;
+    }
+
+    .gmt {
+        margin-left: 5px;
+    }
+
+    @at-root .zh-CN #{&} {
+        font-family: 'YouSheBiaoTiHei';
+        letter-spacing: 1px;
+
+        @include RWD($break_point) {
+            .date {
+                margin-bottom: 5px !important;
+                font-size: 20px !important;
+            }
+        }
+    }
+
+    @at-root .ko-KR #{&} {
+        font-family: 'KoreanSWGI3-R';
+
+        .date {
+            font-size: 28px;
+            line-height: 36px;
+        }
+
+        .time {
+            font-size: 22px;
+            line-height: 30px;
+        }
+
+        @include RWD($break_point) {
+            .date {
+                margin-bottom: 5px !important;
+                font-size: 20px !important;
+                line-height: 34px !important;
+            }
+
+            .time {
+                font-size: 16px !important;
+                line-height: 20px !important;
+            }
+        }
+    }
+
+    @at-root .mobile #{&} {
+        @include absolute(86%, 0);
+        font-weight: bold;
+
+        strong {
+            font-weight: bold;
+        }
+
+        .date {
+            font-size: 22px;
+            margin-bottom: 0px;
+            line-height: 20px;
+            animation: none;
+            letter-spacing: 1px;
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+            transform: translate(0, 0);
+        }
+
+        .ordinal {
+            font-size: 16px;
+        }
+
+        .time {
+            font-size: 18px;
+            letter-spacing: 1.2px;
+            animation: none;
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+            transform: translate(0, 0);
+        }
+    }
+}
+
+/* index */
+main {
+    position: relative;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100vh;
+        background: url(/template/SO-24Aug2/bg/bg_under.webp);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        @include absolute(null, 0, null, 0);
+        opacity: 0.2;
+    }
+
+    @at-root .mobile #{&} {
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.tournament-main {
+    max-width: 60%;
+    margin: 40px auto 64px;
+    flex-wrap: nowrap;
+    @include flex(center);
+    position: relative;
+    text-align: center;
+    font-family: "Bebas Neue";
+    font-weight: 400;
+    z-index: 2;
+    gap: 60px;
+
+    @at-root .mobile #{&} {
+        max-width: 100%;
+        @include flex(center);
+        gap: 25px;
+        margin: 10px auto 50px;
+        flex-wrap: wrap;
+    }
+}
+
+.tire {
+    @include absolute(-26px, 50%);
+    transform: translateX(-50%);
+    width: 122px;
+    z-index: -1;
+}
+
+.date-item {
+    position: relative;
+    width: 320px;
+    background: linear-gradient(180deg, rgba(80, 42, 6, 0) 25%, rgba(80, 42, 6, 0.85) 51%, #502A06 79.5%);
+    border-radius: 0 0 15px 15px;
+    padding: 60px 0 7px;
+    color: #9F6936;
+
+    &.active {
+        color: #fff;
+
+        .date-item-time {
+            color: transparent;
+            background: linear-gradient(180deg, #FFF72E 0%, #FF7A00 100%);
+            background-clip: text;
+        }
+    }
+
+
+    @at-root .mobile #{&} {
+        width: 160px;
+        padding: 80px 0 7px;
+    }
+}
+
+.date-item-time {
+    @include flex(center, flex-end);
+    @include font-size(28);
+    letter-spacing: 2.4px;
+    filter: drop-shadow(0 2px 4px #18113A);
+    font-weight: 600;
+    line-height: 40px;
+}
+
+.date-item-date {
+    filter: drop-shadow(0 2px 4px #18113A);
+    font-size: 1.125rem;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1px;
+
+    @at-root .mobile #{&} {
+        font-size: 1rem;
+    }
+}
+
+.date-item-year {
+    filter: drop-shadow(0 2px 4px #18113A);
+    @include font-size(24);
+}
+
+.index {
+    padding-bottom: 5%;
+    position: relative;
+    margin-top: -7%;
+
+    @at-root .mobile #{&} {
+        padding-bottom: 13%;
+        margin-top: 0;
+
+    }
+}
+
+%title-deco {
+    content: "";
+    width: 60px;
+    aspect-ratio: 1/1;
+    background-image: url(/template/SO-24Aug2/deco/img_icon_glod.webp);
+    background-position: center;
+    background-size: 100%;
+    transform: translateY(-50%);
+    z-index: 5;
+
+    @include RWD($break_point) {
+        width: 32px;
+    }
+}
+
+.points-block {
+    padding: to-rem(10) 5% 0;
+    margin: 0 auto to-rem(48);
+    position: relative;
+    max-width: $containerW;
+
+    >* {
+        position: relative;
+        z-index: 1;
+    }
+
+    h2 {
+        color: transparent;
+        @include font-size(32);
+        line-height: 60px;
+        margin: 0 auto to-rem(25);
+        text-align: center;
+        width: fit-content;
+        background: linear-gradient(180deg, #FFCB31 24.5%, #FFFFFF 100%);
+        background-clip: text;
+        position: relative;
+        letter-spacing: 2px;
+        filter: drop-shadow(0px 5px 8px #250E02CC) drop-shadow(0px 3px 0px #A13A00);
+        font-family: 'Pubg Sans', 'YouSheBiaoTiHei', 'KoreanSWGI3-R';
+
+        &::after {
+            @extend %title-deco;
+            @include absolute(50%, -85px);
+        }
+
+        &::before {
+            @extend %title-deco;
+            @include absolute(50%, null, -85px);
+        }
+
+        @at-root .zh-CN #{&} {
+            font-weight: normal;
+        }
+
+        @at-root .ko-KR #{&} {
+            font-weight: normal;
+        }
+
+        @include RWD($break_point) {
+            line-height: 32px;
+            font-size: 20px;
+            letter-spacing: 1px;
+            margin: 0 auto to-rem(10);
+
+            &::after {
+                display: none;
+            }
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &:has(i) {
+            display: none;
+        }
+    }
+
+    h3 {
+        color: #FF6937;
+        text-shadow: 0px 3px 0px #240F00;
+        max-width: 640px;
+        line-height: 35px;
+        font-size: 28px;
+        text-align: center;
+        margin: 0 auto 50px;
+        font-family: 'Bebas Neue', 'YouSheBiaoTiHei', 'KoreanSWGI3-R';
+        font-weight: 400;
+        letter-spacing: 1.5px;
+
+        @at-root .ko-KR #{&} {
+            font-size: 26px;
+            line-height: 40px;
+
+            @include RWD($break_point) {
+                line-height: 30px !important;
+            }
+        }
+
+        @at-root .mobile #{&} {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    p {
+        color: #FFFFFF;
+        @include font-size(18);
+        line-height: 30px;
+        max-width: to-rem(640);
+        margin: 0 auto to-rem(30);
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    ul {
+        color: #FFFFFF;
+        font-size: 18px;
+        line-height: 24px;
+        max-width: to-rem(700);
+        margin: 0 auto 50px;
+        letter-spacing: 1px;
+        flex-shrink: 0;
+
+        li {
+            @include flex(center, stretch);
+            margin-bottom: 8px;
+
+            strong {
+                width: 130px;
+                padding: 32px 0;
+                text-align: center;
+                flex-shrink: 0;
+                background: #FFCB3114;
+            }
+
+            i {
+                background: #502A0633;
+                padding: 0 16px;
+                font-style: normal;
+                flex-grow: 1;
+                @include flex(flex-start, center);
+            }
+        }
+
+        @at-root .zh-CN #{&} {
+            max-width: to-rem(500);
+        }
+
+        @at-root .ms-MY #{&} {
+            i {
+                padding: 12px 16px;
+            }
+        }
+
+        @at-root .mobile #{&} {
+            font-size: 16px;
+            margin: 0 auto;
+            width: 93%;
+
+            strong {
+                width: 100px;
+                padding: 0;
+                @include flex(center);
+            }
+
+            i {
+                padding: 12px;
+            }
+        }
+    }
+
+    /* info table */
+    .table {
+        margin: 0 auto to-rem(15);
+        max-width: 720px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        text-align: center;
+        --cell-h: 48px;
+        table-layout: fixed;
+
+        thead {
+            font-family: 'Pubg Sans', 'YouSheBiaoTiHei', 'KoreanSWGI3-R';
+            background: radial-gradient(53.3% 84.38% at 50% 100%, #502A06 0%, rgba(80, 42, 6, 0) 100%);
+            position: relative;
+
+            &::after {
+                content: "";
+                background: url(/template/SO-24Aug2/deco/img_line_2.svg);
+                background-size: 100%;
+                @include absolute(0, 0);
+                width: 100%;
+                height: 2px;
+                transform: translateY(var(--cell-h));
+            }
+
+            th+th {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    background: url(/template/SO-24Aug2/deco/img_line_1.svg);
+                    @include absolute(-15px, 0);
+                    background-size: 100% 100%;
+                    height: calc(var(--cell-h) * 12);
+                    width: 2px;
+                    z-index: 2;
+                }
+            }
+        }
+
+        th {
+            height: var(--cell-h);
+            color: #FF6937;
+            font-size: 24px;
+            letter-spacing: 1.2px;
+            font-weight: normal;
+
+            @at-root .ko-KR #{&} {
+                font-size: 20px;
+
+                @include RWD($break_point) {
+                    font-size: 16px !important;
+                }
+            }
+
+            @at-root .mobile #{&} {
+                font-size: 20px;
+            }
+        }
+
+        tbody {
+            color: #fff;
+        }
+
+        td {
+            height: var(--cell-h);
+            position: relative;
+            font-weight: bold;
+            font-size: 18px;
+            text-transform: uppercase;
+
+            @at-root .mobile #{&} {
+                font-size: 16px;
+            }
+        }
+
+        tr {
+            position: relative;
+            transition: all 0.3s;
+
+            &:hover {
+                color: #FFCB31;
+            }
+
+            @at-root .mobile #{&} {
+                pointer-events: none;
+            }
+        }
+
+
+        tr+tr {
+            border-top: 0.5px solid #ffffff7b;
+
+            @at-root .mobile #{&} {
+                border-top: none;
+            }
+        }
+
+        @at-root .mobile #{&} {
+            --cell-h: 36px;
+        }
+    }
+
+    @at-root .mobile #{&} {
+        border: none;
+        padding: to-rem(5) to-rem(20);
+
+        table {
+            margin-top: 40px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+}
+
+.zh-CN,
+.ko-KR {
+    @include RWD($break_point) {
+        p {
+            font-size: 14px !important;
+        }
+
+        li {
+            font-size: 14px !important;
+        }
+    }
+}
+
+%text-setting {
+    font-family: 'Pubg Sans';
+    color: transparent;
+    filter: drop-shadow(0px 5px 8px 0px #250E02CC) drop-shadow(0px 3px 0px #A13A00);
+    background: linear-gradient(180deg, #FFCB31 24.5%, #FFFFFF 100%);
+    background-clip: text;
+
+    @at-root .zh-CN #{&} {
+        font-family: 'YouSheBiaoTiHei';
+    }
+}
+
+.treasure {
+    max-width: 640px;
+    margin: auto;
+
+    .exp {
+        font-size: 40px;
+        @extend %text-setting;
+
+        span {
+            margin-left: 15px;
+        }
+    }
+
+    @include flex(center);
+    gap: 15px;
+
+    .box {
+        width: 246px;
+        aspect-ratio: 1/1;
+        position: relative;
+
+        img {
+            width: 100%;
+            z-index: -1;
+        }
+
+        .currency {
+            @include absolute(31%, -7%);
+            width: 100%;
+            text-align: center;
+
+            .text {
+                @extend %text-setting;
+                font-size: 30px;
+                line-height: 50px;
+                z-index: 2;
+                position: relative;
+            }
+
+            .bg {
+                height: 46px;
+                width: 100%;
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 40%, rgba(0, 0, 0, 0.791047) 66.45%, rgba(0, 0, 0, 0.9) 65%, rgba(0, 0, 0, 0) 100%);
+                @include absolute(0, 0);
+            }
+        }
+    }
+
+    @at-root .mobile #{&} {
+        .exp {
+            font-size: 28px;
+
+            span {
+                margin-left: 10px;
+            }
+        }
+
+        gap: 10px;
+
+        .box {
+            width: 184px;
+
+            .currency {
+                top: 33%;
+
+                .text {
+                    font-size: 22px;
+                    line-height: 32px;
+                }
+
+                .bg {
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
+
+.content {
+    font-size: 14px;
+
+    li {
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+/* go top btn */
+.go-top-btn {
+    width: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    position: fixed;
+    bottom: 6vh;
+    right: calc((100% - $containerW) / 2 - 50px);
+    @include font-size(20);
+    color: #e8dede;
+    background: rgba(14, 14, 14, 0.5);
+    box-shadow: 0px 3px 4px #0000008b;
+    border: 1px solid #ffffff29;
+    border-radius: 8px;
+    @include flex(center);
+    opacity: 0;
+    pointer-events: none;
+    @extend %transition-03s;
+    z-index: 1;
+
+    &:hover {
+        background-color: rgba(14, 14, 14, 1);
+        border-color: #ffdddd38;
+        color: #fff;
+
+        i {
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    @include RWD($smallWeb) {
+        right: 10px;
+    }
+
+    @include RWD($break_point) {
+        bottom: 2vh;
+        right: 10px;
+        width: 45px;
+    }
+}
+
+.btn-more {
+    border: solid 1px #FFCB31;
+    color: #FFCB31;
+    margin-top: 70px;
+    position: relative;
+    z-index: 1;
+    font-family: 'Pubg Sans', 'YouSheBiaoTiHei', 'KoreanSWGI3-R';
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    height: 40px;
+    line-height: 41px;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0px 0px 4px 0px #FFF626;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 120%;
+        top: -10%;
+        right: 0;
+        z-index: -1;
+        background-color: #FFCB31;
+        transition: all 0.3s ease;
+        border-radius: 18px;
+    }
+
+    &:hover {
+        padding: 0 1.125rem;
+        color: #181818;
+
+        &::after {
+            left: -10%;
+            width: 120%;
+        }
+    }
+
+    @at-root .mobile #{&} {
+        font-size: 15px;
+        margin-top: 32px;
+        padding: 0 20px;
+        box-shadow: 0px 0px 2px 0px #FFF626;
+    }
+}
+
+[class^='coin-'] {
+    background: url(/template/SO-24Aug2/deco/img_coin.gif);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 14vw;
+    aspect-ratio: 1/1;
+}
+
+.coin-1 {
+    @include absolute(10%, null, 2%);
+}
+
+.coin-2 {
+    @include absolute(51%, null, 9%);
+    transform: scale(0.8);
+
+    @at-root .id-ID #{&} {
+        @include absolute(51%, null, 4%);
+    }
+}
+
+.coin-3 {
+    @include absolute(1%, -2%);
+    transform: scale(0.65);
+}
+
+.coin-4 {
+    @include absolute(24%, 0%);
+    transform: scale(0.9) rotate(-150deg);
+}

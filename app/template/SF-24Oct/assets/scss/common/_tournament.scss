@@ -1,0 +1,417 @@
+/* tournament list */
+$block-max-width: 984px;
+$tournamentTab_borderRadius: 50px;
+$tournamentTab_borderRadius_Mob: 5px;
+$tournament_bg: #1c1c1c;
+
+.tournament-block {
+    max-width: $block-max-width;
+    margin: -1vw auto 0;
+    border-radius: $tournamentTab_borderRadius;
+    position: relative;
+
+    @at-root .mobile #{&} {
+        margin: -34vw auto 0;
+        width: 95%;
+        background: #02013D8C;
+    }
+}
+
+.tournament-nav {
+    @include flex(center, end);
+    gap: 1px;
+    border-radius: $tournamentTab_borderRadius;
+    overflow: hidden;
+}
+
+.tournament-tab {
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    @include flex(center);
+    flex-direction: column;
+    height: 77px;
+    gap: to-rem(5);
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(180deg, #28A9F5 0%, #4846D8 100%);
+    transition: all 0.3s;
+    cursor: none;
+    >* {
+        z-index: 1;
+    }
+
+    .heading {
+        color: #F3E601;
+        text-shadow: 0px 0px 5px #000000CC;
+        font-weight: 900;
+        @include font-size(18);
+        @include flex(center);
+        gap: 8px;
+    }
+
+    .date {
+        @include font-size(16);
+        display: inline-block;
+    }
+    .triangle {
+        width: 0;
+        height: 0;
+        display: block;
+        border-style: solid;
+        border-width: 3px 0 3px 5px;
+        border-color: transparent transparent transparent #FFF;
+    }
+
+    .date-box {
+        @include flex(center);
+        gap: 7px;
+        font-weight: 400;
+    }
+
+    &:not(.active) {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(180deg, #28A9F5 0%, #4846D8 100%);
+
+        .heading {
+            color: #FFFFFFCC;
+        }
+        &:hover {
+            filter: brightness(1.2);  
+        }
+    }
+
+    &.mobile {
+        width: 100%;
+        align-items: flex-start;
+        height: 54px;
+        padding-left: 20px;
+        padding-right: 40px;
+        margin-bottom: 1px;
+        &:nth-child(1) {
+            border-radius: 5px 5px 0 0;
+        }
+
+        &::after {
+            content: "";
+            @include flex(center);
+            @include absolute(50%, null, 16px);
+            background: url(/template/SF-24Oct/deco/arrow.svg);
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 16px;
+            aspect-ratio: 1/1;
+            transition: transform ease-in 0.3s;
+            transform: translateY(-50%);
+            color: #fbf625;
+        }
+
+        &:not(.active) {
+            filter: brightness(0.5);
+        }
+
+        .date-box {
+            opacity: initial;
+        }
+
+        .heading {
+            opacity: initial;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &.active {
+            margin-bottom: initial;
+
+            &::after {
+                transform: translateY(-50%) scaleY(-1);
+            }
+        }
+    }
+
+    &.disable {
+        filter: brightness(0.5);
+        cursor:not-allowed;
+    }
+}
+
+.disable-mask {
+    display: block;
+    pointer-events: none;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    @include font(13, 25);
+    z-index: 2;
+    background: linear-gradient(90deg, #00000000 0%, #221a0b2e 5%, #7c5f27 48%, #221a0b2f 95%, #00000000 100%);
+}
+
+.tournament-content {
+    text-align: center;
+    color: #fff;
+    @extend %transition-02s;
+    display: none;
+    z-index: 1;
+    position: relative;
+
+    &.active {
+        display: block;
+    }
+
+    @at-root .mobile #{&} {
+        display: block;
+        max-height: 0;
+        overflow: hidden;
+
+        &.active {
+            @extend %transition-03s;
+            max-height: 1000px;
+        }
+    }
+}
+
+.tournament-item-gmt {
+    @include absolute(0, 50%);
+    font-size: 11px;
+    line-height: 24px;
+    width: 76px;
+    color: #ffffff;
+    transform: translateX(-50%);
+    z-index: 2;
+    letter-spacing: 0.8px;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 120%;
+        background: #3803B5;
+        border-radius: 0 0 6px 6px;
+        transform: perspective(10px) rotateX(-5deg);
+        transform-origin: top;
+        z-index: -1;
+        @include absolute(0, 0);
+    }
+}
+
+.tournament-item {
+    padding: 50px 1% 50px;
+    display: inline-block;
+    position: relative;
+    @include flex(space-evenly, center);
+    gap: 10px;
+    >div {
+        flex: 1;
+    }
+}
+
+.mobile .tournament-item {
+    opacity: 1;
+    flex-direction: column;
+    padding: 35px 0;
+    gap: 10px;
+
+    &::after {
+        content: none;
+    }
+
+    .tournament-item-gmt {
+        display: block;
+        font-size: 11px;
+    }
+}
+
+.list-order {
+    width: 100%;
+    margin-bottom: 55px;
+    position: relative;
+    z-index: 1;
+    font-size: 16px;
+    color: #5DF7FF;
+    text-shadow: 0px 0px 5px #000000CC;
+
+    .number {
+        display: inline-block;
+        margin-left: 0.25em;
+    }
+
+    .time {
+        display: block;
+        color: #fff;
+        @include font(14, 16);
+        font-weight: 400;
+        letter-spacing: 1.2px;
+    }
+}
+
+.mobile .list-order {
+    width: 65px;
+    background: linear-gradient(180deg, #2991E1 0%, #5326D4 100%);
+    margin: 0;
+    height: 54px;
+    @include flex(center);
+    .number {
+        font-size: 25px;
+        display: block;
+        text-align: center;
+        margin-right: 0px;
+        color: #F3EB01;
+    }
+
+    .round {
+        font-size: 1rem;
+    }
+}
+
+.date-item {
+    flex: 1;
+    font-size: 1rem;
+    font-weight: bold;
+    max-width: 178px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    &::after {
+        content: "";
+        width: 178px;
+        height: 100%;
+        background: url(/template/SF-24Oct/deco/weekBG.webp) no-repeat;
+        background-position: center bottom;
+        background-size: 100%;
+        @include absolute(0, 0);
+        z-index: -1;
+    }
+    &:not(.active) {
+        &::after {
+            filter: grayscale(0.8);
+        }
+        .date-content {
+            opacity: 0.6;
+        }
+        .list-order {
+            color: #ffffffc7;
+        }
+
+    }
+    .date-dash {
+        transform: rotate(90deg);
+        display: inline-block;
+        font-size: 25px;
+    }
+}
+
+.mobile .date-item {
+    @include flex(center);
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 90%;
+    min-height: 0px;
+    max-height: 54px;
+    background: #D9D9D9;
+    border-radius: 55px;
+
+    &::after {
+        content: none;
+    }
+
+    .date-dash {
+        transform: initial;
+        font-size: 15px;
+    }
+
+    &.active-date {
+        opacity: 1;
+    }
+}
+
+.date-content {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    padding: 0 0 40px;
+    color: #FFFFFF;
+    filter: drop-shadow(0px 2px 2px #00000080);
+
+    @at-root .mobile #{&} {
+        padding: 0;
+        @include flex(space-evenly);
+        color: #010A55;
+        filter: drop-shadow(0px 0px 0px #00000080);
+    }
+}
+
+.date-item-box {
+    line-height: to-rem(25);
+    font-size: 24px;
+
+    .date {
+        display: inline-block;
+    }
+
+    .time {
+        display: inline-block;
+    }
+}
+
+.mobile .date-item-box {
+    font-size: 16px;
+    text-align: left;
+
+    .date {
+        display: block;
+    }
+
+    .time {
+        display: block;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .gmt {
+        font-size: 10px;
+        margin-left: 3px;
+    }
+}
+
+.tournament-info {
+    text-align: center;
+    width: 100%;
+    color: #ffffffcf;
+    @include absolute(null, 0, null, 0);
+    font-size: 13px;
+    font-family: 'Roboto';
+    strong {
+        font-weight: bold;
+    }
+
+    @at-root .mobile #{&} {
+        position: static;
+        font-size: 11px;
+        line-height: 16px;
+        text-align: left;
+        padding: 10px 18px 15px;
+        color: #FFFFFF;
+        background: #FFFFFF26;
+        border-radius: 0 0 5px 5px;
+        strong {
+            display: block;
+            line-height: 25px;
+        }
+    }
+}
+
+.event-rules {
+    color: #F3E601;
+    font-size: 12px;
+}
+
+.tournament-text {
+    @at-root .mobile #{&} {
+        padding: 15px 20px;
+        background: linear-gradient(0deg, #263047 0%, #414F5D 100%);
+        border-radius: 0 0 5px 5px;
+    }
+}

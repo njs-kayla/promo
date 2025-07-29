@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Alibaba Sans Thai';
+    src: url('./AlibabaSansThai-Bold.eot');
+    src: url('./AlibabaSansThai-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./AlibabaSansThai-Bold.woff2') format('woff2'),
+        url('./AlibabaSansThai-Bold.ttf') format('truetype'),
+        url('./AlibabaSansThai-Bold.svg#AlibabaSansThai-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

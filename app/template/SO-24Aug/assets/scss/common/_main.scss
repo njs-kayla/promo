@@ -1,0 +1,757 @@
+/* footer */
+footer {
+    @include flex(center);
+    background: #8A2900;
+    height: 48px;
+    z-index: 5;
+    position: relative;
+
+    @at-root .mobile #{&} {
+        position: static;
+    }
+}
+
+.copy-right {
+    color: rgba(255, 255, 255, 0.8);
+    @include font-size(12);
+
+    @at-root .mobile #{&} {
+        @include font-size(13);
+    }
+}
+
+header {
+    &.SG {
+        background: #47100a67;
+        box-shadow: 0px 1px 6px #0000004d;
+    }
+}
+
+body {
+    padding-top: 0;
+}
+
+/* banner */
+.banner {
+    width: 100%;
+    min-height: 80vh;
+    position: relative;
+    z-index: 1;
+
+    @at-root .mobile #{&} {
+        min-height: 100vw;
+    }
+}
+
+.bn-bg {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+
+    @at-root .mobile #{&} {
+        position: static;
+        margin-top: 0;
+    }
+}
+
+.title-area {
+    @include absolute(10%, 50%);
+    transform: translateX(-50%);
+    width: 51%;
+    z-index: 10;
+}
+
+.bn-title {
+    width: 100%;
+
+    img {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+.bonus {
+    width: 100%;
+    position: relative;
+    top: -6vw;
+
+    img {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+.won {
+    width: 100%;
+    position: relative;
+    top: -3.5vw;
+
+    img {
+        margin: 0 auto;
+        width: 33%;
+    }
+}
+
+.bn-tag {
+    width: 14%;
+    @include absolute(23%, null, 18%);
+    animation: uptodown 1s 1s infinite alternate;
+
+    img {
+        width: 100%;
+    }
+}
+
+.bn-date {
+    text-align: center;
+    @include absolute(85%, 50%);
+    color: #fff;
+    transform: translateX(-50%);
+    font-weight: bold;
+    z-index: 2;
+    @include font-size(24);
+    letter-spacing: 0.2rem;
+    white-space: nowrap;
+
+    .date {
+        text-shadow: 0px 4px 4px #00000080;
+        display: block;
+        line-height: 40px;
+        width: 639px;
+        background: linear-gradient(90deg, rgba(153, 35, 10, 0) 0%, rgba(153, 35, 10, 0.7) 53%, rgba(153, 35, 10, 0) 100%);
+    }
+
+    .time {
+        display: block;
+        @include font-size(18);
+        font-weight: normal;
+        letter-spacing: 1px;
+        line-height: 34px;
+    }
+
+    @at-root .mobile #{&} {
+        @include absolute(89%, 50%);
+        .date {
+            width: 100%;
+            font-size: 20px;
+        }
+
+        .time {
+            color: #B4B4B4;
+            font-size: 14px;
+        }
+    }
+
+    strong {
+        color: #fbc639;
+        font-weight: bold;
+    }
+}
+
+/* index */
+main {
+    position: relative;
+}
+
+$alchemy-h: 130px;
+
+.tournament-main {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    @include flex(space-between);
+    flex-wrap: wrap;
+    position: relative;
+    color: #9283B6;
+    text-align: center;
+    font-family: "Akshar";
+    z-index: 2;
+
+    @at-root .mobile #{&} {
+        top: initial;
+        @include flex(space-evenly);
+        padding-top: calc(20vw + to-rem(10));
+    }
+}
+
+.date-item {
+    position: relative;
+    width: 180px;
+    background-image: linear-gradient(to bottom, #352a4f00 10%, #352A4F 60%);
+    padding: calc($alchemy-h - 30px) 0 10px;
+    border-radius: 0 0 15px 15px;
+
+    &.active {
+        color: #fff;
+
+        .date-item-time {
+            color: transparent;
+            background: linear-gradient(180deg, #FFF500 0%, #FF7A00 100%);
+            background-clip: text;
+        }
+    }
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: $alchemy-h;
+        background: url(/template/SO-24Aug/deco/alchemy.webp);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include absolute(0, 0);
+        z-index: -1;
+    }
+
+    @at-root .mobile #{&} {
+        width: 162px;
+    }
+}
+
+.date-item-time {
+    @include flex(center, flex-end);
+    @include font-size(30);
+    letter-spacing: 2.4px;
+    filter: drop-shadow(0 2px 4px #18113A);
+    font-weight: bold;
+}
+
+.date-item-date {
+    filter: drop-shadow(0 2px 4px #18113A);
+    @include font-size(12);
+    position: relative;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.date-item-year {
+    filter: drop-shadow(0 2px 4px #18113A);
+    @include font-size(24);
+    font-weight: bold;
+}
+
+.light-mini {
+    @include absolute(-40px, -10%);
+    width: 120%;
+    animation: turn 15s linear infinite, brightness 4s linear infinite alternate;
+    z-index: -1;
+
+    img {
+        width: 100%;
+    }
+}
+
+.index {
+    padding: 0 5%;
+    position: relative;
+
+    @at-root .mobile #{&} {
+        padding: initial;
+        margin-top: -7vw;
+
+    }
+}
+
+%title-deco {
+    content: "";
+    width: 50px;
+    aspect-ratio: 1/1;
+    background-image: url(/template/SO-24Aug/deco/ingots.svg);
+    background-position: center;
+    background-size: 100%;
+    transform: translateY(-50%);
+    z-index: 5;
+
+    @include RWD($break_point) {
+        width: 32px;
+    }
+}
+
+.info-block {
+    --border-w: #{to-rem(30)};
+    padding: to-rem(10) 5% 0;
+    margin-bottom: to-rem(48);
+    position: relative;
+    max-width: $containerW;
+    margin: 0 auto;
+
+    >* {
+        position: relative;
+        z-index: 1;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: transparent;
+        @include font-size(24);
+        line-height: to-rem(60);
+        margin: to-rem(70) auto to-rem(25);
+        text-align: center;
+        width: fit-content;
+        background: linear-gradient(360deg, #FFFFFF 0%, #FFB88F 100%);
+        background-clip: text;
+        font-weight: bolder;
+        position: relative;
+        filter: drop-shadow(0px 5px 8px #250E02CC) drop-shadow(2px 0px #761C00);
+
+        &::after {
+            @extend %title-deco;
+            @include absolute(50%, -70px);
+        }
+
+        &::before {
+            @extend %title-deco;
+            @include absolute(50%, null, -70px);
+        }
+
+        @include RWD($break_point) {
+            line-height: 32px;
+            font-size: 20px;
+
+            &::after {
+                @extend %title-deco;
+                @include absolute(50%, -45px);
+            }
+
+            &::before {
+                @extend %title-deco;
+                @include absolute(50%, null, -45px);
+            }
+        }
+    }
+
+    p {
+        color: #FFFFFF;
+        @include font-size(16);
+        line-height: to-rem(24);
+        max-width: to-rem(640);
+        margin: 0 auto to-rem(30);
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    /* info table */
+    .table {
+        margin: 0 auto to-rem(15);
+        max-width: 706px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        @include font-size(16);
+        text-align: center;
+        --cell-h: 48px;
+        table-layout: fixed;
+
+        thead {
+            background: linear-gradient(88.18deg, rgba(198, 38, 38, 0.7) -11.5%, rgba(225, 171, 64, 0.7) 122.13%);
+        }
+
+        th {
+            height: var(--cell-h);
+            color: #ffffff;
+            padding: 0 0.5em;
+            font-weight: normal;
+        }
+        tbody {
+            color: #fff;
+        }
+        tr {
+            td {
+                &:nth-child(1) {
+                    &::after {
+                        @include absolute(0, 0);
+                    }
+                }
+                &:nth-child(2) {
+                    &::after {
+                        @include absolute(0, -100%);
+                    }
+                }
+            }
+        }
+
+        td {
+            height: var(--cell-h);
+            background: #462d23b0;
+            position: relative;
+            font-weight: bold;
+            &::after {
+                content: "";
+                width: 200%;
+                height: 100%;
+                background: #FFFFFF33;
+                opacity: 0;
+                transition: opacity 0.3s;
+                pointer-events: none;
+                z-index: 2;
+            }
+            &:hover {
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        tr {
+            position: relative;
+            &:hover {
+                color: #FFBF29 !important;
+            } 
+            td:nth-child(2) {
+                &::before {
+                    content: '';
+                    width: 1px;
+                    height: 12px;
+                    background-color: #ffffff75;
+                    @include absolute(50%, 0);
+                    transform: translateY(-50%);
+                }
+            }
+            td:nth-child(3) {
+                border-left: 0.5px solid #ffffff52;
+                pointer-events: none;
+                p {
+                    margin-bottom: 0;
+                    font-weight: 500;
+                }
+                &::after {
+                    content: none;
+                }
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 78px;
+                    height: 76px;
+                    margin: 0 auto 10px;
+                    background: url(/template/SO-24Aug/deco/img_coin2.svg);
+                }
+            }
+        }
+
+
+        tr+tr {
+            border-top: 0.5px solid #ffffff52;
+        }
+    }
+
+    @at-root .mobile #{&} {
+        border: none;
+        padding: to-rem(5) to-rem(30) to-rem(60);
+
+        table {
+            font-size: 14px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 24px;
+        }
+    }
+}
+
+.table+p {
+    text-align: left;
+
+    strong {
+        color: #FFBF29;
+    }
+
+    @at-root .mobile #{&} {
+        width: 95%;
+    }
+}
+
+@at-root .mobile #{&} {
+    .table {
+        color: #fff;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        text-align: center;
+        width: 95%;
+        font-size: 14px;
+    }
+
+    .head {
+        height: 32px;
+        line-height: 32px;
+    }
+
+    .value {
+        height: 36px;
+        line-height: 36px;
+    }
+    .value + .value {
+        border-top: 1px solid #ffffff5e;
+    }
+
+    .box {
+        width: 100%;
+        background: #462d23b0;
+    }
+
+    .box:nth-child(3) {
+        grid-column: 2 span;
+
+        .head {
+            background: linear-gradient(88.18deg, rgba(198, 38, 38, 0.7) -11.5%, rgba(225, 171, 64, 0.7) 122.13%);
+        }
+    }
+
+    .box {
+        &:nth-child(1) {
+            .head {
+                background: linear-gradient(88.18deg, rgba(198, 38, 38, 0.7) 0%, rgba(225, 171, 64, 0.7) 200%);
+            }
+            .value {
+                font-weight: 900;
+            }
+        }
+
+        &:nth-child(2) {
+            .head {
+                background: linear-gradient(88.18deg, rgba(198, 38, 38, 0.7) -100%, rgba(225, 171, 64, 0.7) 100%);
+            }
+            .value {
+                position: relative;
+                font-weight: 900;
+                &::before {
+                    content: '';
+                    width: 1px;
+                    height: 12px;
+                    background-color: #ffffff75;
+                    @include absolute(50%, 0);
+                    transform: translateY(-50%);
+                }
+            }
+        }
+        &:nth-child(3) {
+            p {
+                margin: 0;
+                font-weight: 500;
+            }
+            .value {
+                height: 64px;
+                @include flex(center);
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 42px;
+                    height: 40px;
+                    margin:0 10px 0 0;
+                    background: url(/template/SO-24Aug/deco/img_coin2.svg);
+                    background-size: cover;
+                }
+            }
+        }
+    }
+}
+
+.info-content {
+    margin-bottom: initial;
+    max-width: to-rem(650);
+    margin: 0 auto;
+
+    li {
+        list-style: decimal;
+        margin-bottom: 1.5em;
+        margin-left: 1em;
+        padding-left: 0.5em;
+
+        &:nth-last-child(1) {
+            margin-bottom: initial;
+        }
+    }
+}
+
+/* go top btn */
+.go-top-btn {
+    width: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    position: fixed;
+    bottom: 6vh;
+    right: calc((100% - $containerW) / 2 - 50px);
+    @include font-size(20);
+    color: #e8dede;
+    background: rgba(14, 14, 14, 0.5);
+    box-shadow: 0px 3px 4px #0000008b;
+    border: 1px solid #ffffff29;
+    border-radius: 8px;
+    @include flex(center);
+    opacity: 0;
+    pointer-events: none;
+    @extend %transition-03s;
+    z-index: 1;
+
+    &:hover {
+        background-color: rgba(14, 14, 14, 1);
+        border-color: #ffdddd38;
+        color: #fff;
+
+        i {
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    @include RWD($smallWeb) {
+        right: 10px;
+    }
+
+    @include RWD($break_point) {
+        bottom: 2vh;
+        right: 10px;
+        width: 45px;
+    }
+}
+
+.btn-more {
+    margin-top: 50px;
+    position: relative;
+    width: 170px;
+    z-index: 1;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border-radius: 0;
+    border: 1px solid transparent;
+    line-height: 36px;
+    @include flex(center);
+    transition: background-color 0.3s;
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        @include absolute(-1px, -1px);
+        border: 1px solid transparent;
+        border-image: linear-gradient(to right, #FF5858 -15.26%, #F09819 115.3%);
+        border-image-slice: 1;
+        z-index: -1;
+        transition: opacity 0.3s;
+    }
+    &::after {
+        content: "";
+        width: 0;
+        height: 2px;
+        @include absolute(null, 0, null, -1px);
+        background-color: #fff;
+        transition: width 0.5s;
+    }
+
+    span {
+        color: transparent;
+        background-clip: text;
+        background-image: linear-gradient(to right, #FF5858 -15.26%, #F09819 115.3%);
+        font-weight: 900;
+        font-size: 16px;
+        position: relative;
+        z-index: 2;
+        &::after {
+            @include icomoon("\e904", 14px);
+            color: #F09819;
+            margin-left: 5px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+    }
+
+    &:hover {
+        padding: 0 1.125rem;
+        span {
+            color: #fff;
+            transition: all 0.3s;
+            &::after {
+                color: #ffffff;
+            }
+        }
+    }
+    &.hover {
+        &:hover {
+            background-color: #CC651B80;
+            &::before {
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+        }
+    }
+
+    &.active {
+        span {
+            color: #fff;
+            &::after {
+                color: #fff;
+                transform: rotate(-180deg);
+                transition: all 0.3s;
+            }
+            &::before {
+                content: "";
+                background: radial-gradient(51.69% 79.17% at 50% 100%, rgba(255, 191, 41, 0.3) 0%, rgba(255, 191, 41, 0) 100%);
+                @include absolute(0, 0);
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+            }
+        }
+        &::before {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+.content {
+    max-width: to-rem(640);
+    margin: 20px auto 0;
+    color: #fff;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 230px;
+
+    li {
+        list-style: disc;
+        list-style-position: inside;
+        margin-bottom: 10px;
+    }
+
+    ol {
+        max-height: 0;
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+
+    &.open {
+        ol {
+            max-height: 300px;
+        }
+    }
+    @include RWD($break_point) {
+        min-height: 0;
+    }
+}
+
+.red_packet {
+    width: 100%;
+    position: fixed;
+    top: 160px;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.1s;
+}

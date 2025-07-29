@@ -1,0 +1,15 @@
+{
+    "EventTime": "Thời gian diễn ra",
+    "EventRules": "Thể lệ sự kiện",
+    "Disable": "Chương trình khuyến mãi này đã kết thúc",
+    "Round": "Vòng",
+    "TournamentTitle": "Giải đấu giai đoạn {{i}}",
+    "TermsConditions": "Điều khoản & Điều kiện",
+    "Footer": "{{brand}} © {{year}} All rights reserved.",
+    "TPS": "Hệ thống tính điểm của giải đấu",
+    "Points": "Điểm",
+    "PrizesCurrencies": "Danh sách giải thưởng & Tiền tệ áp dụng",
+    "WCP": "Giải Thưởng Hàng Tuần",
+    "Ranking": "Cấp",
+    "infoText":"Vòng 1 của Giải Đấu 3, ban đầu dự kiến bắt đầu vào 12:00 trưa ngày 28/7 (GMT+8), sẽ được dời sang 16:00 chiều cùng ngày (GMT+8)."
+}

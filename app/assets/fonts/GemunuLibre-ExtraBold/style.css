@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Gemunu Libre';
+    src: url('./GemunuLibre-ExtraBold.woff2') format('woff2'),
+        url('./GemunuLibre-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

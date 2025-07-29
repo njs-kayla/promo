@@ -1,0 +1,63 @@
+.bubbles-area {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+@function random_range($min, $max) {
+    $rand: random();
+    $random_range: $min + floor($rand * (($max - $min) + 1));
+    @return $random_range;
+}
+
+$blossom-h: 100vh;
+
+@include RWD($break_point) {
+    $blossom-h: 80vh;
+}
+
+[class^="bubble-"] {
+    $total: 20;
+    position: absolute;
+    will-change: transform, opacity;
+    aspect-ratio: 1/1;
+    @include absolute(null, 0, null, -100px);
+    background: #5468D5;
+    border-radius: 50%;
+    opacity: 0.5;
+
+    @for $i from 1 through $total {
+        $random-width: random_range(20, 80) * 1px;
+        $random-x: random_range(0, 100) * 1vw;
+        $fall-duration: random_range(12, 20) * 1s;
+        $fall-delay: random_range(0, 20) * 1s;
+
+        &:nth-child(#{$i}) {
+            width: $random-width;
+            @include absolute(null, $random-x, null, -100px);
+            animation: rise $fall-duration $fall-delay linear infinite;
+        }
+    }
+}
+
+@keyframes rise {
+    0% {
+        bottom: -100px;
+    }
+    25% {
+        transform: translateX(-20px);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    75% {
+        transform: translateX(-20px);
+    }
+    100% {
+        bottom: 100%;
+        transform: translate(0, 0);
+    }
+}

@@ -1,0 +1,96 @@
+$snowman-h: 200px;
+.tournament-main {
+    width: 100%;
+    margin: 20px auto 64px;
+    @include flex(center);
+    gap: 35px;
+    flex-wrap: wrap;
+    position: relative;
+    text-align: center;
+    font-family: "Kanit";
+    z-index: 2;
+    color: #FFF;
+
+    @at-root .mobile #{&} {
+        top: initial;
+        gap: 10px;
+        margin: 20px auto 40px;
+        $snowman-h: 160px;
+    }
+}
+
+.date-item {
+    position: relative;
+    width: 270px;
+    background-image: linear-gradient(to bottom, #FF952F00 50%, #00000057 100%);
+    padding: $snowman-h 0 10px;
+    border-radius: 0 0 30px 30px;
+    opacity: 0.8;
+    &.active {
+        background-image: linear-gradient(to bottom, #FF952F00 50%, #FFBA30 100%);
+        opacity: 1;
+    }
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: $snowman-h;
+        background: url(/template/SO-24Dec2/deco/snowman.webp);
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover 100%;
+        transform: translateX(-50%);
+        @include absolute(0, 50%);
+        z-index: -1;
+    }
+    @at-root .mobile #{&} {
+        width: 175px;
+        padding: calc($snowman-h - 30px) 0 10px;
+        &::after {
+            width: 54%;
+            background-size: 100%;
+        }
+    }
+}
+
+.date-item-date {
+    font-size: 22px;
+    letter-spacing: 1px;
+    filter: drop-shadow(0 2px 0px #000);
+    display: block;
+    .slash {
+        font-size: 15px;
+    }
+    @at-root .mobile #{&} {
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        .slash {
+            font-size: 10px;
+        }
+    }
+}
+
+.date-item-time {
+    font-size: 15px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0px;
+    background: #301914;
+    width: 70%;
+    text-align: center;
+    display: block;
+    margin: auto;
+    border-radius: 100px;
+    line-height: 32px;
+    @at-root .mobile #{&} {
+        line-height: 22px;
+        font-size: 13px;
+    }
+}
+
+.date-item-year {
+    filter: drop-shadow(0 2px 4px #18113A);
+    @include font-size(24);
+    font-weight: bold;
+}

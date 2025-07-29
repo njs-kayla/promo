@@ -1,0 +1,9 @@
+@import "../../../../assets/scss/common/variable";
+
+[theme="SO-24Dec3"] {
+    @import "./common/style";
+    @import "./common/animate";
+    @import "./common/redpackets";
+    @import "./common/main";
+    @import "./common/tournament";
+}

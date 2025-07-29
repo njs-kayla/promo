@@ -1,0 +1,755 @@
+/* footer */
+footer {
+    @include flex(center);
+    background: #7B2F21;
+    height: 48px;
+    position: relative;
+}
+
+.copy-right {
+    color: #FFFFFF;
+    text-align: center !important;
+    @include font-size(12);
+    opacity: 0.9;
+
+    @at-root .mobile #{&} {
+        @include font-size(13);
+    }
+}
+
+header {
+    &.SG {
+        background: #00000073;
+        box-shadow: 0px 0px 0px #0000004d;
+    }
+}
+
+main {
+    position: relative;
+    overflow: hidden;
+    &::after {
+        content: '';
+        background: url(/template/SP-24Oct/deco/img_under_bg.webp) no-repeat;
+        background-position: bottom;
+        background-size: cover;
+        width: 100%;
+        height: 30vw;
+        @include absolute(none, 0, none, 0);
+        pointer-events: none;
+        z-index: -1;
+    }
+    @at-root .mobile #{&} {
+        &::after {
+            display: none;
+        }
+    }
+}
+
+/* banner */
+.banner {
+    width: 100%;
+    position: relative;
+}
+
+.bn-bg {
+    width: 100%;
+
+    @at-root .mobile #{&} {
+        position: static;
+    }
+}
+.title-area {
+    width: 100%;
+    @include absolute(4%, 0);
+    z-index: 2;
+}
+
+.title-bar {
+    width: 100%;
+    img {
+        width: 68%;
+        margin: auto;
+    }
+}
+.bn-title {
+    @include absolute(50%, 0);
+    z-index: 2;
+    width: 100%;
+
+    img {
+        width: 17%;
+        position: relative;
+        margin: 0 auto;
+    }
+}
+.coin {
+    @include absolute(0, 0);
+    width: 100%;
+}
+
+.bn-money {
+    @include absolute(64%, 0);
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+
+    img {
+        width: 51%;
+        margin: 0 auto;
+    }
+}
+.mask-img {
+    width: 51%;
+    height: 100%;
+    transform: translateX(-50%);
+    @include absolute(0, 50%);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 45%, #ffffff 50%,
+            rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0));
+    background-size: 100%;
+    background-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    z-index: 3;
+    animation: shine 2.5s infinite;
+}
+
+
+%gradient {
+    background: linear-gradient(180deg, #FFFFFF 31.5%, #2FF3FF 100%);
+    color: transparent;
+    background-clip: text;
+}
+
+.bn-date {
+    @include absolute(85%, 50%);
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    font-weight: bold;
+    font-family: 'Bronco', '微软雅黑';
+    transform: translateX(-50%);
+    letter-spacing: 1px;
+
+    .gmt {
+        margin-left: 5px;
+    }
+
+    .date {
+        @extend %gradient;
+        position: relative;
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .date-bg {
+        width: 140%;
+        height: 40px;
+        @include absolute(0, 50%);
+        transform: translate(-50%, 0);
+        background: linear-gradient(270deg, rgba(51, 128, 181, 0) 0%, #3380B5 17%, #3380B5 78.5%, rgba(51, 128, 181, 0) 100%);
+        z-index: -1;
+    }
+
+    .time {
+        display: block;
+        @extend %gradient;
+        font-size: 28px;
+        font-weight: bold;
+        filter: drop-shadow(0px 1px 1px #4D150A);
+        line-height: 45px;
+    }
+
+
+    @at-root .mobile #{&} {
+        @include absolute(76%, 50%);
+        width: 100%;
+        letter-spacing: 0.2px;
+        .date-bg {
+            width: 110%;
+        }
+        .date {
+            font-size: 22px;
+        }
+        .time {
+            font-size: 18px;
+            line-height: 36px;
+        }
+    }
+
+    @at-root .th-TH #{&} {
+        @include RWD($break_point) {
+            .date {
+                font-size: 21px;
+            } 
+        }
+    }
+    @at-root .vi-VN #{&} {
+        @include RWD($break_point) {
+            .date {
+                font-size: 18px;
+            } 
+        }
+    }
+}
+
+[class^='smoke'] {
+    @include absolute(0, 0);
+    width: 100%;
+    z-index: 1;
+    filter: grayscale(1);
+}
+
+.smoke-L {
+    animation: smoke-L 10s linear infinite;
+}
+.smoke-R {
+    animation: smoke-R 10s linear infinite;
+}
+
+/* index */
+.index {
+    position: relative;
+    width: 100%;
+
+    @at-root .mobile #{&} {
+        margin-top: -10%;
+    }
+}
+
+.points-block {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto 70px;
+
+    p {
+        color: #fff;
+        opacity: 0.85;
+        font-size: 14px;
+        line-height: 28px;
+        max-width: 680px;
+        margin: auto;
+        text-align: center;
+
+        @include RWD($mobile) {
+            width: 100%;
+            line-height: 20px;
+            font-size: 12px;
+        }
+    }
+
+    h2, h3 {
+        width: fit-content;
+        min-width: 280px;
+        padding: 0 20px;
+        text-align: center;
+        margin: auto;
+        font-family: 'Bebas Neue', '微软雅黑', 'KoreanSWGI3-R';
+        font-size: 24px;
+        background: linear-gradient(180deg, #D1FCFF 39.5%, #28D8FF 96%);
+        color: transparent;
+        background-clip: text;
+        position: relative;
+        line-height: 70px;
+        margin-bottom: 30px;
+        font-weight: bold;
+        box-sizing: border-box;
+
+        &::after {
+            content: '';
+            background: url(/template/SP-24Oct/deco/img_wood.webp) no-repeat;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: 100% 100%;
+            @include absolute(0, 0);
+            z-index: -2;
+        }
+        strong {
+            &::before {
+                content: attr(data-text);
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                color: #4D150A;
+                filter: drop-shadow(0px 1px 2px #4D150A);
+                pointer-events: none;
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+
+        &:has(i) {
+           display: none;
+        }
+
+    }
+    @at-root .zh-CN #{&} {
+        h3, h2 {
+            strong {
+                font-weight: bold;
+                font-size: 22px;
+            }
+        }
+    }
+    @at-root .vi-VN #{&} {
+        h2, h3 {
+            strong {
+                font-weight: 900;
+                font-family: 'Archivo Narrow';
+            }
+        }
+        @include RWD($break_point) {
+            h2, h3 {
+                font-size: 20px;
+            }
+        }
+    }
+    @at-root .id-ID #{&} {
+        @include RWD($break_point) {
+            h2, h3 {
+                font-size: 20px;
+            }
+        }
+    }
+    ul {
+        max-width: 748px;
+        width: 90%;
+        margin: auto;
+        font-family: 'Archivo Narrow', '微软雅黑';
+        li {
+            @include flex(center, stretch);
+            color: #fff;
+            font-size: 14px;
+            overflow: hidden;
+            strong {
+                width: 22%;
+                flex-shrink: 0;
+                background: #CA965A33;
+                white-space: nowrap;
+                @include flex(center);
+            }
+            i {
+                background: #542C1E;
+                padding: 18px 16px;
+                font-style: normal;
+                flex-grow: 1;
+                @include flex(flex-start, center);
+                line-height: 20px;
+                letter-spacing: 0.6px;
+            }
+            &:nth-child(1) {
+                border-radius: 10px 10px 0 0;
+            }
+            &:nth-child(2) {
+                border-radius: 0 0 10px 10px;
+            }
+        }
+        li + li {
+            margin-top: 4px;
+        }
+        @at-root .mobile #{&} {
+            li {
+                @include flex(center, stretch);
+                color: #fff;
+                font-size: 14px;
+                strong {
+                    width: 28%;
+                    flex-shrink: 0;
+                    background: #CA965A33;
+                    white-space: wrap;
+                    text-align: center;
+                    line-height: 22px;
+                }
+                i {
+                    background: #542C1E;
+                    padding: 10px;
+                }
+                &:nth-child(1) {
+                    border-radius: 0;
+                }
+                &:nth-child(2) {
+                    border-radius: 0;
+                }
+            }
+        }
+    }
+    @include RWD($break_point) {
+        margin: 0 auto 12%;
+        h2, h3 {
+            font-size: 22px;
+            min-width: 248px;
+            line-height: 62px;
+            strong {
+                font-weight: bold;
+            }
+        }
+    }
+    @at-root .th-TH #{&} {
+        h2, h3 {
+            strong {
+                font-weight: 900;
+                font-family: 'Archivo Narrow';
+            }
+        }
+        @include RWD($break_point) {
+            h2, h3 {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+
+/* info table */
+table {
+    border-collapse: collapse;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    border-radius: 10px;
+    --cell: 40px;
+    table-layout: fixed;
+    width: 95%;
+    font-family: 'Archivo Narrow', '微软雅黑';
+
+
+    thead {
+        z-index: 2;
+        position: relative;
+        tr {
+            th {
+                border-right: 1px solid #f3f3f3;
+                &:nth-last-child(1) {
+                    border-right: none;
+                }
+            }
+        }
+        tr + tr {
+            border-top: 1px solid #f3f3f3;
+        }
+
+
+        background: #7B2F21;
+    }
+
+    tbody {
+        color: #542C1E;
+
+        tr {
+            transition: all 0.2s;
+            &:nth-child(odd) {
+                background: #DEE0E4;
+            }
+
+            &:nth-child(even) {
+                background: #F3F3F3;
+            }
+        }
+    }
+
+    th {
+        color: #FFFFFF;
+        height: var(--cell);
+        font-weight: 400;
+        font-size: 14px;
+        padding: 0 5px;
+    }
+
+    td {
+        text-align: center;
+        height: var(--cell);
+        font-size: 14px;
+        font-weight: 500;
+        padding: 0 5px;
+        position: relative;
+        transition: all 0.2s;
+        background-image: none !important;
+        color: #542C1E !important;
+        strong {
+            position: relative;
+            z-index: 2;
+            pointer-events: none;
+        }
+        &:hover {
+            &::after {
+                content: '';
+                width: 1000vw;
+                height: var(--cell);
+                @include absolute(0, -100vw);
+                background: #e5d7d49b;
+                z-index: 0;
+            }
+            &::before {
+                content: '';
+                width: 100%;
+                height: 1000vh;
+                @include absolute(-100vh, 0);
+                background: #e5d7d49b;
+                z-index: 0;
+            }
+        }
+
+    }
+
+    td+td {
+        border-left: 1px solid #72757C;
+    }
+
+
+    @at-root .mobile #{&} {
+        table-layout: fixed;
+        border-radius: 0;
+
+        .table-index {
+            width: auto;
+        }
+
+        td {
+            pointer-events: none;
+            strong {
+                z-index: 1;
+            }
+        }
+        thead {
+            tr {
+                th {
+                    &:nth-child(1) {
+                        width: 30%;
+                    }
+                }
+            }
+        }
+    }
+}
+.curr-heading {
+    position: relative;
+}
+.currency-select {
+    z-index: 2;
+    width: 100%;
+    @include flex(center);
+
+    .list {
+        width: 96%;
+        @include absolute(85px, 2%);
+        background: #ffffff;
+        box-shadow: 0px 3px 8px #0000005c;
+        border-radius: 5px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 16px;
+        gap: 16px;
+        max-height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        @extend %transition-02s;
+        z-index: 5;
+        opacity: 0;
+
+        li {
+            padding: 10px 6px;
+            @include font-size(16);
+            color: #45241C !important;
+            white-space: nowrap;
+            text-align: center;
+
+            &.active {
+                border-radius: 4px !important;
+                background-color: #E5D7D4;
+            }
+        }
+        li + li {
+            margin-top: 0;
+        }
+
+        &.active {
+            pointer-events: initial;
+            opacity: 0.99;
+            max-height: 1000px;
+            padding: 16px;
+        }
+    }
+
+    .default {
+        height: 30px;
+        color: #FFF;
+        position: relative;
+        width: 100%;
+        font-family: 'Archivo Narrow';
+
+        &::after {
+            content: "";
+            background: url(/template/SP-24Oct/deco/icon_Checkbox.svg);
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 24px;
+            aspect-ratio: 1/1;
+            transform: translateY(-50%);
+            @include absolute(50%, none, 8%)
+        }
+    }
+}
+
+/* point table*/
+.points-colume-table {
+    max-width: 640px;
+    margin: auto;
+    --cell: 48px;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Archivo Narrow', '微软雅黑';
+    border-radius: 10px;
+    overflow: hidden;
+    .box {
+        height: var(--cell);
+        &:nth-child(1) {
+            @include flex(center);
+            background: #7B2F21;
+            gap: 5px;
+            .head {
+                justify-content: end;
+            }
+            .value {
+                justify-content: flex-start;
+            }
+        }
+        &:not(:nth-child(1)) {
+            border-left: none;
+            border-bottom: none;
+            border-top: 0.5px solid #ffffffdc;
+            .head {
+                background: #C38F5F;
+                height: 100%;
+                width: 35%;
+                flex: unset;
+            }
+            .value {
+                background: #EEBE91;
+                color: #542C1E;
+                height: 100%;
+            }
+        }
+    }
+    @at-root .mobile #{&} {
+        width: 90%;
+        --cell:40px;
+        font-size: 14px;
+        &:not(:nth-child(1)) {
+            .head {
+                flex: 1;
+            }
+        }
+    }
+}
+
+
+/* go top btn */
+.go-top-btn {
+    width: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    position: fixed;
+    bottom: 6vh;
+    right: calc((100% - $containerW) / 2 - 50px);
+    @include font-size(20);
+    color: #E8DEDE;
+    background: rgba(14, 14, 14, 0.5);
+    box-shadow: 0px 3px 4px #0000008B;
+    border: 1px solid #FFFFFF29;
+    border-radius: 8px;
+    @include flex(center);
+    opacity: 0;
+    pointer-events: none;
+    @extend %transition-03s;
+    z-index: 5;
+
+    &:hover {
+        background-color: rgba(14, 14, 14, 1);
+        border-color: #FFDDDD38;
+        color: #fff;
+
+        i {
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    @include RWD($smallWeb) {
+        right: 10px;
+    }
+
+    @include RWD($break_point) {
+        bottom: 2vh;
+        right: 10px;
+        width: 45px;
+    }
+}
+
+.btn-more {
+    background: #7B2F21;
+    color: #fff;
+    margin: 60px auto 80px;
+    font-family: 'Bebas Neue', '微软雅黑';
+    font-size: 16px;
+    width: 170px;
+    height: 36px;
+    padding: 0;
+    line-height: 38px;
+    transition: color 0.3s ease-out;
+    position: relative;
+    overflow: hidden;
+    @at-root .vi-VN #{&} {
+        font-family: 'Archivo Narrow';
+        font-weight: 700;
+    }
+    span {
+        z-index: 2;
+        position: relative;
+    }
+
+    &:hover {
+        &::after, &::before {
+            opacity: 1;
+            transition-duration: 0.35s, 0.35s;
+            transition-delay: 0s, 0s;
+            transform: translateY(0);
+        }
+    }
+
+    &::after, &::before {
+        content: "";
+        width: 100%;
+        height: 50%;
+        background-color: #CA965A;
+        opacity: 0;
+        position: absolute;
+        transition: transform 0.2s ease-out, opacity 0.2s ease-out 0.03s;
+        left: 0;
+    }
+    &::after {
+        top: 0;
+        transform: translateY(-50%);
+    }
+    &::before {
+        bottom: 0;
+        transform: translateY(50%);
+    }
+
+    @at-root .mobile #{&} {
+        font-size: 14px;
+        margin: 0 auto 60px;
+        &:hover {
+            &::after, &::before {
+                opacity: 0;
+            }
+        }
+    }
+}

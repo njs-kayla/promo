@@ -1,0 +1,347 @@
+$block-max-width: 1100px;
+
+/* tournament list */
+
+$event-deco-width: to-rem(150);
+
+.EUTournament {
+    .tournament-block {
+        margin-top: -3%;
+        @include RWD($break_point) {
+            margin-top: -28%;
+        }
+    }
+}
+
+
+.tournament-block {
+    margin: -7% auto 60px;
+    position: relative;
+    max-width: $block-max-width;
+    width: 75%;
+
+    &::after {
+        content: '';
+        @include absolute(0, 50%);
+        transform: translateX(-50%);
+        background: url(/template/SP-25Jan/deco/img_wood.webp) no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+        max-width: 1280px;
+        width: 85vw;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    @include RWD($break_point) {
+        width: 100%;
+        max-width: 3000px;
+        margin: -30% auto 46px;
+        z-index: 2;
+        &::after {
+            width: 120vw;
+        }
+    }
+}
+
+.tournament-nav {
+    @include flex(center);
+    gap: 36px;
+    overflow: hidden;
+    position: relative;
+    top: 30px;
+    @include RWD($break_point) {
+        top: 0;
+        justify-content: center;
+    }
+}
+
+.tournament-tab {
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    @include flex(center);
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    max-width: 160px;
+    height: 206px;
+    gap: 5px;
+    background: url(/template/SP-25Jan/deco/img_Tournament_bg.webp) no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    transition: all 0.3s;
+
+    &::after {
+        content: '';
+        background: linear-gradient(to right, #8D3A3A00 0%, #8D3A3AB2 18%, #8d3a3a, #8d3a3a, #8D3A3AB2 82%,#8D3A3A00);
+        width: 100%;
+        height: 48px;
+        @include absolute(57%, 0);
+        transform: translateY(-50%);
+    }
+
+    >* {
+        z-index: 1;
+    }
+
+    .heading {
+        background: linear-gradient(180deg, #FF86B1, #FFFFFF);
+        background-clip: text;
+        color: transparent;
+        letter-spacing: 0.2px;
+        filter: drop-shadow(0 1px 3px #000);
+        font-size: 22px;
+        @include flex(center);
+        font-family: 'Do Hyeon', '微软雅黑';
+        transition: all 0.3s;
+        position: relative;
+        top: 15px;
+        white-space: nowrap;
+
+        @at-root .zh-CN #{&} {
+            font-weight: bold;
+        }
+
+        @at-root .ko-KR #{&} {
+            font-weight: bold;
+        }
+
+        @at-root .vi-VN #{&} {
+            font-family: 'Archivo Narrow';
+            font-weight: 700;
+        }
+
+        @at-root .th-TH #{&} {
+            font-family: 'Archivo Narrow';
+            font-weight: 700;
+        }
+        @at-root .sa-IN #{&} {
+            font-weight: bold;
+        }
+    }
+
+    &.mobile {
+        width: 155px;
+        height: 200px;
+        margin: auto;
+        justify-content: center;
+        pointer-events: none;
+        .heading {
+            letter-spacing: 1px;;
+            font-size: 20px;
+        }
+    }
+
+    &.disable {
+        cursor: not-allowed;
+        overflow: hidden;
+        &::after {
+            display: none;
+        }
+
+        .disable-mask {
+            display: block;
+        }
+        &:hover {
+            filter: sepia(20%) grayscale(0.5) !important;
+        }
+    }
+
+    &:not(.active) {
+        filter: sepia(20%) grayscale(0.5);
+
+        &:hover {
+            filter: sepia(0) grayscale(0);
+        }
+    }
+}
+
+.button-prev,
+.button-next {
+    width: 40px;
+    height: 48px;
+    z-index: 5;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+}
+
+.button-prev {
+    @include absolute(60%, 5%);
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.button-next {
+    @include absolute(60%, none, 5%, none);
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.disable-mask {
+    display: none;
+    pointer-events: none;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: to-rem(10);
+    @include font-size(13);
+    line-height: 20px;
+    @include absolute(50%, 0);
+    z-index: 2;
+    background: linear-gradient(90deg, #00000000 0%, #221a0b2e 5%, #7c5f27 48%, #221a0b2f 95%, #00000000 100%);
+}
+
+.tournament-content {
+    text-align: center;
+    display: none;
+    z-index: 1;
+    position: relative;
+    margin-top: 44px;
+
+    &.active {
+        display: block;
+    }
+
+    @at-root .mobile #{&} {
+        margin-top: 0px;
+    }
+}
+
+.tournament-item {
+    position: relative;
+    @include flex(space-between);
+    top: -8px;
+
+    &.small-item {
+        .date-item {
+            padding-top: 48px;
+        }
+
+        @include RWD($ipad) {
+            .date-item {
+                padding-top: 20px;
+            }
+        }
+    }
+
+    >div {
+        flex: 1;
+    }
+    @at-root .mobile #{&} {
+        justify-content: center;
+        top: 15px;
+    }
+}
+
+$date-item-border-radius: 15px;
+
+.list-order {
+    display: block;
+    width: 100%;
+    font-family: "Do Hyeon", '微软雅黑';
+    color: #FFF;
+    filter: drop-shadow(0 2px 3px #7B2F21);
+    position: relative;
+    z-index: 1;
+    font-size: 20px;
+    font-weight: normal;
+
+    .number {
+        display: inline;
+    }
+
+    @at-root .vi-VN #{&} {
+        font-family: 'Archivo Narrow';
+        font-weight: 700;
+        font-size: 22px;
+    }
+
+    @at-root .th-TH #{&} {
+        font-family: 'Archivo Narrow';
+        font-weight: 700;
+    }
+    @at-root .sa-IN #{&} {
+        font-weight: bold;
+    }
+
+    @include RWD($ipad) {
+        font-size: 22px;
+    }
+    @at-root .mobile #{&} {
+        font-size: 20px;
+    }
+}
+
+.date-item {
+    flex: 1;
+    @include flex(flex-start);
+    flex-direction: column;
+    gap: 10px;
+    max-width: 236px;
+    height: 190px;
+    padding-top: 64px;
+    overflow: hidden;
+    background: url(/template/SP-25Jan/deco/img_Round.webp) no-repeat;
+    background-size: 100%;
+    font-family: 'Do Hyeon';
+    letter-spacing: 1px;
+
+    &:not(.active) {
+        filter: grayscale(0.8);
+    }
+    .date {
+        @include flex(center);
+        font-size: 25px;
+        line-height: 24px;
+        gap: 5px;
+        background: linear-gradient(180deg, #FFD12E 0%, #FFFFFF 100%);
+        color: transparent;
+        background-clip: text;
+        filter: drop-shadow(0px 2px 3px #4A0C00);
+    }
+
+    .time {
+        color: #FFFFFF;
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    .gmt {
+        display: block;
+    }
+
+    @include RWD($ipad) {
+        padding-top: 40px;
+        .date {
+            font-size: 20px;
+        }
+        .time {
+            font-size: 12px;
+        }
+    }
+
+    @at-root .mobile #{&} {
+        width: 238px;
+        flex: 0;
+        padding-top: 60px;
+        background-position: center center;
+        background-size: 94%;
+        
+        .date {
+            font-size: 24px;
+        }
+
+        .time {
+            font-size: 14px;
+        }
+    }
+}
+.swiper-slide.date-item-wrap {
+    width: 238px !important;
+    top: 10px;
+}

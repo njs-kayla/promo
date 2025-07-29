@@ -1,0 +1,104 @@
+.coins-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 110vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.coin {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    @include RWD($break_point) {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+.coin-frame {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+@function random_range($min, $max) {
+    $rand: random();
+    $random_range: $min + floor($rand * (($max - $min) + 1));
+    @return $random_range;
+}
+
+
+$coins-h: 110vh;
+
+
+.coin {
+    $total: 50;
+    position: absolute;
+    will-change: transform, opacity;
+
+    @for $i from 1 through $total {
+        $random-x: random_range(0, 100) * 1vw;
+        $random-offset: random_range(-100000, 100000) * 0.0001vw;
+        $random-yoyo-time: calc(random_range(30000, 80000) / 100000);
+        $random-yoyo-y: $random-yoyo-time * 100vh;
+        $random-rotation-x: random_range(-180, 180);
+        $random-rotation-y: random_range(-180, 180);
+        $random-rotation-z: random_range(-180, 180);
+        $fall-duration: random_range(8, 15) * 1s;
+        $fall-delay: random(30) * -1s;
+
+        &:nth-child(#{$i}) {
+            transform: translate($random-x, -100px);
+            animation: fall-#{$i} $fall-duration $fall-delay linear infinite;
+        }
+
+        @keyframes fall-#{$i} {
+            #{percentage($random-yoyo-time)} {
+                transform: translate($random-x, $random-yoyo-y);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate($random-x, $coins-h) ;
+                opacity: 1;
+            }
+        }
+    }
+
+    @include RWD($break_point) {
+        @for $i from 1 through $total {
+            $random-x: clamp(-10vw, calc(random(80) * 1vw), 80vw);
+            $random-offset: random_range(-100000, 100000) * 0.0001vw;
+            $random-x-end: $random-x + $random-offset;
+            $random-x-end-yoyo: clamp(5vw, $random-x * 2, 120vw);
+            $random-yoyo-time: calc(random_range(30000, 80000) / 100000);
+            $random-yoyo-y: $random-yoyo-time * 100vh;
+            $fall-duration: random_range(12, 20) * 1s;
+            $fall-delay: random(30) * -1s;
+
+            &:nth-child(#{$i}) {
+                transform: translate($random-x, -100px);
+                animation: fall-#{$i} $fall-duration $fall-delay linear infinite;
+            }
+
+            @keyframes fall-#{$i} {
+                #{percentage($random-yoyo-time)} {
+                    transform: translate($random-x-end, $random-yoyo-y);
+                    opacity: 1;
+                }
+
+                95% {
+                    opacity: 0;
+                }
+                100% {
+                    transform: translate($random-x-end-yoyo, $coins-h);
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

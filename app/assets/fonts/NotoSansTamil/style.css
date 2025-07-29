@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Noto Sans Tamil';
+    src: url('./NotoSansTamilSemiCondensed-Regular.woff2') format('woff2'),
+        url('./NotoSansTamilSemiCondensed-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans Tamil';
+    src: url('./NotoSansTamil-Black.woff2') format('woff2'),
+        url('./NotoSansTamil-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans Tamil';
+    src: url('./NotoSansTamilCondensed-Medium.woff2') format('woff2'),
+        url('./NotoSansTamilCondensed-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans Tamil';
+    src: url('./NotoSansTamil-SemiBold.woff2') format('woff2'),
+        url('./NotoSansTamil-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+

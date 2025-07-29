@@ -1,0 +1,772 @@
+/* footer */
+footer {
+    @include flex(center);
+    background: #431000;
+    height: 48px;
+    position: relative;
+}
+
+.copy-right {
+    color: #FFFFFF;
+    text-align: center !important;
+    @include font-size(12);
+    opacity: 0.9;
+
+    @at-root .mobile #{&} {
+        @include font-size(13);
+    }
+}
+
+header {
+    background: rgb(161 54 20 / 60%) !important;
+    box-shadow: 0px 1px 6px #0000004d !important;
+
+    .nav-logo {
+        background: url(/template/FO-24Aug/logo_fs.svg) center no-repeat !important;
+    }
+}
+
+main {
+    position: relative;
+    background: linear-gradient(180.58deg, #B93121 44.79%, #670C00 102.39%);
+
+}
+
+/* banner */
+.banner {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.bn-bg {
+    width: 100%;
+    position: relative;
+    z-index: -1;
+    filter: contrast(1.2);
+}
+
+.bn-logo {
+    z-index: 2;
+    width: 100%;
+    @include absolute(4.5%, 0);
+
+    img {
+        width: 20%;
+        transform: translateX(-50%);
+        @include absolute(0, 50%)
+    }
+}
+
+.role {
+    width: 100%;
+    @include absolute(10%, 0);
+    transition: transform 0.1s;
+    z-index: 2;
+
+    img {
+        width: 30%;
+        margin: auto;
+    }
+}
+
+.bn-title {
+    @include absolute(46%, 0);
+    z-index: 2;
+    width: 100%;
+    transition: transform 0.1s;
+    z-index: 3;
+
+    img {
+        width: 53%;
+        margin: 0 auto;
+        position: relative;
+        left: -15px;
+        animation: rubberBand 2s infinite;
+    }
+}
+
+.bn-money {
+    @include absolute(42%, 0);
+    width: 100%;
+    z-index: 2;
+    animation: bounce 1.5s infinite;
+
+    img {
+        width: 63%;
+        margin: 0 auto;
+    }
+}
+
+.coin {
+    width: 100%;
+    @include absolute(5%, 0);
+    z-index: 1;
+    transition: transform 0.1s;
+    filter: contrast(1.4);
+    img {
+        width: 75%;
+        margin: auto;
+    }
+}
+
+.bn-date {
+    @include absolute(92%, 50%);
+    transform: translateX(-50%);
+    font-family: 'Kohinoor Bangla';
+    line-height: 40px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    white-space: nowrap;
+
+    .ordinal {
+        font-size: 22px;
+    }
+
+    %date_setting {
+        color: transparent;
+        background: linear-gradient(180deg, #FFFFFF 0%, #FFE2C1 50%, #FFAB87 100%);
+        background-clip: text;
+        filter: drop-shadow(0px 6px 5px #290007) drop-shadow(0px 2px 0px#CA3C29) drop-shadow(0px 1px 9px #BC4400);
+    }
+
+    strong {
+        font-weight: bold;
+    }
+
+    .date {
+        @extend %date_setting;
+        font-size: 32px;
+    }
+
+    .time {
+        display: block;
+        @extend %date_setting;
+        font-size: 24px;
+    }
+    @at-root .zh-CN #{&} {
+        @include absolute(86%, 50%);
+    }
+
+    @include RWD($break_point) {
+        @include absolute(78%, 50%);
+        line-height: 25px;
+
+        .date {
+            font-size: 18px;
+        }
+
+        .time {
+            font-size: 16px;
+        }
+
+        .ordinal {
+            font-size: 16px;
+        }
+        @at-root .zh-CN #{&} {
+            @include absolute(75%, 50%);
+            line-height: 34px;
+
+            .date {
+                font-size: 24px;
+            }
+    
+            .time {
+                font-size: 22px;
+            }
+        }
+        @at-root .ko-KR #{&} {
+            line-height: 34px;
+            .date {
+                font-size: 24px;
+            }
+    
+            .time {
+                font-size: 22px;
+            }
+        }
+        @at-root .vi-VN #{&} {
+            .date {
+                font-size: 17px;
+            }
+    
+            .time {
+                font-size: 15px;
+            }
+        }
+
+    }
+}
+
+/* index */
+.index {
+    position: relative;
+    padding-bottom: 3%;
+    margin-top: 5%;
+    width: 100%;
+    @at-root .zh-CN #{&} {
+        margin-top: 3%;
+    }
+
+    @include RWD($break_point) {
+        margin-top: -10%;
+        overflow: hidden;
+        padding-bottom: 12%;
+        @at-root .zh-CN #{&} {
+            margin-top: -13%;
+        }
+    }
+}
+
+%text-deco {
+    content: "";
+    background: url(/template/FO-24Aug/deco/icon_yuanbao.webp) no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 39px;
+    height: 25px;
+
+    @include RWD($break_point) {
+        width: 29px;
+        height: 18px;
+    }
+}
+
+.content-block {
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+
+    h2 {
+        color: #FFD7DE;
+        font-family: 'Bebas Neue', 'Roboto';
+        font-size: 28px;
+        line-height: 35px;
+        margin: 0 auto 15px;
+        width: fit-content;
+        position: relative;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 8px #640000;
+
+        @at-root .zh-CN #{&} {
+            font-weight: bold;
+            max-width: 80%;
+            text-align: center;
+        }
+        @at-root .ko-KR #{&} {
+            font-weight: bold;
+        }
+
+        &::after {
+            @extend %text-deco;
+            @include absolute(5px, -55px);
+        }
+
+        &::before {
+            @extend %text-deco;
+            @include absolute(5px, null, -55px);
+            transform: scaleX(-1);
+        }
+
+        @include RWD($break_point) {
+            font-size: 20px;
+
+            &::after {
+                @include absolute(50%, -35px);
+                transform: translateY(-50%);
+            }
+
+            &::before {
+                @include absolute(50%, null, -35px);
+                transform: translateY(-50%) scaleX(-1);
+            }
+        }
+    }
+
+    p {
+        font-family: 'Roboto';
+        color: #ffffff;
+        @include font-size(14);
+        line-height: 25px;
+        max-width: 730px;
+        margin: auto;
+        text-align: center;
+        text-shadow: 0 1px 3px #3A0000E5;
+
+        @include RWD($mobile) {
+            width: 95%;
+            font-size: 12px;
+        }
+    }
+
+    strong {
+        font-family: 'Bebas Neue';
+        font-size: 45px;
+        color: #FFC329;
+        margin-bottom: 16px;
+        text-align: center;
+        display: block;
+        text-shadow: 3px 2px 0px #7B0E00;
+        line-height: 35px;
+
+        @include RWD($break_point) {
+            font-size: 36px;
+        }
+    }
+
+    @include RWD ($break_point) {
+        &:nth-child(2) {
+            h2 {
+                @at-root .zh-CN #{&} {
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+                @at-root .ms-MY #{&} {
+                    font-size: 17px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+
+}
+
+/* info table */
+table {
+    width: 640px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    --cell-h: 40px;
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: url(/template/FO-24Aug/deco/frame.webp);
+        background-size: 100% 100%;
+        @include absolute(0, 0);
+        pointer-events: none;
+    }
+
+
+    @include RWD($mobile) {
+        width: 100%;
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: url(/template/FO-24Aug/deco/frame_mobile.webp);
+            background-size: 100% 100%;
+            @include absolute(0, 0);
+        }
+    }
+
+    thead {
+        height: 70px;
+        position: relative;
+
+        &::after {
+            content: "";
+            background: #b60018;
+            z-index: -1;
+            @include absolute(0, 0);
+            width: 100%;
+            height: 70px;
+            border-radius: 50px 50px 0 0;
+        }
+        &::before {
+            content: "";
+            width: 100%;
+            height: 2px;
+            @include absolute(0, 0);
+            transform: translateY(68px);
+            background: #e6be99;
+        }
+    }
+
+    tbody {
+        tr {
+            &:nth-child(odd) {
+                td {
+                    background: #6D0C00;
+                }
+            }
+
+            &:nth-child(even) {
+                td {
+                    background: transparent;
+                }
+            }
+        }
+    }
+
+    tr {
+        &:nth-child(1) {
+            td {
+                &:nth-child(1) {
+                    border-right: 2px solid #e6be9956;
+                    background-color: transparent;
+                }
+
+                &:nth-child(4) {
+                    background-color: transparent;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+    th {
+        font-weight: normal;
+        color: #FFFFFF;
+        font-size: 16px;
+        padding: 0 8px;
+        height: 70px;
+    }
+
+    td {
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        height: var(--cell-h);
+        line-height: 22px;
+    }
+
+    td+td {
+        border-left: 2px solid #e6be9956;
+    }
+
+
+
+    @include RWD($mobile) {
+        width: 100%;
+        @at-root .zh-CN #{&} {
+            table-layout: auto;
+        }
+        th {
+            font-size: 13px;
+        }
+        tr {
+            &:nth-child(1) {
+                td {
+                    &:nth-child(4) {
+                        font-size: 20px;
+                    }
+                }
+            }
+            &:nth-child(even) {
+                td {
+                    background: transparent;
+                }
+            }
+        }
+        
+
+        td {
+            pointer-events: none;
+            font-size: 13px;
+        }
+    }
+}
+.typeA {
+    table {
+        width: 750px;
+        --cell-h: 60px;
+        --cell-th-h: 70px;
+        &::after {
+            background: url(/template/FO-24Aug/deco/format_web.webp) no-repeat;
+        }
+    
+        thead {
+            height: var(--cell-th-h);
+            &::after {
+                border-radius: 62px 60px 0 0;
+            }
+            &::before {
+                left: 1px;
+            }
+        }
+        tbody {
+            position: relative;
+
+        }
+
+        col {
+            &:nth-child(2) {
+                width: 10%;
+            }
+        }
+    
+        tr {
+            &:nth-child(1) {
+                td {
+                    &:nth-child(4) {
+                        font-size: 14px;
+                        background:  #6D0C00;
+                        border-radius: 0 0 60px 0;
+                    }
+                    &:nth-child(1) {
+                        background:  #6D0C00;;
+                        border-radius: 0 0 0px 60px;
+                    }
+                }
+                
+            }
+        }
+    
+        @include RWD($mobile) {
+            width: 100%;
+            &::after {
+                background: url(/template/FO-24Aug/deco/format_mobile.webp) no-repeat;
+            }
+            thead {
+                &::after {
+                    border-radius: 50px 50px 0 0;
+                }
+            }
+            th {
+                font-size: 13px;
+            }
+            tr {
+                &:nth-child(1) {
+                    td {
+                        &:nth-child(4) {
+                            font-size: 13px;
+                            border-radius: 0 0 50px 0;
+                        }
+                        &:nth-child(1) {
+                            border-radius: 0 0 0px 50px;
+                        }
+                    }
+                }
+            }
+    
+            td {
+                pointer-events: none;
+                font-size: 13px;
+            }
+        }
+    }
+    .content-block {
+        strong {
+            @include RWD($break_point) {
+                font-size: 32px;
+            }
+        }
+    }
+    .bn-date {
+        @include RWD($break_point) {
+            .date {
+                font-size: 20px;
+            }
+    
+            .time {
+                font-size: 18px;
+            }
+            @at-root .ko-KR #{&} {
+                .date {
+                    font-size: 22px;
+                }
+        
+                .time {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .role {
+        @include absolute(14%, 0);
+        img {
+            width: 36%;
+        }
+    }
+}
+.typeB {
+    table {
+        width: 750px;
+        --cell-h: 60px;
+        --cell-th-h: 70px;
+        &::after {
+            background: url(/template/FO-24Aug/deco/format_web.webp) no-repeat;
+        }
+    
+        thead {
+            height: var(--cell-th-h);
+            &::after {
+                border-radius: 62px 60px 0 0;
+            }
+            &::before {
+                left: 1px;
+            }
+        }
+        tbody {
+            position: relative;
+
+        }
+
+        col {
+            &:nth-child(2) {
+                width: 10%;
+            }
+        }
+    
+        tr {
+            &:nth-child(1) {
+                td {
+                    &:nth-child(4) {
+                        font-size: 14px;
+                        background:  #6D0C00;
+                        border-radius: 0 0 60px 0;
+                    }
+                    &:nth-child(1) {
+                        background:  #6D0C00;;
+                        border-radius: 0 0 0px 60px;
+                    }
+                }
+                
+            }
+        }
+    
+        @include RWD($mobile) {
+            width: 100%;
+            table-layout: fixed;
+            &::after {
+                background: url(/template/FO-24Aug/deco/format_mobile.webp) no-repeat;
+                background-size: 100% 100%;
+            }
+            thead {
+                &::after {
+                    border-radius: 50px 50px 0 0;
+                }
+            }
+            th {
+                font-size: 13px;
+            }
+    
+            td {
+                pointer-events: none;
+                font-size: 13px;
+                padding: 0 8px;
+            }
+        }
+    }
+    .bn-title {
+        top: 56%;
+        img {
+            width: 54%;
+        }
+    }
+    .role {
+        top: 18%;
+    }
+    .logo {
+        width: 100%;
+        @include absolute(10%, 0);
+        img {
+            width: 18%;
+            margin: auto;
+        }
+    }
+    .bn-date {
+        top: 100%;
+        z-index: 3;
+        @include RWD($mobile) {
+            top: 79%;
+        }
+    }
+    .index {
+        margin-top: 8%;
+        @include RWD($mobile) {
+            margin-top: -5%;
+        }
+    }
+}
+
+
+/* go top btn */
+.go-top-btn {
+    width: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    position: fixed;
+    bottom: 6vh;
+    right: calc((100% - $containerW) / 2 - 50px);
+    @include font-size(20);
+    color: #E8DEDE;
+    background: rgba(14, 14, 14, 0.5);
+    box-shadow: 0px 3px 4px #0000008B;
+    border: 1px solid #FFFFFF29;
+    border-radius: 8px;
+    @include flex(center);
+    opacity: 0;
+    pointer-events: none;
+    @extend %transition-03s;
+    z-index: 5;
+
+    &:hover {
+        background-color: rgba(14, 14, 14, 1);
+        border-color: #FFDDDD38;
+        color: #fff;
+
+        i {
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    @include RWD($smallWeb) {
+        right: 10px;
+    }
+
+    @include RWD($break_point) {
+        bottom: 2vh;
+        right: 10px;
+        width: 45px;
+    }
+}
+
+.btn-more {
+    display: block;
+    margin: 2.0625rem auto 0;
+    background: #C34838;
+    color: #6E0000;
+    border-radius: 18px;
+    line-height: 2.125rem;
+    padding: 0 1.125rem;
+    font-size: 0.8125rem;
+    font-weight: bold;
+    overflow: hidden;
+    z-index: 2;
+    position: relative;
+
+    &:hover {
+        background: #C02510;
+        color: #fff;
+    }
+}
+
+body:has(.modal) {
+    @include RWD($break_point) {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+    }
+}
+
+.modal-box {
+    @include RWD($break_point) {
+        max-height: 600px;
+        overflow-y: scroll;
+    }
+}

@@ -1,0 +1,9 @@
+@import '../../../../assets/scss/common/variable';
+
+[theme="SP-25Jan"] {
+    @import './common/style';
+    @import './common/animate';
+    @import './common/main';
+    @import './common/blossom';
+    @import './common/tournament';
+}

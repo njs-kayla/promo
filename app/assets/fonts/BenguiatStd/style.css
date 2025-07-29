@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "BenguiatStd";
+    src: url("./BenguiatStd-Medium.eot");
+    src: url("./BenguiatStd-Medium.eot?#iefix") format("embedded-opentype"),
+        url("./BenguiatStd-Medium.woff2") format("woff2"),
+        url("./BenguiatStd-Medium.ttf") format("truetype"),
+        url("./BenguiatStd-Medium.svg#benguiatstd") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "BenguiatStd";
+    src: url("./BenguiatStd-Bold.eot");
+    src: url("./BenguiatStd-Bold.eot?#iefix") format("embedded-opentype"),
+        url("./BenguiatStd-Bold.woff2") format("woff2"),
+        url("./BenguiatStd-Bold.ttf") format("truetype"),
+        url("./BenguiatStd-Bold.svg#benguiatstd_bold") format("svg");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

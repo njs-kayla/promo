@@ -1,0 +1,8 @@
+@import '../../../../assets/scss/common/variable';
+
+[theme="SP-24Oct"] {
+    @import './common/style';
+    @import './common/animate';
+    @import './common/main';
+    @import './common/tournament';
+}

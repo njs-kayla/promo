@@ -1,0 +1,118 @@
+$smallWeb: 1240px;
+$smallIpad: 870px;
+
+// reset
+html {
+    font-family: "Roboto", "微软雅黑", sans-serif;
+    width: 100%;
+    max-width: 100%;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--bg, #fff);
+    -webkit-overflow-scrolling: touch;
+    padding-top: var(--header-height);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: text;
+}
+
+a,
+ul,
+li {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    color: inherit;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    &:focus {
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        outline: inherit;
+    }
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+strong {
+    appearance: none;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 0;
+    text-indent: -9999px;
+}
+
+img {
+    display: block;
+}
+
+input,
+textarea {
+    appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    resize: none;
+
+    &:focus {
+        appearance: none;
+        outline: none;
+    }
+}
+
+// Chrome, Safari, Edge, Opera //
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+// Firefox //
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+select:focus {
+    outline: none;
+}
+
+// default
+main {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+// input
+input,
+select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    min-width: 1px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}

@@ -1,0 +1,20 @@
+// animate
+@keyframes light-left {
+    0% {
+        transform: 0;
+    }
+
+    100% {
+        transform: rotate(60deg);
+    }
+}
+
+@keyframes light-right {
+    0% {
+        transform: rotate(-60deg);
+    }
+
+    100% {
+        transform: rotate(-120deg);
+    }
+}

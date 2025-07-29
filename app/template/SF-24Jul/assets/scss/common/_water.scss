@@ -1,0 +1,63 @@
+.bubble-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: transparent;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.bubble {
+    &.animate {
+        animation: ripple 0.8s linear;
+    }
+    position: absolute;
+    background: #06244b76;
+    border-radius: 50%;
+    opacity: 0;
+    border: 0.5px solid #1a4276a2;
+    &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        box-shadow:
+        inset calc(var(--size) * 0.1) calc(var(--size) * -0.1) calc(var(--size) * 0.11) rgba(18, 25, 126, 0.674),
+        inset calc(var(--size) * 0.2) calc(var(--size) * -0.2) calc(var(--size) * 0.22) #10253f;
+    }
+    
+    &::after {
+        content: "";
+        position: absolute;
+        height: 30%;
+        width: 30%;
+        background: #e6fdfb49;
+        border-radius: 44% 56% 46% 54% / 36% 50% 50% 64%;
+        right: 12%;
+        top: 14%;
+        box-shadow: calc(var(--size) * 0.08) calc(var(--size) * 0.3) 0 calc(var(--size) * -0.1) rgba(255, 255, 255, 0.463);
+        opacity: 0.8;
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 1;
+        filter: blur(0px);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2) rotate(20deg);
+        opacity: 0;
+        filter: blur(2px);
+    }
+}

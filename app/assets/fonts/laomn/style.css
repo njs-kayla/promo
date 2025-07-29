@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "LaoMN";
+    src: url("./LaoMN.eot");
+    src: url("./LaoMN.eot?#iefix") format("embedded-opentype"),
+        url("./LaoMN.woff2") format("woff2"),
+        url("./LaoMN.ttf") format("truetype"),
+        url("./LaoMN.svg#laomn") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

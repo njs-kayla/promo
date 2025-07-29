@@ -1,0 +1,8 @@
+@import "../../../../assets/scss/common/variable";
+
+[theme="SF-24Jul"] {
+    @import "./common/style";
+    @import "./common/animate";
+    @import "./common/main";
+    @import "./common/water";
+}

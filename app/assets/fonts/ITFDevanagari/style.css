@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "ITFDevanagari";
+    src: url("./ITFDevanagari-Bold.eot");
+    src: url("./ITFDevanagari-Bold.eot?#iefix") format("embedded-opentype"),
+        url("./ITFDevanagari-Bold.woff2") format("woff2"),
+        url("./ITFDevanagari-Bold.ttf") format("truetype"),
+        url("./ITFDevanagari-Bold.svg#itfdevanagari") format("svg");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

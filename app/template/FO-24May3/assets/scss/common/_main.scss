@@ -1,0 +1,383 @@
+.header.FS {
+    box-shadow: none;
+    transition: box-shadow 0.3s;
+}
+body {
+    &:has(.headerShadow) {
+        .header.FS {
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5019607843);
+        }
+    }
+}
+
+/* footer */
+footer {
+    @include flex(center);
+    background: #005061;
+    height: 48px;
+    position: relative;
+}
+
+.copy-right {
+    color: #FFFFFF;
+    text-align: center !important;
+    @include font-size(12);
+    opacity: 0.9;
+    @at-root .mobile #{&} {
+        @include font-size(13);
+    }
+}
+.nav-logo {
+    height: 30px;
+    @include RWD($mobile) {
+        height: 24px!important;
+    }
+}
+
+main {
+    margin-top: 54px;
+}
+
+/* banner */
+.banner {
+    width: 100%;
+    max-height: 96vh;
+    position: relative;
+    @include RWD($break_point) {
+        max-height: none;
+    }
+}
+.logo {
+    position: absolute;
+    width: 27vw;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0px 2px 4px #000000D8);
+    z-index: -1;
+}
+
+.bn-bg {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    object-position: center;
+    position: relative;
+    z-index: -1;
+}
+.bn-title {
+    @include absolute(0%, 0%);
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+    img {
+        width: 100%;
+    }
+}
+.bn-money {
+    @include absolute(65%, 50%);
+    transform: translateX(-50%);
+    width: 50%;
+    animation: bounce 1.5s infinite;
+    transform-origin: center bottom;
+}
+.role {
+    @include absolute(35%, 45%);
+    width: var(--w);
+    transition: all 1s cubic-bezier(.89,-1.3,.2,1.3);
+    opacity: 0;
+
+    &.active {
+        opacity: 1;
+        @include absolute(var(--top), var(--left));
+    }
+}
+.excl {
+    @include absolute(10%, 36%);
+    width: 11%;
+    filter: contrast(1.1);
+    animation: tada 1.5s infinite;
+}
+.bn-date {
+    @include absolute(85%, 50%);
+    transform: translateX(-50%);
+    @include font-size(35);
+    font-family: 'BoonTook';
+    font-weight: 400;
+    line-height: 72px;
+    width: 1120px;
+    letter-spacing: 1px;
+    text-align: center;
+
+    .date {
+        color: transparent;
+        background-clip: text;
+        background-image: linear-gradient(180deg, #FFF500 61.23%, #00DBC1 86.11%); 
+    }
+    @include RWD($smallWeb) {
+        width: 80%;
+        @include font-size(25);
+    }
+    @include RWD($break_point) {
+        width: 100%;
+        position: static;
+        transform: translateX(0);
+        @include font-size(30);
+        line-height: 35px;
+        .ordinal {
+            @include font-size(20);
+        }
+        .time {
+            display: block;
+            @include font-size(24);
+            color: transparent;
+            background-clip: text;
+            background-image: linear-gradient(180deg, #FFF500 50.23%, #00DBC1 86.11%);
+        }
+        .time-box {
+            position: relative;
+        }
+        .time-stroke {
+            @include font-size(24);
+            filter: drop-shadow(0 2px 3px #001D1A);
+            text-shadow: -1.5px -1.5px 0 #0D2AFF,
+                      1.5px -1.5px 0 #0D2AFF,
+                      -1.5px 1.5px 0 #0D2AFF,
+                      1.5px 1.5px 0 #0D2AFF;
+            @include absolute(0, 50%);
+            transform: translateX(-50%);
+            width: 100%;
+            z-index: -1;
+        }
+        .gmt {
+            display: inline;
+            @include font-size(18);
+        }
+    }
+}
+.date-stroke {
+    color: #ffffff;
+    filter: drop-shadow(0 2px 3px #001D1A);
+    text-shadow: -2px -2px 0 #0D2AFF,
+              2px -2px 0 #0D2AFF,
+              -2px 2px 0 #0D2AFF,
+              2px 2px 0 #0D2AFF;
+    @include absolute(0, 50%);
+    width: 1120px;
+    transform: translateX(-50%);
+    z-index: -1;
+    @include RWD($break_point) {
+        width: 100%;
+    }
+}
+/* index */
+.points-block {
+    margin-bottom: 5%;
+}
+.index {
+    position: relative;
+    padding-bottom: 3%;
+    width: 100%;
+    @include RWD($mobile) {
+        margin-top: 10%;
+        overflow: hidden;
+        padding-bottom: 12%;
+    }
+}
+.info-block {
+    position: relative;
+    >* {
+        z-index: 1;
+        position: relative;
+    }
+}
+.content-block {
+    margin-bottom: 60px;
+    h2 {
+    color:#005061;
+    font-family: 'Bango Pro';
+    font-size: 24px;
+    margin: 0 auto 15px;
+    line-height: 35px;
+    width: fit-content;
+    position: relative;
+    font-weight: 400;
+    @include RWD($break_point) {
+        font-size: 22px;
+        width: 100%;
+        text-align: center;
+    }
+    }
+    p {
+        font-family: 'Roboto';
+        color: #1F1F1F;
+        @include font-size(14);
+        line-height: 25px;
+        width: 72%;
+        margin:auto;
+        &:not(ol) {
+            text-align: center;
+        }
+        @include RWD($mobile) {
+            width: 95%;
+            @include font-size(12);
+        }
+    }
+    .table:first-of-type {
+        margin-bottom: 30px;
+    }
+    .table + p {
+        margin-top: 10px;
+    }
+    @include RWD($break_point) {
+        .table:first-of-type {
+            table {
+                table-layout: auto;
+                tr {
+                    td {
+                        &:first-child {
+                            width: 35%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+strong {
+    color: #004351;
+}
+
+/* info table */
+table {
+    width: 55%;
+    max-width: 640px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    @include RWD($mobile) {
+        width: 95%;
+    }
+    thead {
+        background-color: #005061;
+    }
+    tbody {
+        background-color: #FFFFFF;
+    }
+    th {
+        font-weight: bold;
+        color: #FFF500;
+        height: 2.8rem;
+        font-weight: bold;
+        font-size: 16px;
+        &:nth-child(4) {
+            border-right: none;
+        }
+        @include RWD($mobile) {
+            height: 3.2rem;
+        }
+    }
+    td {
+        border-right: 1px solid #86CFDF;
+        border-bottom: 1px solid #86CFDF;
+        color: #004351;
+        text-align: center;
+        height: 2.8rem;
+        font-size: 14px;
+        font-weight: bold;
+        &:nth-child(4) {
+            border-right: none;
+        }
+    }
+    tr {
+        &:nth-last-child(1) {
+            td {
+                border-bottom: none; 
+            }
+        }
+    }
+    @include RWD($mobile) {
+        @include font-size(13);
+    }
+}
+
+
+/* go top btn */
+.go-top-btn {
+    width: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    position: fixed;
+    bottom: 6vh;
+    right: calc((100% - $containerW) / 2 - 50px);
+    @include font-size(20);
+    color: #E8DEDE;
+    background: rgba(14, 14, 14, 0.5);
+    box-shadow: 0px 3px 4px #0000008B;
+    border: 1px solid #FFFFFF29;
+    border-radius: 8px;
+    @include flex(center);
+    opacity: 0;
+    pointer-events: none;
+    @extend %transition-03s;
+    z-index: 1;
+
+    &:hover {
+        background-color: rgba(14, 14, 14, 1);
+        border-color: #FFDDDD38;
+        color: #fff;
+
+        i {
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    @include RWD($smallWeb) {
+        right: 10px;
+    }
+
+    @include RWD($break_point) {
+        bottom: 2vh;
+        right: 10px;
+        width: 45px;
+    }
+}
+
+.btn-more {
+    display: block;
+    margin: 2.0625rem auto 0;
+    background: linear-gradient(180deg, #00D192 21.21%, rgba(0, 68, 44, 0.7) 116.67%);
+    border: 1px solid #00C7AF;
+    border-radius: 18px;
+    color: #004351;
+    line-height: 2.125rem;
+    padding: 0 1.125rem;
+    font-size: 0.8125rem;
+    font-weight: bold;
+}
+
+.btn-more:hover {
+    -webkit-filter: brightness(1.2);
+    filter: brightness(1.2);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    padding: 0 1.625rem;
+}
+body:has(.modal) {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.modal-box {
+    overflow: auto;
+}

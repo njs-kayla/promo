@@ -1,0 +1,135 @@
+@keyframes bounce {
+
+    0%,
+    20%,
+    53%,
+    to {
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+        transform: translateZ(0);
+    }
+
+    40%,
+    43% {
+        animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+        transform: translate3d(0, -15px, 0) scaleY(1.1);
+    }
+
+    70% {
+        animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+        transform: translate3d(0, -10px, 0) scaleY(1.02);
+    }
+
+    80% {
+        transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+        transform: translateZ(0) scaleY(.95);
+    }
+
+    90% {
+        transform: translate3d(0, -4px, 0) scaleY(1.02);
+    }
+}
+
+@keyframes uptodown {
+    0% {
+        transform: translate(0, -15px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes shine {
+    0% {
+        filter: blur(15px) opacity(0.5) brightness(1);
+        transform: scaleX(1) translateX(-50%);
+    }
+
+    100% {
+        filter: blur(15px) opacity(0.5) brightness(2);
+        transform: scaleX(1.5) translateX(-50%);
+    }
+}
+
+@keyframes showOut-up {
+    0% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, 120px, 0) scale(0.7);
+        opacity: 0;
+    }
+
+    14% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, -74px, 0) scale(1.111);
+        opacity: 1.37;
+    }
+
+    28% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, 32px, 0) scale(0.952);
+        opacity: 0.84;
+    }
+
+    46% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, -8px, 0) scale(1.012);
+        opacity: 1.04;
+    }
+
+    58% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, 3.28px, 0) scale(0.99508);
+        opacity: 0.9836;
+    }
+
+    74% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, -1.16px, 0) scale(1.00174);
+        opacity: 1.0058;
+    }
+
+    89% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, 0.4px, 0) scale(0.9994);
+        opacity: 0.998;
+    }
+
+    100% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: 1;
+    }
+}
+
+[data-aos="show-out"] {
+    opacity: 0;
+
+    &.aos-animate {
+        animation: showOut-up 1s forwards;
+    }
+}
+
+@mixin coin-animation($x) {
+    animation: coin#{$x} 1s cubic-bezier(.89,-1.3,.2,1.3) 1s 1 forwards;
+}
+@keyframes coin1 {
+    to {
+        top: 3%;
+        left: 3%;
+        opacity: 1;
+    }
+}
+@keyframes coin2 {
+    to {
+        top: 2%;
+        right: 7%;
+        opacity: 1;
+    }
+}
+@keyframes coin3 {
+    to {
+        top: 26%;
+        right: 0%;
+        opacity: 1;
+    }
+}

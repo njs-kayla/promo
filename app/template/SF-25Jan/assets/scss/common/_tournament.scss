@@ -1,0 +1,446 @@
+$block-max-width: 1100px;
+
+/* tournament list */
+
+$event-deco-width: to-rem(150);
+
+
+.tournament-block {
+    margin: 0 auto;
+    position: relative;
+    max-width: $block-max-width;
+    top: -35vh;
+    @include RWD($containerW) {
+        top: -30vh;
+    }
+    @include RWD($smallWeb) {
+        top: -5vh;
+    }
+
+    @include RWD($break_point) {
+        width: 90%;
+        max-height: 620px;
+        margin: -20% auto 20px;
+        @at-root .zh-CN #{&} {
+            margin: -40% auto 20px;
+        }
+    }
+}
+
+.tournament-nav {
+    @include flex(center);
+    width: 90%;
+    margin: auto;
+    padding-right: 55px;
+
+    @include RWD($break_point) {
+        top: 0;
+        justify-content: center;
+    }
+}
+
+.tournament-tab {
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    @include flex(center);
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+    margin-right: -55px;
+    background: linear-gradient(180deg, #28A8F5 0%, #4749D9 100%);
+    padding: 15px 0;
+    font-family: 'Poppins', '微软雅黑';
+    border-radius: 50px;
+    box-shadow: 5px 0px 5px 0px #1C2760;
+
+    &:nth-child(1) {
+        z-index: 4;
+    }
+
+    &:nth-child(2) {
+        z-index: 3;
+    }
+
+    &:nth-child(3) {
+        z-index: 2;
+    }
+
+    &.active {
+        z-index: 4;
+
+        &::after {
+            content: "";
+            @include absolute(50%, 10px);
+            width: 54px;
+            aspect-ratio: 1/1;
+            top: 50%;
+            transform: translateY(-50%);
+            background: url(/template/SF-25Jan/deco/boll.webp) no-repeat;
+            background-size: 100%;
+        }
+    }
+
+    .heading {
+        color: #FDE403;
+        letter-spacing: 0.2px;
+        filter: drop-shadow(0 4px 4px #464DDA80);
+        font-size: 16px;
+        @include flex(center);
+        transition: all 0.3s;
+        white-space: nowrap;
+        font-weight: bold;
+
+        @at-root .zh-CN #{&} {
+            font-weight: bold;
+        }
+
+        @at-root .ko-KR #{&} {
+            font-weight: bold;
+        }
+
+        @at-root .vi-VN #{&} {
+            font-family: 'Archivo Narrow';
+            font-weight: 700;
+        }
+
+        @at-root .th-TH #{&} {
+            font-family: 'Archivo Narrow';
+            font-weight: 700;
+        }
+
+        @at-root .sa-IN #{&} {
+            font-weight: bold;
+        }
+    }
+
+    .date-box {
+        color: #fff;
+        font-size: 14px;
+        @include flex(center);
+        gap: 5px;
+        font-weight: 600;
+    }
+
+    .triangle {
+        width: 0;
+        height: 0;
+        display: block;
+        border-style: solid;
+        border-width: 3px 0 3px 5px;
+        border-color: transparent transparent transparent #FFF;
+    }
+
+    &.disable {
+        cursor: not-allowed;
+        overflow: hidden;
+
+        &::after {
+            display: none;
+        }
+
+        .disable-mask {
+            display: block;
+        }
+
+        &:hover {
+            filter: sepia(20%) grayscale(0.5) !important;
+        }
+    }
+
+    &:not(.active) {
+        background: linear-gradient(180deg, #164F79 0%, #23286E 100%);
+        .heading {
+            color: #FFFFFFBF !important;
+        }
+
+        .date-box {
+            color: #FFFFFF99 !important;
+        }
+
+        &:hover {
+            filter: brightness(1.5);
+        }
+    }
+    &.mobile {
+        width: 100%;
+        align-items: flex-start;
+        height: 54px;
+        padding-left: 20px;
+        padding-right: 40px;
+        border-radius: 0;
+        box-shadow: none;
+        margin-bottom: 1px;
+
+        &:nth-child(1) {
+            border-radius: 5px 5px 0 0;
+        }
+
+        &::after {
+            display: none;
+        }
+        &:hover {
+            filter: none;
+        }
+
+        .date-box {
+            opacity: initial;
+            font-size: 12px;
+        }
+
+        .heading {
+            opacity: initial;
+            color: #FFF7C1;
+            font-size: 13px;
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+.disable-mask {
+    display: none;
+    pointer-events: none;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: to-rem(10);
+    @include font-size(13);
+    line-height: 20px;
+    @include absolute(50%, 0);
+    z-index: 2;
+    background: linear-gradient(90deg, #00000000 0%, #221a0b2e 5%, #7c5f27 48%, #221a0b2f 95%, #00000000 100%);
+}
+
+.tournament-content {
+    text-align: center;
+    display: none;
+    z-index: 1;
+    position: relative;
+    margin-top: 30px;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 330px;
+        background: linear-gradient(180deg, rgba(255, 245, 236, 0.75) 0%, #FFF5EC 100%);
+        backdrop-filter: blur(4px);
+        border-radius: 30px;
+        @include absolute(-25%, 0);
+        z-index: -1;
+    }
+
+    &.active {
+        display: block;
+    }
+
+    @at-root .mobile #{&} {
+        margin-top: 0px;
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.tournament-item {
+    position: relative;
+    @include flex(center);
+    min-height: 214px;
+}
+
+$date-item-border-radius: 15px;
+
+.date-item {
+    flex: 1;
+    @include flex(flex-start);
+    flex-direction: column;
+    gap: 2px;
+    overflow: hidden;
+    font-family: 'Poppins';
+    letter-spacing: 1px;
+    max-width: 230px;
+
+    &::before {
+        content: "";
+        background: url(/template/SF-25Jan/deco/chest_open.webp) no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 185px;
+        width: 170px;
+    }
+
+    &:not(.active) {
+        &::before {
+            content: "";
+            background: url(/template/SF-25Jan/deco/chest.webp) no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 164px;
+            width: 151px;
+        }
+
+        .date-content {
+            opacity: 0.8;
+            font-size: 16px;
+        }
+
+        .time-content {
+            font-size: 14px;
+        }
+    }
+}
+
+.date-content {
+    @include flex(center);
+    font-size: 18px;
+    line-height: 27px;
+    gap: 5px;
+    background: linear-gradient(180deg, #FF678D 0%, #F94279 100%);
+    border-radius: 50px;
+    color: #fff;
+    font-weight: bold;
+    white-space: nowrap;
+    padding: 0 10px;
+    letter-spacing: 0.3px;
+}
+
+.time-content {
+    color: #613316;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+}
+
+.tournament-info {
+    display: block;
+    font-family: 'poppins';
+    width: 80%;
+    text-align: center;
+    margin: 15px auto 0;
+    color: #613316;
+    font-size: 12px;
+    position: relative;
+    z-index: 2;
+
+    strong {
+        font-weight: bold;
+    }
+
+    @include RWD($break_point) {
+        width: 100%;
+        background:  #FFF5EC;
+        padding: 10px 20px;
+        margin-top: 0;
+        text-align: left;
+        font-size: 11px;
+        line-height: 13px;
+        strong {
+            display: block;
+            font-size: 12px;
+            line-height: 20px;
+        }
+    }
+}
+
+
+.mobile .tournament-item {
+    opacity: 1;
+    flex-direction: column;
+    padding: 35px 0;
+    gap: 10px;
+    background: linear-gradient(180deg, rgba(255, 245, 236, 0.75) 0%, #FFF5EC 100%);
+
+    &::after {
+        content: none;
+    }
+}
+
+.list-order {
+    width: 20%;
+    color: #FFF7C1;
+    font-size: 25px;
+    background: linear-gradient(180deg, #2991E1 0%, #5326D4 100%);
+    @include flex(center);
+    font-family: 'Poppins';
+    font-weight: 600
+}
+
+.mobile .date-item {
+    @include flex(flex-start, stretch);
+    flex-direction: row;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 90%;
+    background: #D9D9D9;
+    border-radius: 55px;
+
+    &::after {
+        content: none;
+    }
+
+    &::before {
+        content: none;
+    }
+
+    &.active-date {
+        opacity: 1;
+    }
+}
+
+.mobile .date-content {
+    @include flex(space-around);
+    flex: 1;
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: 600;
+    background: none;
+    color: #010A55;
+    font-family: 'Poppins';
+    padding: 10px 10px 10px 0px;
+    letter-spacing: 0px;
+}
+
+.mobile .date-item-box {
+    font-size: 16px;
+    text-align: left;
+
+    .time {
+        display: block;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .gmt {
+        font-size: 10px;
+        margin-left: 3px;
+    }
+}
+
+.mobile .tournament-item-gmt {
+    @include absolute(0, 50%);
+    font-size: 11px;
+    line-height: 24px;
+    width: 76px;
+    color: #ffffff;
+    transform: translateX(-50%);
+    z-index: 2;
+    letter-spacing: 0.8px;
+    font-weight: 400;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 120%;
+        background: #3803B5;
+        border-radius: 0 0 6px 6px;
+        transform: perspective(10px) rotateX(-5deg);
+        transform-origin: top;
+        z-index: -1;
+        @include absolute(-2px, 0);
+    }
+}

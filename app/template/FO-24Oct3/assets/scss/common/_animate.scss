@@ -1,0 +1,14 @@
+@keyframes flicker {
+	0%, 6%, 12%, 18% {
+        filter: brightness(0.3);
+	}
+	3%, 9%, 15% {
+        filter: brightness(1.5);
+	}
+	60% {
+        filter: brightness(1.2);
+	}
+	100% {
+        filter: brightness(1.2);
+	}
+}

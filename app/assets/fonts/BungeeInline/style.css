@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Bungee Inline';
+    src: url('./BungeeInline-Regular.woff2') format('woff2'),
+        url('./BungeeInline-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

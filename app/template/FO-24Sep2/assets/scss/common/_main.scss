@@ -1,0 +1,223 @@
+/* footer */
+footer {
+    @include flex(center);
+    background: #360000E5;
+    height: 48px;
+}
+
+.copy-right {
+    color: #FFFCFC;
+    opacity: 0.6;
+    @include font(12);
+}
+header {
+    
+    &.FS {
+        background: #ffffff5e;
+        box-shadow: 0px 0px 0px #0000004d;
+    }
+}
+/* banner */
+.banner {
+    width: 100%;
+    min-height: 25vw;
+    position: relative;
+}
+
+.bn-bg {
+    width: 100%;
+}
+.bn-title {
+    width: 40%;
+    @include absolute(10%, 10%);
+    img {
+        width: 100%;
+    }
+}
+.bn-money {
+    width: 42%;
+    @include absolute(15%, 14%);
+
+    img {
+        width: 100%;
+        animation: slogan 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    @at-root .zh-CN #{&} {
+        width: 38%;
+        top: 12%;
+    }
+}
+
+/* index */
+.index {
+    padding: to-rem(35) 0 0;
+    min-height: 75vh;
+    position: relative;
+    z-index: 1;
+
+    .container {
+        z-index: 1;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        @include absolute(-4vw, 0, 0, 0);
+        width: 100%;
+        height: calc(100% + 4vw);
+        z-index: -1;
+        background: linear-gradient(212deg, var(--bg) 0%, #d82222 100%);
+        clip-path: circle(600vw at 50% 600vw);
+        box-shadow: inset 0 to-rem(15) to-rem(20) rgba(0, 0, 0, .4);
+    }
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        @include absolute(null, 0, 0, 0);
+        z-index: 0;
+        opacity: 0.17;
+        background: bottom/contain url(/template/FO-24Sep2/bg/fs_ufa_bg.webp) no-repeat;
+        pointer-events: none;
+    }
+
+    @include RWD($containerW) {
+
+        &::before {
+            background-size: $containerW;
+        }
+    }
+
+    @at-root .mobile #{&} {
+        &::after {
+            min-height: calc(100% + 8vw);
+            clip-path: circle(300vw at 50% 300vw);
+        }
+    }
+}
+
+.info-block {
+    margin: 5% auto;
+    padding: 0 2%;
+    width: 100%;
+
+    h2, h3 {
+        @include font(24, 40);
+        color: #FFEA4D;
+        font-family: 'Big John';
+        text-align: center;
+        margin-bottom: to-rem(20);
+    }
+
+    h4 {
+        color: #FFEA4D;
+        margin-bottom: to-rem(20);
+    }
+
+    p {
+        @include font(16, 30);
+        color: #FFE0D0;
+        text-align: center;
+        margin-bottom: to-rem(90);
+        letter-spacing: to-rem(-0.48);
+    }
+}
+.container {
+    max-width: 800px;
+    padding-bottom: 50px;
+}
+
+table {
+    width: 100%;
+    @include font(16, 25, 600);
+    background: #FFE2E6;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: center;
+    margin-bottom: to-rem(90);
+    margin: auto;
+
+    thead {
+        background: #C73238;
+    }
+
+    th {
+        color: #fff;
+        height: to-rem(47);
+    }
+
+    td {
+        height: to-rem(47);
+        color: #4B4B4B;
+
+        &:nth-child(even) {
+            background: rgba(#D98E99, 0.2);
+            border-width: 0 1px 0 1px;
+            border-style: solid;
+            border-color: #B72121;
+        }
+    }
+
+    tbody {
+        tr:nth-of-type(even) {
+            background: #FFCBCF;
+        }
+    }
+}
+
+.btn-more {
+    background: #FFFFFF33;
+    color: #fff;
+}
+
+/* go top btn */
+.go-top-btn {
+    width: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    position: fixed;
+    bottom: 6vh;
+    right: 3vw;
+    @include font(20);
+    color: #E8DEDE;
+    background: rgba(14, 14, 14, 0.5);
+    box-shadow: 0px 3px 4px #0000008B;
+    border: 1px solid #FFFFFF29;
+    border-radius: 8px;
+    @include flex(center);
+    opacity: 0;
+    pointer-events: none;
+    @extend %transition-03s;
+    z-index: 1;
+
+    &:hover {
+        background-color: rgba(14, 14, 14, 1);
+        border-color: #FFDDDD38;
+        color: #fff;
+
+        i {
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    @include RWD($smallWeb) {
+        right: 10px;
+    }
+
+    @include RWD($break_point) {
+        bottom: 2vh;
+        right: 10px;
+        width: 45px;
+    }
+}

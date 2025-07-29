@@ -1,0 +1,510 @@
+$block-max-width: 720px;
+
+/* tournament list */
+
+$event-deco-width: to-rem(150);
+
+
+.tournament-block {
+    margin: 0 auto 0;
+    position: relative;
+    max-width: $block-max-width;
+    min-height: 400px;
+
+    &.typeB {
+        @include flex(center, stretch);
+        min-height: 0;
+        gap: 20px;
+        margin-bottom: 60px;
+    }
+
+    @include RWD($break_point) {
+        width: 85%;
+        z-index: 2;
+
+        &.typeB {
+            width: 100%;
+            gap: 0;
+            @include flex(space-evenly, stretch);
+        }
+    }
+}
+
+.tournament-nav {
+    @include flex(center);
+    width: 100%;
+    margin: auto;
+
+    @include RWD($break_point) {
+        top: 0;
+        justify-content: center;
+    }
+}
+
+.tournament-tab {
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    @include flex(center);
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+    margin-right: -15px;
+    padding: 15px 0;
+    font-family: 'Poppins', '微软雅黑';
+    border-radius: 15px;
+    filter: drop-shadow(1px 0 3px #25050f);
+
+    &:nth-of-type(1) {
+        z-index: 4;
+        background: #4a76c0;
+    }
+
+    &:nth-of-type(2) {
+        z-index: 3;
+        background: #3C62A6;
+    }
+
+    &:nth-of-type(3) {
+        z-index: 2;
+        background: #1B3D78;
+        width: calc(100% - 30px);
+        margin-right: 0px;
+    }
+
+    &.active {
+        z-index: 5;
+    }
+
+    .heading {
+        color: #FFF7C1;
+        letter-spacing: 0.2px;
+        filter: drop-shadow(0 4px 4px #464DDA80);
+        font-size: 16px;
+        @include flex(center);
+        transition: all 0.3s;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    .date-box {
+        color: #fff;
+        font-size: 14px;
+        @include flex(center);
+        gap: 5px;
+        font-weight: 600;
+        filter: drop-shadow(0 4px 4px #464DDA80);
+    }
+
+    .triangle {
+        width: 0;
+        height: 0;
+        display: block;
+        border-style: solid;
+        border-width: 3px 0 3px 5px;
+        border-color: transparent transparent transparent #FFF;
+    }
+
+    &.disable {
+        cursor: not-allowed;
+        overflow: hidden;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    &:not(.active) {
+        .heading {
+            color: #FFFFFFBF !important;
+        }
+
+        .date-box {
+            color: #FFFFFF99 !important;
+            fill: none;
+        }
+    }
+
+    &:not(.active):not(.disable) {
+        @include desktopHover {
+            background: #5A88D8;
+        }
+    }
+
+    @at-root .vi-VN #{&} {
+        &::after {
+            display: none;
+        }
+    }
+
+    &.mobile {
+        width: 100%;
+        align-items: flex-start;
+        height: 54px;
+        padding-left: 15px;
+        border-radius: 0;
+        box-shadow: none;
+        margin-bottom: 1px;
+        filter: none;
+
+        &:not(.active) {
+            // background: linear-gradient(180deg, #0077FF 0%, #001AFF 100%);
+
+            &:last-of-type {
+                border-radius: 0 0 5px 5px;
+            }
+        }
+
+        &:nth-child(1) {
+            border-radius: 5px 5px 0 0;
+        }
+
+        &::after {
+            display: none;
+        }
+
+        &:hover {
+            filter: none;
+        }
+
+        .date-box {
+            opacity: initial;
+            font-size: 12px;
+        }
+
+        .heading {
+            opacity: initial;
+            color: #FFF7C1;
+            font-size: 13px;
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+.disable-mask {
+    pointer-events: none;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: to-rem(10);
+    @include font-size(13);
+    line-height: 20px;
+    z-index: 2;
+    background: linear-gradient(90deg, #00000000 0%, #27507c86 5%, #164e8b 48%, #27507c86 95%, #00000000 100%);
+
+    @include RWD($break_point) {
+        @include absolute(0, 0);
+        height: 100%;
+        padding: 0;
+        @include flex(center);
+    }
+}
+
+.tournament-content {
+    text-align: center;
+    display: none;
+    position: relative;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 280px;
+        background: url(/template/SO-25Jul/deco/BG.webp) no-repeat;
+        @include absolute(-10%, 0);
+        z-index: -1;
+        border-radius: 15px;
+        background-size: 100% 100%;
+        border-radius: 0 0 35px 35px;
+    }
+
+    &.active {
+        display: block;
+    }
+
+    @at-root .mobile #{&} {
+        margin-top: 0px;
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.tournament-item {
+    position: relative;
+    @include flex(center, stretch);
+    min-height: 260px;
+    gap: 0px;
+}
+
+$date-item-border-radius: 15px;
+
+.date-item {
+    flex: 1;
+    @include flex(center);
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Poppins';
+    letter-spacing: 1px;
+    position: relative;
+    max-width: 260px;
+
+    &.active {
+        &::before {
+            content: "";
+            background: url(/template/SO-25Jul/deco/Mahjong.webp) no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+            height: 167px;
+            width: 141px;
+            transform: translateY(10px);
+        }
+    }
+
+    &:not(.active) {
+        filter: opacity(0.6);
+
+        &::before {
+            content: "";
+            background: url(/template/SO-25Jul/deco/dice.webp) no-repeat;
+            background-size: 100%;
+            background-position: center;
+            height: 104px;
+            width: 114px;
+            filter: sepia(60%);
+        }
+
+        .date-content {
+            color: #FFFFFF;
+        }
+
+        .time-content {
+            font-size: 14px;
+        }
+    }
+}
+
+.date-item.typeB {
+    max-width: 302px;
+    background: linear-gradient(180deg, rgba(117, 48, 255, 0) 50%, #7530FF 100%);
+    background-size: 100% 100%;
+    padding-bottom: 18px;
+    border-radius: 0 0 35px 35px;
+
+    &.active {
+        &::before {
+            content: "";
+            background: url(/template/SO-25Jul/deco/dice.webp) no-repeat;
+            background-position: center;
+            width: 141px;
+            background-size: 100%;
+            height: auto;
+            aspect-ratio: 141/167;
+        }
+    }
+
+    &:not(.active) {
+        filter: opacity(0.6);
+
+        &::before {
+            content: "";
+            background: url(/template/SO-25Jul/deco/dice.webp) no-repeat;
+            background-size: 100%;
+            background-position: center;
+            width: 141px;
+            height: auto;
+            aspect-ratio: 141/167;
+            filter: none;
+        }
+
+    }
+
+    .date-item-date {
+        color: #FFFFFF;
+        filter: drop-shadow(0 3px 0 #000000);
+        font-weight: 400;
+        font-family: 'Kanit';
+        font-size: 24px;
+
+        span {
+            font-size: 17px;
+        }
+    }
+
+    .date-item-time {
+        color: #FFFFFF;
+        background: #000563;
+        padding: 5px 20px;
+        border-radius: 50px;
+        font-family: 'Kanit';
+        margin-top: 5px;
+    }
+
+    @include RWD($break_point) {
+        .date-item-date {
+            font-size: 15px;
+            line-height: 24px;
+            margin-bottom: 5px;
+
+            span {
+                font-size: 10px;
+            }
+        }
+
+        .date-item-time {
+            font-size: 13px;
+            padding: 5px 10px;
+            margin-top: 0;
+        }
+    }
+}
+
+.date-content {
+    @include flex(center);
+    font-size: 16px;
+    line-height: 28px;
+    gap: 5px;
+    background: linear-gradient(180deg, #E7A400 0%, #D17C01 100%);
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-weight: bold;
+    white-space: nowrap;
+    padding: 0 10px;
+    letter-spacing: 0.3px;
+    position: relative;
+    z-index: 2;
+
+    .triangle {
+        width: 0;
+        height: 0;
+        display: block;
+        border-style: solid;
+        border-width: 3px 0 3px 5px;
+        border-color: transparent transparent transparent #FFF;
+    }
+}
+
+.time-content {
+    color: #A3C2FF;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+    line-height: 30px;
+}
+
+.mobile .tournament-item {
+    opacity: 1;
+    flex-direction: column;
+    padding: 35px 0;
+    gap: 10px;
+    background: #0E113F;
+    align-items: center;
+    min-height: 200px;
+
+    &::after {
+        content: none;
+    }
+}
+
+.list-order {
+    width: 20%;
+    color: #FFF7C1;
+    font-size: 25px;
+    background: linear-gradient(180deg, #0077FF 0%, #001AFF 100%);
+    @include flex(center);
+    font-family: 'Poppins';
+    font-weight: 600
+}
+
+:not(.typeB) {}
+
+.mobile .date-item {
+    &:not(.typeB) {
+        @include flex(flex-start, stretch);
+        flex-direction: row;
+        border-radius: 10px;
+        overflow: hidden;
+        min-width: 90%;
+        background: #D9D9D9;
+        border-radius: 50px;
+        filter: none;
+
+        &::after {
+            content: none;
+        }
+
+        &::before {
+            content: none;
+        }
+
+        &.active-date {
+            opacity: 1;
+        }
+    }
+}
+
+.mobile .date-content {
+    @include flex(space-evenly);
+    flex: 1;
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: 600;
+    background: none;
+    font-family: 'Poppins';
+    padding: 10px 10px 10px 0px;
+    letter-spacing: 0px;
+    margin-top: 0;
+    color: #010A55 !important;
+
+    .triangle {
+        border-color: transparent transparent transparent #010A55;
+    }
+}
+
+.mobile .date-item-box {
+    font-size: 16px;
+    text-align: left;
+
+    .time {
+        display: block;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .gmt {
+        font-size: 10px;
+        margin-left: 3px;
+    }
+}
+
+.mobile .tournament-item-gmt {
+    @include absolute(0, 50%);
+    font-size: 11px;
+    line-height: 24px;
+    width: 76px;
+    color: #ffffff;
+    transform: translateX(-50%);
+    z-index: 2;
+    letter-spacing: 0.8px;
+    font-weight: 400;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 140%;
+        background: #3C62A5;
+        border-radius: 0 0 6px 6px;
+        transform: perspective(10px) rotateX(-5deg);
+        transform-origin: top;
+        z-index: -1;
+        @include absolute(-2px, 0);
+    }
+}

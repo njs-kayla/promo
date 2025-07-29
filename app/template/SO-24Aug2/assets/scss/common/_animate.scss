@@ -1,0 +1,133 @@
+// animate
+@keyframes slogan {
+    0% {
+        filter: brightness(100%);
+        transform: scale(1);
+    }
+
+    25% {
+        filter: brightness(150%);
+        transform: scale(1);
+    }
+
+    26% {
+        transform: scale(1.04);
+    }
+
+    27% {
+        transform: scale(1);
+    }
+
+    28% {
+        transform: scale(1.04);
+    }
+
+    29% {
+        transform: scale(1);
+    }
+
+    50% {
+        filter: brightness(100%);
+    }
+
+    75% {
+        filter: brightness(150%);
+    }
+
+    78% {
+        transform: scale(1);
+    }
+
+    79% {
+        transform: scale(1.04);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+
+    81% {
+        transform: scale(1.04);
+    }
+
+    82% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: brightness(100%);
+    }
+}
+
+@keyframes uptodown {
+    0% {
+        transform: translate(0, -5px);
+    }
+
+    100% {
+        transform: translate(0, 5px);
+    }
+}
+
+@keyframes brightness {
+    0% {
+        filter: brightness(50%) blur(2px);
+    }
+
+    100% {
+        filter: brightness(200%) blur(2px);
+    }
+}
+
+@keyframes turn {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes dash {
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes open-t {
+    to {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes open-b {
+    to {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes shakeY {
+
+    5%,
+    15%,
+    25%,
+    35% {
+        -webkit-transform: translate3d(0, -10px, 0);
+        transform: translate3d(0, -10px, 0)
+    }
+
+    10%,
+    20%,
+    30% {
+        -webkit-transform: translate3d(0, 10px, 0);
+        transform: translate3d(0, 10px, 0)
+    }
+
+    40% {
+        transform: translate3d(0, 0, 0); 
+    }
+}

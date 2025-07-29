@@ -1,0 +1,54 @@
+
+@keyframes shine {
+    0% {
+        background-position: -1000px;
+    }
+
+    100% {
+        background-position: 1000px;
+    }
+}
+
+@keyframes sparkle {
+    0% {
+        transform: scale(0.5);
+        filter: brightness(0.8);
+    }
+    100% {
+        transform: scale(1.5);
+        filter: brightness(2);
+    }
+}
+@keyframes rubberBand {
+    0% {
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(1); /* No movement in the first half */
+    }
+
+    65% {
+        transform: scale3d(1.1, .9, 1);
+    }
+
+    75% {
+        transform: scale3d(.9, 1.1, 1);
+    }
+
+    85% {
+        transform: scale3d(1.05, .95, 1);
+    }
+
+    92.5% {
+        transform: scale3d(.98, 1.02, 1);
+    }
+
+    100% {
+        transform: scale3d(1.02, .98, 1);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}

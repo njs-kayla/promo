@@ -1,0 +1,22 @@
+.loading-mask {
+    @extend .modal;
+}
+
+.loading {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #e6b407;
+    border-radius: 50%;
+    border-top-color: transparent;
+    -webkit-animation: spin 1000ms infinite linear;
+    animation: spin 1000ms infinite linear;
+    z-index: 1;
+}
+
+@keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

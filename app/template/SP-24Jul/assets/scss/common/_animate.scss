@@ -1,0 +1,143 @@
+// animate
+@keyframes slogan {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1);
+    }
+
+    26% {
+        transform: scale(1.04);
+    }
+
+    27% {
+        transform: scale(1);
+    }
+
+    28% {
+        transform: scale(1.04);
+    }
+
+    29% {
+        transform: scale(1);
+    }
+
+    78% {
+        transform: scale(1);
+    }
+
+    79% {
+        transform: scale(1.04);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+
+    81% {
+        transform: scale(1.04);
+    }
+
+    82% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes showOut-left {
+    0% {
+        transform: translate(-500px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+@keyframes showOut-right {
+    0% {
+        transform: translate(500px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes showOut-up {
+    0% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, 200px, 0) scale(0.7);
+        opacity: 0;
+    }
+    14% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, -74px, 0) scale(1.111);
+        opacity: 1.37;
+    }
+    28% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, 32px, 0) scale(0.952);
+        opacity: 0.84;
+    }
+    46% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, -8px, 0) scale(1.012);
+        opacity: 1.04;
+    }
+    58% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, 3.28px, 0) scale(0.99508);
+        opacity: 0.9836;
+    }
+    74% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, -1.16px, 0) scale(1.00174);
+        opacity: 1.0058;
+    }
+    89% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, 0.4px, 0) scale(0.9994);
+        opacity: 0.998;
+    }
+    100% {
+        animation-timing-function: ease-in-out;
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: 1;
+    }
+}
+
+// 滾動出場效果
+[data-aos="show-out"] {
+    opacity: 0;
+
+    &.aos-animate {
+        &.left {
+            animation: showOut-left 1s 1s forwards;
+        }
+        &.right {
+            animation: showOut-right 1s 1s forwards;
+        }
+        &.first {
+            animation: showOut-up 1s forwards;
+        }
+        &.second {
+            animation: showOut-up 1s 0.5s forwards;
+        }
+    }
+}
+
+@keyframes turn-around {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}

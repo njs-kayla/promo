@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "SharkTooth";
+    src: url("./Sharktooth-Bold.eot");
+    src: url("./Sharktooth-Bold.eot?#iefix") format("embedded-opentype"), url("./Sharktooth-Bold.woff2") format("woff2"), url("./Sharktooth-Bold.ttf") format("truetype"), url("./Sharktooth-Bold.svg#sharktooth") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SharkTooth";
+    src: url("./Sharktooth-Heavy.eot");
+    src: url("./Sharktooth-Heavy.eot?#iefix") format("embedded-opentype"), url("./Sharktooth-Heavy.woff2") format("woff2"), url("./Sharktooth-Heavy.ttf") format("truetype"), url("./Sharktooth-Heavy.svg#sharktooth_bold") format("svg");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}

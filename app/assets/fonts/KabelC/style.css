@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'KabelC';
+    src: url('./KabelC-Ultra.woff2') format('woff2'),
+        url('./KabelC-Ultra.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+

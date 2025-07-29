@@ -1,0 +1,8 @@
+@import '../../../../assets/scss/common/variable';
+
+[theme="FO-24Aug"] {
+    @import './common/style';
+    @import './common/animate';
+    @import './common/coins';
+    @import './common/main';
+}

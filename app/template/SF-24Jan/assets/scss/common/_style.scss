@@ -1,0 +1,40 @@
+// RWD定義
+$bodyW: 1600px;
+$containerW: 1280px;
+$smallWeb: 1240px;
+$ipad: 1024px;
+$smallIpad: 870px;
+$mobile: 600px;
+$smallMobile: 480px;
+$break_point: $smallIpad;
+
+// reset
+& {
+    --header-height: 60px;
+    --bg: #020e33;
+    font-family: "Poppins", "微软雅黑", sans-serif;
+
+    @include RWD($smallWeb) {
+        font-size: 14px;
+    }
+
+    @include RWD($smallIpad) {
+        font-size: 12px;
+    }
+}
+
+
+.container {
+    max-width: $containerW;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+
+    @at-root .mobile #{&} {
+        max-width: to-rem(800);
+    }
+
+    @include RWD($smallMobile) {
+        padding: 0 10px;
+    }
+}

@@ -1,0 +1,194 @@
+$deco-h: 150px;
+.tournament-block {
+    padding-top: 50px;
+    margin: 0 auto 76px;
+    width: 100%;
+    z-index: 2;
+    position: relative;
+    @include RWD($break_point) {
+        top: -155px;
+        margin-bottom: 0;
+        padding-top: 0;
+    }
+}
+.tournament-head {
+    display: block;
+    h2 {
+        color: transparent;
+        font-size: 24px;
+        line-height: 32px;
+        margin: 0 auto 15px;
+        text-align: center;
+        width: fit-content;
+        background: linear-gradient(360deg, #FFFFFF 0%, #FFED8F 100%);
+        background-clip: text;
+        font-weight: bold;
+        position: relative;
+        letter-spacing: 1px;
+        @include RWD($break_point) {
+            line-height: 32px;
+            font-size: 20px;
+            margin: 0 auto 0px;
+        }
+    }
+}
+
+.tournament-main {
+    max-width: 980px;
+    width: 100%;
+    @include flex(space-between);
+    gap: 0px;
+    flex-wrap: wrap;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    color: #FFF;
+    margin: auto;
+    @at-root .mobile #{&} {
+        top: initial;
+        gap: 10px;
+        margin: 0px auto 120px;
+        $deco-h: 160px;
+        display: block;
+    }
+}
+
+.date-item {
+    position: relative;
+    padding: $deco-h 0 10px;
+    border-radius: 0 0 30px 30px;
+    max-width: 33%;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: $deco-h;
+        background: url(/template/SO-24Dec3/deco/day2.webp);
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover 100%;
+        transform: translateX(-50%);
+        @include absolute(0, 50%);
+        z-index: -1;
+    }
+
+    .date-item-date {
+        background: linear-gradient(0deg, rgba(122, 71, 67, 0.75) 0%, rgba(192, 17, 0, 0.75) 100%);
+        backdrop-filter: blur(5px);
+    }
+
+    &.active {
+        .date-item-date {
+            background: linear-gradient(0deg, rgba(179, 12, 0, 0.75) 0%, rgba(255, 99, 84, 0.75) 100%);
+        }
+
+        &::after {
+            background: url(/template/SO-24Dec3/deco/day.webp);
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: cover 100%;
+        }
+
+    }
+
+    @at-root .mobile #{&} {
+        width: 60%;
+        max-width: none;
+        padding: calc($deco-h - 40px) 0 10px;
+        margin: auto;
+        pointer-events: none;
+
+        &::after {
+            width: 54%;
+            background-size: 100%;
+        }
+    }
+}
+
+.date-item-date {
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 4px 4px #00000080;
+    display: block;
+    padding: 17px 32px;
+    border-radius: 30px;
+    line-height: 24px;
+    font-weight: 700;
+    @at-root .mobile #{&} {
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        padding: 10px 15px;
+    }
+}
+
+.date-item-time {
+    font-size: 18px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0px;
+    background: linear-gradient(180deg, #FCFF61 0%, #AFDC52 100%);
+    background-clip: text;
+    color: transparent;
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: auto;
+    line-height: 40px;
+    font-weight: 900;
+    margin-top: 20px;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(41, 25, 19, 0) 0%, #291913 47.5%, rgba(41, 25, 19, 0) 100%);
+        @include absolute(0, 0);
+        z-index: -1;
+    }
+
+    .gmt {
+        margin-left: 5px;
+        display: inline-block;
+    }
+
+    @at-root .mobile #{&} {
+        line-height: 22px;
+        font-size: 12px;
+        margin-top: 5px;
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.date-item-year {
+    filter: drop-shadow(0 2px 4px #18113A);
+    @include font-size(24);
+    font-weight: bold;
+}
+
+.button-prev,
+.button-next {
+    background: url(/template/SO-24Dec3/deco/vector.webp);
+    background-size: cover;
+    width: 20px;
+    height: 32px;
+    background-position: center;
+    transition: filter 0.2s;
+    z-index: 3;
+
+    &:hover {
+        filter: brightness(1.2);
+    }
+}
+
+.button-prev {
+    @include absolute(50%, 8%);
+    transform: scaleX(-1) translateY(-50%);
+}
+
+.button-next {
+    @include absolute(50%, null, 8%);
+    transform: translateY(-50%);
+}

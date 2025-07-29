@@ -1,0 +1,7 @@
+@import "../../../../assets/scss/common/variable";
+
+[theme="SO-23Nov2"] {
+    @import "./common/style";
+    @import "./common/animate";
+    @import "./common/main";
+}

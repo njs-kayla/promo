@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'BoonTook';
+    src: url('./BoonTook-Regular.woff2') format('woff2'),
+        url('./BoonTook-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

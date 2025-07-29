@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Hokuba Grabs';
+    src: url('./HokubaGrabs-Regular.woff2') format('woff2'),
+        url('./HokubaGrabs-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

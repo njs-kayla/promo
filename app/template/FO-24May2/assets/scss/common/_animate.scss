@@ -1,0 +1,53 @@
+@keyframes backInLeft {
+    0% {
+        transform: translateX(-2000px) scale(.7);
+        opacity: .7
+    }
+
+    80% {
+        transform: translateX(0) scale(.7);
+        opacity: .7
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+.animate__backInLeft {
+    animation-name: backInLeft;
+}
+@keyframes rubberBand {
+    0% {
+        transform: translateX(-50%) scaleX(1);
+    }
+
+    30% {
+        transform: translateX(-50%) scale3d(1.1, .9, 1);
+    }
+
+    40% {
+        transform: translateX(-50%) scale3d(.9, 1.1, 1);
+    }
+
+    50% {
+        transform: translateX(-50%) scale3d(1.05, .95, 1);
+    }
+
+    65% {
+        transform: translateX(-50%) scale3d(.98, 1.02, 1);
+    }
+
+    75% {
+        transform: translateX(-50%) scale3d(1.02, .98, 1);
+    }
+
+    to {
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
+.animate__rubberBand {
+    animation-name: rubberBand;
+}

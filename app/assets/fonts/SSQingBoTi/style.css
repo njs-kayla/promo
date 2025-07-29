@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'SSQingBoTi';
+    src: url('./243-SSQingBoTi.woff2') format('woff2'),
+        url('./243-SSQingBoTi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

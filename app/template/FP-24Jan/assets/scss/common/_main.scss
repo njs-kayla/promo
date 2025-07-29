@@ -1,0 +1,766 @@
+/* footer */
+footer {
+    @include flex(center);
+    background: #2a2e64c1;
+    height: 48px;
+    position: relative;
+    z-index: 1;
+}
+
+.copy-right {
+    color: #e4d6ff;
+    opacity: 0.9;
+    @include font-size(12);
+}
+
+/* banner */
+.banner {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.bg {
+    width: 100%;
+    z-index: 0;
+    position: fixed;
+    top: var(--header-height);
+}
+
+.deco-bg {
+    width: 100%;
+    @include absolute;
+}
+
+.bn-bg {
+    width: 100%;
+}
+
+.bn-money {
+    width: 85%;
+    z-index: 2;
+    pointer-events: none;
+    width: 50%;
+    margin: -8vw auto to-rem(20);
+    -webkit-mask-image: var(--imgUrl);
+    mask-image: var(--imgUrl);
+    mask-size: contain;
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+            120deg,
+            transparent 0%,
+            transparent 8rem,
+            white 14rem,
+            transparent 11.15rem,
+            transparent 15rem,
+            rgba(255, 255, 255, 0.3) 20rem,
+            transparent 25rem,
+            transparent 27rem,
+            rgba(255, 255, 255, 0.6) 32rem,
+            white 33rem,
+            rgba(255, 255, 255, 0.3) 33.15rem,
+            transparent 38rem,
+            transparent 40rem,
+            rgba(255, 255, 255, 0.3) 45rem,
+            transparent 50rem,
+            transparent 100%
+        );
+        background-size: 150% 100%;
+        background-repeat: no-repeat;
+        animation: slogan 5s infinite linear;
+    }
+}
+
+.bn-title {
+    width: 45%;
+    margin: 0 auto;
+
+    img {
+        width: 100%;
+        object-fit: contain;
+        transform: translateX(10%);
+    }
+}
+
+.bn-date {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 1;
+    white-space: nowrap;
+    font-style: italic;
+    letter-spacing: 0px;
+    color: #ffea77;
+    text-shadow: 0 2px 0px #ce7f00;
+
+    strong {
+        display: block;
+    }
+
+    .date {
+        font-size: clamp(1vw, to-rem(39), 5.5vw);
+        line-height: to-rem(47);
+        margin-bottom: to-rem(15);
+
+        @at-root .vi-VN #{&} {
+            font-size: clamp(1vw, to-rem(39), 4.5vw);
+        }
+    }
+
+    .time {
+        @include font(28, 35);
+    }
+
+    .gmt {
+        @include font(26, 35);
+    }
+
+    @at-root .mobile #{&} {
+        min-width: to-rem(300);
+        bottom: initial;
+        @include font(16, 20);
+        top: 75%;
+    }
+}
+
+/* index */
+.index {
+    min-height: calc(100vh - 64px);
+    padding: to-rem(30) 0 to-rem(80);
+    position: relative;
+
+    .container {
+        z-index: 1;
+    }
+
+    h2,
+    h3,
+    h4 {
+        @include font-size(18);
+        color: #fff;
+        @include flex(flex-start);
+        gap: to-rem(10);
+        margin: to-rem(45) 0 10px;
+
+        &::before {
+            content: "";
+            display: block;
+            width: to-rem(18);
+            aspect-ratio: 1/1;
+            background: url(/template/FP-24Jan/icon/Img_dot.webp) center/contain no-repeat;
+        }
+    }
+}
+
+/* tournament list */
+$tournamentTab_borderRadius: 6px;
+$tournament_bg: #3b3d7f;
+
+.tournament-block {
+    overflow: hidden;
+
+    @at-root .mobile #{&} {
+        border-radius: 5px;
+    }
+}
+
+.tournament-nav {
+    height: 65px;
+    @include flex($alignItem: flex-end);
+    gap: 4px;
+    box-shadow: 0px 3px 6px #0000003e;
+}
+
+.tournament-tab {
+    flex: 1;
+    background: linear-gradient(180deg, #2c2d65 0%, #212353 100%);
+    color: #fff;
+    text-align: center;
+    padding: 11px;
+    cursor: pointer;
+    @include flex(center);
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    z-index: 1;
+    border-radius: $tournamentTab_borderRadius $tournamentTab_borderRadius 0 0;
+    height: 50px;
+    transition: height ease-in 0.15s;
+
+    .date {
+        display: inline-block;
+    }
+
+    .date-box {
+        @include flex(center);
+        gap: 5px;
+        text-transform: uppercase;
+        font-weight: 700;
+        opacity: 0.7;
+        white-space: nowrap;
+        @include font-size(18);
+        letter-spacing: to-rem(1.2);
+        font-style: italic;
+    }
+
+    sup {
+        margin-right: 0.5em;
+        @include font-size(12);
+        text-transform: lowercase;
+    }
+
+    &:not(.active, .disable):hover {
+        .heading,
+        .date-box {
+            opacity: 1;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        height: 100%;
+        padding-top: 15px;
+        background: $tournament_bg;
+        color: #ffd769;
+
+        .date-box {
+            opacity: initial;
+            color: #ffd769;
+            font-size: to-rem(24);
+        }
+    }
+
+    &.mobile {
+        width: 100%;
+        align-items: flex-start;
+        height: 40px;
+        padding-left: 20px;
+        padding-right: 40px;
+        margin-bottom: 1px;
+        border-radius: initial;
+        opacity: initial;
+
+        &::after {
+            @include flex(center);
+            @include icomoon("\e901", 12px);
+            @include absolute(0, null, 16px);
+            height: 100%;
+            transition: transform ease-in 0.3s;
+            transform: scale(0.8);
+            color: #aeafc7;
+        }
+
+        .date-box {
+            opacity: initial;
+        }
+
+        .heading {
+            opacity: initial;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &.active {
+            padding-top: 5px;
+            margin-bottom: initial;
+            box-shadow: 0px 3px 6px #0000003e;
+            background: linear-gradient(180deg, #393577 0%, #1a1741 100%);
+
+            &::after {
+                transform: scale(0.8) rotate(180deg);
+            }
+        }
+    }
+
+    &.disable {
+        cursor: not-allowed;
+        overflow: hidden;
+
+        &::after {
+            display: block;
+            content: "";
+            @include absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(#000, 0.6);
+            transform: initial;
+        }
+
+        .disable-mask {
+            display: block;
+        }
+
+        .date-box {
+            opacity: 0;
+        }
+    }
+}
+
+.disable-mask {
+    display: none;
+    pointer-events: none;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: to-rem(6);
+    @include font-size(13);
+    @include absolute(null, 0, null, 0);
+    z-index: 2;
+    background: linear-gradient(90deg, #00000000 0%, #221a0b2e 5%, #7c5f27 48%, #221a0b2f 95%, #00000000 100%);
+}
+
+.tournament-content {
+    text-align: center;
+    color: #fff;
+    background-color: $tournament_bg;
+    @extend %transition-02s;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+
+    @at-root .mobile #{&} {
+        display: block;
+        max-height: 0;
+        overflow: hidden;
+
+        &.active {
+            @extend %transition-03s;
+            max-height: 1000px;
+        }
+    }
+}
+
+.tournament-item {
+    padding: 2.25rem 5%;
+    display: inline-block;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+
+    @at-root .mobile #{&} {
+        flex-wrap: wrap;
+    }
+}
+
+.list-order {
+    text-align: center;
+    color: #ffffff;
+    @include font(18, 21);
+    padding: to-rem(5);
+    background: #545698;
+    border-radius: to-rem(20);
+    margin: to-rem(20) auto 0;
+    width: to-rem(150);
+    font-style: italic;
+}
+
+.date-item {
+    flex: 1;
+    max-width: to-rem(500);
+    min-width: to-rem(180);
+
+    img {
+        width: to-rem(120);
+        margin: 0 auto;
+
+        &.active-img {
+            display: none;
+        }
+
+        &.default {
+            opacity: 0.75;
+        }
+    }
+
+    &.active {
+        img {
+            filter: drop-shadow(0px 0px 8px rgba(#f9d900, 0.9));
+
+            &.default {
+                display: none;
+            }
+
+            &.active-img {
+                display: block;
+            }
+        }
+
+        .date-item-box {
+            color: #f9d900;
+        }
+
+        .list-order {
+            background: #4364c6;
+        }
+    }
+}
+
+.date-item-box {
+    color: #a1a3de;
+    @include font(22, 26, bold);
+    font-style: italic;
+}
+
+.tournament-info {
+    background: $tournament_bg;
+    @include font-size(13);
+    box-shadow: inset 0px 1px 0px #ffffff60;
+    text-align: left;
+    padding: to-rem(15) 5%;
+    border-radius: 0 0 $tournamentTab_borderRadius $tournamentTab_borderRadius;
+
+    p {
+        padding: to-rem(5) 0;
+        color: #fff;
+    }
+
+    strong,
+    b {
+        font-weight: bold;
+        margin-right: 0.5em;
+    }
+
+    @at-root .mobile #{&} {
+        @include font-size(16);
+
+        strong,
+        b {
+            display: block;
+            margin: 3px 0;
+        }
+    }
+}
+
+/* points table*/
+.points-block {
+    .table {
+        width: 100% !important;
+        margin: 0 auto to-rem(70);
+    }
+
+    table {
+        width: 100%;
+        text-align: center;
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 1px 1px;
+    }
+
+    th,
+    .head {
+        text-align: center;
+        background: #292a60;
+        @include font(14, 16, bold);
+        color: #c898ff;
+        height: to-rem(42);
+        font-weight: 300;
+    }
+
+    td,
+    .value {
+        @include font-size(13);
+        height: to-rem(42);
+        background: #3b3d7f;
+        color: #fff;
+    }
+}
+
+/* currency table */
+.currency-block {
+    position: relative;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        color: #000;
+        table-layout: fixed;
+        background: var(--bg);
+
+        .table-index {
+            width: 62px;
+        }
+
+        thead {
+            background-image: linear-gradient(to bottom, #a7b2ed, #808fe3);
+
+            &:first-child {
+                tr {
+                    th {
+                        &:last-child {
+                            @include font-size(15);
+                        }
+                    }
+                }
+            }
+        }
+
+        th {
+            height: to-rem(40);
+            border: solid 1px #7982c0;
+            @include font-size(14);
+            color: #000000d5;
+        }
+
+        tbody {
+            background: #e8eefc;
+
+            tr {
+                @extend %transition-015s;
+
+                &:nth-of-type(even) {
+                    background: #dbdefd;
+                }
+
+                &:hover {
+                    background-color: #babfeb;
+                }
+            }
+        }
+
+        td {
+            @include font-size(13);
+            border-width: 0 1px 0 1px;
+            border-style: solid;
+            border-color: #7982c0;
+            height: to-rem(40);
+            text-align: center;
+        }
+
+        %td_img {
+            color: transparent;
+            background-position: center;
+            background-size: 28px;
+            background-repeat: no-repeat;
+        }
+
+        @at-root .mobile #{&} {
+            table-layout: auto;
+
+            .table-index {
+                width: auto;
+            }
+
+            th,
+            td {
+                @include font-size(18);
+            }
+
+            %td_img {
+                background-size: 22px;
+            }
+        }
+    }
+}
+
+.currency-select {
+    @include absolute(null, null, 0, calc(100% + 12px));
+
+    .list {
+        @include absolute(calc(100% + 12px), null, 0);
+        background: #ffffff;
+        box-shadow: 0px 3px 8px #0000005c;
+        border-radius: 5px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 16px;
+        gap: 16px;
+        max-height: 0;
+        width: 95vw;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        @extend %transition-02s;
+
+        li {
+            padding: 6px;
+            @include font-size(18);
+            color: #000000b3;
+            white-space: nowrap;
+            text-align: center;
+
+            &.active {
+                color: #c4801b;
+            }
+        }
+
+        &.active {
+            pointer-events: initial;
+            opacity: 1;
+            max-height: 1000px;
+            padding: 16px;
+        }
+    }
+
+    .default {
+        height: 30px;
+        min-width: 84px;
+        color: #f9d900;
+        background: #ffffff1f;
+        border: 1px solid rgba(#fff, 0.2);
+        border-radius: 3px;
+        @include flex;
+        padding: 0 8px 0 12px;
+        @include font-size(18);
+
+        &::after {
+            @include icomoon("\e901", 12px, #ffffffbe);
+            transform: scale(0.6);
+        }
+    }
+}
+
+/* go top btn */
+.go-top-btn {
+    width: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    position: fixed;
+    bottom: 6vh;
+    right: calc((100% - $containerW) / 2 - 50px);
+    @include font-size(20);
+    color: #dee8e0;
+    background: #0000004b;
+    box-shadow: 0px 3px 4px #0000008b;
+    border: 1px solid #ffffff29;
+    border-radius: 8px;
+    @include flex(center);
+    opacity: 0;
+    pointer-events: none;
+    @extend %transition-03s;
+    z-index: 1;
+
+    &:hover {
+        background: transparent linear-gradient(180deg, #fbae01 0%, #ff4d00 100%) 0% 0% no-repeat padding-box;
+        border-color: #380504;
+        color: #fff;
+
+        i {
+            transform: scale(1.1);
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    @include RWD($smallWeb) {
+        right: 10px;
+    }
+
+    @include RWD($break_point) {
+        bottom: 2vh;
+        right: 10px;
+        width: 45px;
+    }
+}
+
+/* T&C */
+.btn-more {
+    background: #3b3d7f;
+    border: 1px solid #5c5fb9;
+    color: #fff;
+
+    &:hover {
+        background: #3b3d7f;
+        filter: brightness(1.5);
+    }
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    @include flex(center);
+    flex-direction: column;
+}
+
+.btn-close {
+    @include absolute(20px, null, 25px);
+    font-size: 18px;
+    color: #131313;
+
+    @include RWD($break_point) {
+        font-size: 16px;
+    }
+
+    &:hover {
+        transform: scale(1.2);
+        @extend %transition-015s;
+    }
+}
+
+/* floating ad */
+.float-ad-list {
+    position: fixed;
+    bottom: 30px;
+    right: 8px;
+    animation: float 3.6s ease-in-out infinite;
+    z-index: 10;
+    @include flex(flex-end, stretch);
+    flex-direction: column;
+    gap: to-rem(10);
+
+    .float-ad {
+        position: initial;
+
+        img {
+            margin: 0 auto;
+            filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.65));
+        }
+    }
+}
+
+.mark-dot {
+    width: to-rem(18);
+    aspect-ratio: 1/1;
+    background: url(/template/FP-24Jan/icon/Img_dot.webp) bottom/contain no-repeat;
+}
+
+// decorate
+canvas {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@include RWD($smallWeb) {
+    .ko-KR {
+        .tournament-tab {
+            .date-box {
+                @include font-size(14);
+            }
+
+            &.active {
+                .date-box {
+                    @include font-size(18);
+                }
+            }
+        }
+    }
+}

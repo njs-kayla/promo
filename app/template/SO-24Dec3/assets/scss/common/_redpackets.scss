@@ -1,0 +1,37 @@
+.wrap {
+    width: 100%;
+    height: 50vh;
+    @include absolute(null, 0, null, 0)
+}
+
+.redpacket-item {
+    @include absolute(null, var(--redpacket-init), null, 0);
+    z-index: 2;
+    opacity: 0;
+}
+
+.redpacket--animated {
+    animation-name: redpacket-axis-and-flip;
+    animation-timing-function: ease-out;
+    animation-duration: var(--redpacket-duration);
+    animation-delay: var(--redpacket-delay);
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes redpacket-axis-and-flip {
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(calc(var(--redpacket-to-x)), calc(var(--redpacket-to-y)) );
+    }
+}

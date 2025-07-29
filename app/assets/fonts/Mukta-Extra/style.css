@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Mukta';
+    src: url('./Mukta-ExtraBold.woff2') format('woff2'),
+        url('./Mukta-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

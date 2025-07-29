@@ -1,0 +1,456 @@
+$block-max-width: 1200px;
+
+/* tournament list */
+
+$event-deco-width: to-rem(150);
+
+
+.tournament-block {
+    margin: 0 auto 0;
+    position: relative;
+    max-width: $block-max-width;
+    min-height: 400px;
+
+    @include RWD($smallWeb) {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    @include RWD($break_point) {
+        width: 85%;
+        z-index: 2;
+        margin-top: -20%;
+    }
+}
+
+.tournament-nav {
+    @include flex(center);
+    width: 85%;
+    margin: auto;
+    padding-right: 55px;
+
+    @include RWD($break_point) {
+        top: 0;
+        justify-content: center;
+    }
+}
+
+.tournament-tab {
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    @include flex(center);
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+    margin-right: -55px;
+    padding: 15px 0;
+    font-family: 'Poppins', '微软雅黑';
+    border-radius: 15px;
+
+    &:nth-child(1) {
+        z-index: 4;
+        background: linear-gradient(180deg, #139dff 0%, #006aff 100%);
+    }
+
+    &:nth-child(2) {
+        z-index: 3;
+        background: linear-gradient(180deg, #0077FF 0%, #001AFF 100%);
+    }
+
+    &:nth-child(3) {
+        z-index: 2;
+        background: linear-gradient(180deg, #0064DE 0%, #001BC4 100%);
+    }
+
+
+    &.active {
+        z-index: 5;
+
+        &::after {
+            content: "";
+            @include absolute(null, -25px, null, 0);
+            width: 30%;
+            aspect-ratio: 123 / 108;
+            background: url(/template/SP-25Aug/deco/day_btn.webp) no-repeat;
+            background-size: 100%;
+        }
+    }
+
+    .heading {
+        color: #FDE403;
+        letter-spacing: 0.2px;
+        filter: drop-shadow(0 4px 4px #464DDA80);
+        font-size: 16px;
+        @include flex(center);
+        transition: all 0.3s;
+        white-space: nowrap;
+        font-weight: bold;
+
+        @at-root .zh-CN #{&} {
+            font-weight: bold;
+        }
+
+        @at-root .ko-KR #{&} {
+            font-weight: bold;
+        }
+
+        @at-root .vi-VN #{&} {
+            font-family: 'Archivo Narrow';
+            font-weight: 700;
+        }
+
+        @at-root .th-TH #{&} {
+            font-family: 'Archivo Narrow';
+            font-weight: 700;
+        }
+
+        @at-root .sa-IN #{&} {
+            font-weight: bold;
+        }
+    }
+
+    .date-box {
+        color: #fff;
+        font-size: 14px;
+        @include flex(center);
+        gap: 5px;
+        font-weight: 600;
+    }
+
+    .triangle {
+        width: 0;
+        height: 0;
+        display: block;
+        border-style: solid;
+        border-width: 3px 0 3px 5px;
+        border-color: transparent transparent transparent #FFF;
+    }
+
+    &.disable {
+        cursor: not-allowed;
+        overflow: hidden;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    &:not(.active) {
+        .heading {
+            color: #FFFFFFBF !important;
+        }
+
+        .date-box {
+            color: #FFFFFF99 !important;
+        }
+    }
+
+    &:not(.active):not(.disable) {
+        @include desktopHover {
+            background: linear-gradient(180deg, #13B4FF 0%, #0088FF 100%);
+        }
+    }
+
+    @at-root .vi-VN #{&} {
+        &::after {
+            display: none;
+        }
+    }
+
+    &.mobile {
+        width: 100%;
+        align-items: flex-start;
+        height: 54px;
+        padding-left: 15px;
+        border-radius: 0;
+        box-shadow: none;
+        margin-bottom: 1px;
+        filter: none;
+        background: linear-gradient(180deg, #13B4FF 0%, #0088FF 100%);
+
+        &:not(.active) {
+            background: linear-gradient(180deg, #0077FF 0%, #001AFF 100%);
+
+            &:last-of-type {
+                border-radius: 0 0 5px 5px;
+            }
+        }
+
+        &:nth-child(1) {
+            border-radius: 5px 5px 0 0;
+        }
+
+        &::after {
+            display: none;
+        }
+
+        &:hover {
+            filter: none;
+        }
+
+        .date-box {
+            opacity: initial;
+            font-size: 12px;
+        }
+
+        .heading {
+            opacity: initial;
+            color: #FFF7C1;
+            font-size: 13px;
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+.disable-mask {
+    pointer-events: none;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: to-rem(10);
+    @include font-size(13);
+    line-height: 20px;
+    z-index: 2;
+    background: linear-gradient(90deg, #00000000 0%, #27507c86 5%, #164e8b 48%, #27507c86 95%, #00000000 100%);
+    @include RWD($break_point) {
+        @include absolute(0, 0);
+        height: 100%;
+        padding: 0;
+        @include flex(center);
+    }
+}
+
+.tournament-content {
+    text-align: center;
+    display: none;
+    position: relative;
+    margin-top: 30px;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 320px;
+        background: #EFE5DD;
+        @include absolute(-30%, 0);
+        z-index: -1;
+        border-radius: 15px;
+        box-shadow: 0px 3px 30px 0px #AE5D2740;
+    }
+
+    &.active {
+        display: block;
+    }
+
+    @at-root .mobile #{&} {
+        margin-top: 0px;
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.tournament-item {
+    position: relative;
+    @include flex(space-around, stretch);
+    min-height: 214px;
+    gap: 0px;
+    padding: 0 20px;
+}
+
+$date-item-border-radius: 15px;
+
+.date-item {
+    flex: 1;
+    @include flex(center);
+    flex-direction: column;
+    gap: 2px;
+    overflow: hidden;
+    font-family: 'Poppins';
+    letter-spacing: 1px;
+    position: relative;
+    max-width: 260px;
+
+    &::before {
+        content: "";
+        background: url(/template/SP-25Aug/deco/day_bg2.webp) no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+        @include absolute(50%, 50%);
+        transform: translate(-50%, -50%);
+    }
+
+
+    &:not(.active) {
+        filter: opacity(0.5);
+
+        &::before {
+            content: "";
+            background: url(/template/SP-25Aug/deco/day_bg.webp) no-repeat;
+            background-size: 100%;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            @include absolute(50%, 50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .date-content {
+            color: #FFFFFF;
+        }
+
+        .time-content {
+            font-size: 14px;
+        }
+    }
+}
+
+.date-content {
+    @include flex(center);
+    font-size: 16px;
+    line-height: 28px;
+    gap: 5px;
+    background: linear-gradient(180deg, #0077FF 0%, #001AFF 100%);
+    border-radius: 50px;
+    color: #FDE403;
+    font-weight: bold;
+    white-space: nowrap;
+    padding: 0 10px;
+    letter-spacing: 0.3px;
+    position: relative;
+    z-index: 2;
+    margin-top: 38px;
+
+    .triangle {
+        width: 0;
+        height: 0;
+        display: block;
+        border-style: solid;
+        border-width: 3px 0 3px 5px;
+        border-color: transparent transparent transparent #FFF;
+    }
+}
+
+.time-content {
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+    line-height: 30px;
+}
+
+.mobile .tournament-item {
+    opacity: 1;
+    flex-direction: column;
+    padding: 35px 0;
+    gap: 10px;
+    background: linear-gradient(180deg, rgba(255, 245, 236, 0.75) 70%, #FFF5EC 120%);
+    align-items: center;
+
+    &::after {
+        content: none;
+    }
+}
+
+.list-order {
+    width: 20%;
+    color: #FFF7C1;
+    font-size: 25px;
+    background: linear-gradient(180deg, #0077FF 0%, #001AFF 100%);
+    @include flex(center);
+    font-family: 'Poppins';
+    font-weight: 600
+}
+
+.mobile .date-item {
+    @include flex(flex-start, stretch);
+    flex-direction: row;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 90%;
+    background: #D9D9D9;
+    border-radius: 50px;
+    filter: none;
+
+    &::after {
+        content: none;
+    }
+
+    &::before {
+        content: none;
+    }
+
+    &.active-date {
+        opacity: 1;
+    }
+}
+
+.mobile .date-content {
+    @include flex(space-evenly);
+    flex: 1;
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: 600;
+    background: none;
+    font-family: 'Poppins';
+    padding: 10px 10px 10px 0px;
+    letter-spacing: 0px;
+    margin-top: 0;
+    color: #010A55 !important;
+
+    .triangle {
+        border-color: transparent transparent transparent #010A55;
+    }
+}
+
+.mobile .date-item-box {
+    font-size: 16px;
+    text-align: left;
+
+    .time {
+        display: block;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .gmt {
+        font-size: 10px;
+        margin-left: 3px;
+    }
+}
+
+.mobile .tournament-item-gmt {
+    @include absolute(0, 50%);
+    font-size: 11px;
+    line-height: 24px;
+    width: 76px;
+    color: #ffffff;
+    transform: translateX(-50%);
+    z-index: 2;
+    letter-spacing: 0.8px;
+    font-weight: 400;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 140%;
+        background: linear-gradient(180deg, #0077FF 0%, #001AFF 100%);
+        border-radius: 0 0 6px 6px;
+        transform: perspective(10px) rotateX(-5deg);
+        transform-origin: top;
+        z-index: -1;
+        @include absolute(-2px, 0);
+    }
+}

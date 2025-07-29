@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31.98" height="36" viewBox="0 0 31.98 36">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.71" y1="0.856" x2="0.289" y2="0.142" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e57d00"/>
+      <stop offset="1" stop-color="#fde403"/>
+    </linearGradient>
+    <filter id="Path_75" x="0" y="0" width="31.98" height="36" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.231"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-2" x1="0.733" y1="0.855" x2="0.273" y2="0.154" gradientUnits="objectBoundingBox">
+      <stop offset="0.25" stop-color="#fde403"/>
+      <stop offset="1" stop-color="#ea8d00"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.401" y1="0.252" x2="0.774" y2="1.187" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e5b000"/>
+      <stop offset="1" stop-color="#ffed48"/>
+    </linearGradient>
+  </defs>
+  <g id="no1" transform="translate(-6.01 4)">
+    <g id="r1" transform="translate(9.01 -2)" style="isolation: isolate">
+      <g id="_圖層_1">
+        <g id="Group_57" data-name="Group 57">
+          <g transform="matrix(1, 0, 0, 1, -3, -2)" filter="url(#Path_75)">
+            <path id="Path_75-2" data-name="Path 75" d="M12.99,0,0,7.5v15L12.99,30l12.99-7.5V7.5Zm7.23,19.17-7.23,4.17L5.76,19.17V10.83l7.23-4.17,7.23,4.17v8.35Z" transform="translate(3 2)" fill="url(#linear-gradient)"/>
+          </g>
+          <path id="Path_76" data-name="Path 76" d="M25.98,7.5,23.6,8.88l-.1,12.18,2.48,1.43V7.5Z" fill="#ea8d00" style="mix-blend-mode: multiply;isolation: isolate"/>
+          <path id="Path_77" data-name="Path 77" d="M2.48,8.92,0,7.5H0L12.99,0V2.85Z" fill="#fff" opacity="0.51" style="mix-blend-mode: overlay;isolation: isolate"/>
+          <path id="Path_78" data-name="Path 78" d="M12.99,2.85,2.48,8.92V21.06l10.51,6.07L23.5,21.06V8.92Zm8.36,16.97-8.36,4.83L4.63,19.82V10.16l8.36-4.82,8.36,4.83v9.66Z" fill="url(#linear-gradient-2)"/>
+          <path id="Path_79" data-name="Path 79" d="M4.63,19.82V10.16l8.36-4.82V2.85L2.48,8.92V21.06l10.51,6.07V24.65Z" fill="#ea8d00"/>
+          <path id="Path_80" data-name="Path 80" d="M22.43,20.44V9.54L12.99,4.09,3.55,9.54v10.9l9.44,5.45Z" fill="url(#linear-gradient-3)"/>
+          <path id="Path_81" data-name="Path 81" d="M4.02,9.69l8.95-5.1,9.46,5.35v-.4L12.99,4.09,3.55,9.54v10.9l.47.27Z" fill="#bd4500"/>
+        </g>
+      </g>
+    </g>
+    <path id="Path_99" data-name="Path 99" d="M1.4,0h-2V-6.836H-2.922V-8.162A8.636,8.636,0,0,0-1.63-8.285,1.822,1.822,0,0,0-.673-8.8a1.711,1.711,0,0,0,.383-.711,1.632,1.632,0,0,0,.075-.4H1.4Z" transform="translate(22 18)" fill="#212121"/>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'YouSheBiaoTiHei';
+    src: url('./YouSheBiaoTiHei.woff2') format('woff2'),
+        url('./YouSheBiaoTiHei.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

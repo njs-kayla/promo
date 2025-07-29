@@ -1,0 +1,57 @@
+.blossom-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+
+    img {
+        width: 100%;
+    }
+}
+
+@function random_range($min, $max) {
+    $rand: random();
+    $random_range: $min + floor($rand * (($max - $min) + 1));
+    @return $random_range;
+}
+
+[class^="flower"] {
+    $total: 120;
+    position: absolute;
+    width: 100px;
+
+    @for $i from 1 through $total {
+        $random-size: random_range(10, 25);
+        $random-x: clamp(-10vw, calc(random(80) * 1vw), 80vw);
+        $random-offset: random_range(-100000, 100000) * 0.0001vw;
+        $random-x-end: $random-x + $random-offset;
+        $random-x-end-yoyo: clamp(5vw, $random-x * 2, 120vw);
+        $random-yoyo-time: calc(random_range(30000, 80000) / 100000);
+        $random-yoyo-y: $random-yoyo-time * 100vh;
+        $random-rotation-x: random_range(-180, 180);
+        $random-rotation-y: random_range(-180, 180);
+        $random-rotation-z: random_range(-180, 180);
+        $fall-duration: random_range(12, 20) * 1s;
+        $fall-delay: random(30) * -1s;
+
+        &:nth-child(#{$i}) {
+            width: $random-size + px;
+            transform: translate($random-x, -100px) rotate3d($random-rotation-x, $random-rotation-y, $random-rotation-z, 0deg);
+            animation: fall-#{$i} $fall-duration $fall-delay linear infinite;
+        }
+
+        @keyframes fall-#{$i} {
+            #{percentage($random-yoyo-time)} {
+                transform: translate($random-x-end, $random-yoyo-y) rotate3d(0);
+            }
+
+            to {
+                transform: translate($random-x-end-yoyo, 100vh) rotate3d($random-rotation-x, $random-rotation-y, $random-rotation-z, 360deg);
+            }
+        }
+    }
+}

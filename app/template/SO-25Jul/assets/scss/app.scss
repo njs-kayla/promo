@@ -1,0 +1,8 @@
+@import '../../../../assets/scss/common/variable';
+
+[theme="SO-25Jul"] {
+    @import './common/style';
+    @import './common/animate';
+    @import './common/main';
+    @import './common/tournament';
+}

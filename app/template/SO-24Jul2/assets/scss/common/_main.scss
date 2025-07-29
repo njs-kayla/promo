@@ -1,0 +1,410 @@
+/* footer */
+footer {
+    @include flex(center);
+    background: #323070;
+    height: 48px;
+    position: relative;
+}
+
+.copy-right {
+    color: #FFFFFF;
+    text-align: center !important;
+    @include font-size(12);
+    opacity: 0.9;
+
+    @at-root .mobile #{&} {
+        @include font-size(13);
+    }
+}
+
+.nav-logo {
+    height: 30px;
+
+    @include RWD($mobile) {
+        height: 24px !important;
+    }
+}
+
+main {
+    margin-top: 54px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+/* banner */
+.banner {
+    width: 100%;
+    position: relative;
+}
+
+.bn-bg {
+    width: 100%;
+    position: relative;
+}
+
+.bn-title {
+    @include absolute(10%, 0);
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 41%;
+        position: relative;
+        margin: 0 auto;
+        @at-root .id-ID #{&} {
+            width: 35%;
+        }
+    }
+}
+
+.exclusive {
+    @include absolute(-2%, 28%);
+    width: 6.5%;
+    @at-root .id-ID #{&} {
+        @include absolute(-8%, 27.5%);
+        width: 19%;
+    }
+    img {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+.bn-money {
+    @include absolute(26%, 0);
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+
+    img {
+        width: 71%;
+        margin: 0 auto;
+        animation: pulse 1.5s ease-in-out infinite;
+    }
+}
+
+.mask-img {
+    width: 71%;
+    height: 100%;
+    transform: translateX(-50%);
+    @include absolute(0, 50%);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 45%, #ffffff 50%,
+            rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0));
+    background-size: 100%;
+    background-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    z-index: 3;
+    animation: shine 2s infinite;
+}
+
+.bn-date {
+    position: relative;
+    @include absolute(65%, 50%);
+    transform: translateX(-50%);
+    @include font-size(24);
+    font-family: 'Do Hyeon';
+    font-weight: 400;
+    width: 878px;
+    line-height: 40px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0px 2px 0px #29CA9A, 0px 1px 25px #00BC8E, 0px 6px 5px #0B0027;
+    background: linear-gradient(90deg, rgba(21, 32, 45, 0) 0%, rgba(21, 32, 45, 0.50505) 9.09%, rgba(21, 32, 45, 0.8) 27%, rgba(21, 32, 45, 0.8) 75.5%, rgba(21, 32, 45, 0.534653) 90.05%, rgba(21, 32, 45, 0) 100%);
+
+    .MD {
+        @include font-size(32);
+    }
+    @at-root .th-TH #{&} {
+        font-family: 'Kanit';
+    }
+    @at-root .vi-VN #{&} {
+        font-family: 'Kanit';
+    }
+
+    @include RWD($break_point) {
+        height: 57px;
+        @include flex(space-evenly);
+        flex-direction: column;
+        width: 100%;
+        @include absolute(76%, 50%);
+        @include font-size(18);
+        line-height: normal;
+        text-shadow: none;
+        .bn-date-span {
+            text-shadow: 0px 1.5px 0px #29CA9A, 0px 6px 5px #0B0027, 0px 1px 10px #00BC8E;
+        }
+        .bn-time {
+            display: block;
+            @include font-size(14);
+            filter: drop-shadow(0px 0px 5px #36DAB2);
+        }
+    }
+
+    @include RWD($smallMobile) {
+        @include font-size(16);
+    }
+}
+
+.role1,
+.role2 {
+    position: absolute;
+
+    img {
+        width: 100%;
+    }
+}
+
+.role2 {
+    @include absolute(22%, 22%);
+    width: 18%;
+}
+
+.role1 {
+    @include absolute(18%, null, 20%);
+    width: 18%;
+}
+
+/* index */
+.points-block {
+    margin-bottom: 5%;
+}
+
+.index {
+    position: relative;
+    padding-bottom: 3%;
+    width: 100%;
+    margin-top: -7.5vw;
+    &::after {
+        content: "";
+        width: 100%;
+        height: 300px;
+        background: url(/template/SO-24Jul2/deco/under_bg.webp);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        @include absolute(null, 0, null, 0);
+        pointer-events: none;
+    }
+    @include RWD($break_point) {
+        margin-top: -10vw;
+        padding-bottom: 10%;
+        &::after {
+            content: none;
+        }
+    }
+}
+
+.content-block {
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+
+    p {
+        font-family: 'Dubai';
+        color: #ffffff;
+        @include font-size(16);
+        line-height: 27px;
+        max-width: 680px;
+        margin: auto;
+        text-align: center;
+
+        @include RWD($mobile) {
+            width: 95%;
+            font-size: 14px;
+        }
+    }
+
+    @include RWD($break_point) {
+        padding-top: 10px;
+        margin-bottom: 30px;
+    }
+}
+%arrow {
+    content: "";
+    width: 60px;
+    height: 12px;
+    background: url(/template/SO-24Jul2/deco/img_arrow.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+h3 {
+    color: #52FCD6;
+    font-family: 'Do Hyeon';
+    font-weight: 400;
+    font-size: 30px;
+    margin: 0 auto 10px;
+    line-height: 38px;
+    width: fit-content;
+    padding: 0 70px;
+    position: relative;
+    text-shadow: 0px 0px 8px #52FCD6B2;
+    &::after {
+        @extend %arrow;
+        @include absolute(50%, null, 0);
+        transform: translateY(-50%);
+    }
+    &::before {
+        @extend %arrow;
+        @include absolute(50%, 0);
+        transform: translateY(-50%) scaleX(-1);
+    }
+    @at-root .th-TH #{&} {
+        font-family: 'Kanit';
+    }
+    @at-root .vi-VN #{&} {
+        font-family: 'Kanit';
+    }
+    @include RWD($break_point) {
+        font-size: 20px;
+    }
+    
+}
+.content {
+    width: 860px;
+    margin: auto;
+    font-size: 16px;
+    li {
+        font-family: 'Dubai';
+        color: #fff;
+        position: relative;
+        line-height: 27px;
+        font-weight: 400;
+        &::before {
+            content: "* ";
+        } 
+    }
+    @include RWD($break_point) {
+        width: 95%;
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
+
+
+/* info table */
+table {
+    width: 65%;
+    max-width: 640px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin: 60px auto 0;
+    font-family: 'Dubai';
+
+    @include RWD($mobile) {
+        width: 95%;
+        margin: 30px auto 0;
+    }
+
+    thead {
+        background-color: #323070;
+        background-image: linear-gradient(180deg, rgba(82, 252, 214, 0) 0%, rgba(82, 252, 214, 0.0276596) 29%, rgba(82, 252, 214, 0.0992658) 66%, rgba(82, 252, 214, 0.2) 100%);
+    }
+
+    tbody {
+        background: #ACB4CB;
+        tr {
+            &:nth-last-child(1) {
+                td {
+                    border-bottom: none;
+                }
+            }
+            border-bottom: solid 1px #8989b2;
+            td {
+                &:not(:nth-last-child(1)) {
+                    border-right: solid 1px #8989b2;
+                }
+            }
+        }
+    }
+
+    th {
+        color: #FFFFFF;
+        height: 45px;
+        font-weight: bold;
+        font-size: 16px;
+
+        &:nth-child(4) {
+            border-right: none;
+        }
+    }
+
+    td {
+        color: #3A384E;
+        text-align: center;
+        height: 38px;
+        font-size: 16px;
+        font-weight: 500;
+
+        &:nth-child(4) {
+            border-right: none;
+        }
+    }
+
+
+    @include RWD($mobile) {
+        th {
+            font-size: 14px;
+        }
+        td {
+            pointer-events: none;
+            font-size: 14px;
+        }
+    }
+}
+
+
+/* go top btn */
+.go-top-btn {
+    width: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    position: fixed;
+    bottom: 6vh;
+    right: calc((100% - $containerW) / 2 - 50px);
+    @include font-size(20);
+    color: #E8DEDE;
+    background: rgba(14, 14, 14, 0.5);
+    box-shadow: 0px 3px 4px #0000008B;
+    border: 1px solid #FFFFFF29;
+    border-radius: 8px;
+    @include flex(center);
+    opacity: 0;
+    pointer-events: none;
+    @extend %transition-03s;
+    z-index: 5;
+
+    &:hover {
+        background-color: rgba(14, 14, 14, 1);
+        border-color: #FFDDDD38;
+        color: #fff;
+
+        i {
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    @include RWD($smallWeb) {
+        right: 10px;
+    }
+
+    @include RWD($break_point) {
+        bottom: 2vh;
+        right: 10px;
+        width: 45px;
+    }
+}

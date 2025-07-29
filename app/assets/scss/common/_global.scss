@@ -1,0 +1,30 @@
+:where(html[theme="forbidden"]) body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  width: 100vw;
+
+  background: #eceff1;
+  font-family: Montserrat, sans-serif;
+}
+
+:where(html[theme="forbidden"]) .container {
+  width: 40vw;
+
+  @media screen and (max-width: 768px) {
+    width: 50vw;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 60vw;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 80vw;
+  }
+}
+:where(html[theme="forbidden"]) main {
+	overflow: visible;
+}

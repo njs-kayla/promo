@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'Kohinoor Bangla';
+    src: url('./KohinoorBangla-Semibold.woff2') format('woff2'),
+        url('./KohinoorBangla-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kohinoor Bangla';
+    src: url('./KohinoorBangla-Medium.woff2') format('woff2'),
+        url('./KohinoorBangla-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kohinoor Bangla';
+    src: url('./KohinoorBangla-Regular.woff2') format('woff2'),
+        url('./KohinoorBangla-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kohinoor Bangla';
+    src: url('./KohinoorBangla-Bold.woff2') format('woff2'),
+        url('./KohinoorBangla-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kohinoor Bangla';
+    src: url('./KohinoorBangla-Light.woff2') format('woff2'),
+        url('./KohinoorBangla-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Mada';
+    src: url('./Mada-SemiBold.woff2') format('woff2'),
+        url('./Mada-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+

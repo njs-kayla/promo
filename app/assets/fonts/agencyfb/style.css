@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "AgencyFB";
+    src: url("./AgencyFB-Bold.eot");
+    src: url("./AgencyFB-Bold.eot?#iefix") format("embedded-opentype"),
+        url("./AgencyFB-Bold.woff2") format("woff2"),
+        url("./AgencyFB-Bold.ttf") format("truetype"),
+        url("./AgencyFB-Bold.svg#agencyfb") format("svg");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,45 @@
+.wrap {
+    width: 80%;
+    height: 50vh;
+    transform: translateX(-50%);
+    @include absolute(8%, 50%);
+}
+
+.coin-item {
+    @include absolute(null, 50%, null, 0);
+    z-index: 2;
+    opacity: 0;
+    width: 100px;
+    aspect-ratio: 1/1;
+    background: url(/template/FO-24Aug/deco/coins.webp);
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+}
+
+.coin--animated {
+    animation-name: coin-axis-and-flip;
+    animation-timing-function: ease-out;
+    animation-duration: var(--coin-duration);
+    animation-delay: var(--coin-delay);
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes coin-axis-and-flip {
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(calc(var(--coin-to-x)), calc(var(--coin-to-y)) ) rotate3d(1, 1, 1, 1080deg);
+        width: 50px;
+    }
+}

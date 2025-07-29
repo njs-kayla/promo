@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Dread Ringer Expanded';
+    src: url('./DreadRingerExpandedItalic.woff2') format('woff2'),
+        url('./DreadRingerExpandedItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+

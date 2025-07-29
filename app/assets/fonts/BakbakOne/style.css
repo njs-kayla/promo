@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Bakbak One';
+    src: url('./BakbakOne-Regular.woff2') format('woff2'),
+        url('./BakbakOne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

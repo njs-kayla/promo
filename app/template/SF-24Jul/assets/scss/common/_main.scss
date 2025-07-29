@@ -1,0 +1,1013 @@
+header {
+    &.SG {
+        background: #082d9aca;
+        box-shadow: 0px 1px 6px #0000004d;
+    }
+}
+
+/* footer */
+footer {
+    @include flex(center);
+    background: #00000080;
+    height: 48px;
+    z-index: 1;
+    position: relative;
+}
+
+.copy-right {
+    color: #fff;
+    opacity: 0.8;
+    @include font-size(12);
+}
+
+/* banner */
+
+.banner {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    @at-root .mobile #{&} {
+        margin-top: 20px;
+    }
+}
+
+.bn-bg {
+    width: 100%;
+    z-index: -1;
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+}
+
+.bn-money {
+    width: 100%;
+    @include absolute(42%, 0);
+    z-index: 2;
+    pointer-events: none;
+
+    img {
+        width: 50%;
+        margin: 0 auto;
+        animation: slogan 4s linear 1.6s infinite;
+    }
+}
+
+.bn-title {
+    width: 100%;
+    @include absolute(4%, 0);
+    transform: scaleY(0);
+
+    img {
+        width: 47%;
+        margin: 0 auto;
+    }
+}
+
+.bn-tag {
+    width: 20%;
+    @include absolute(35%, null, 10%);
+
+    img {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.dragon {
+    @include absolute(14%, 5%);
+    width: 24%;
+
+    img {
+        width: 100%;
+    }
+}
+
+
+.bn-date {
+    @include font(18, 20);
+    color: #fff;
+    text-align: center;
+    @include absolute(73%, 50%);
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, rgba(2, 45, 128, 0) 0%, #082C9A 20%, #082C9A 80%, rgba(2, 45, 128, 0) 100%);
+    width: 60%;
+    height: 70px;
+    @include flex(space-evenly);
+    flex-direction: column;
+    font-weight: 700;
+
+    .bn-date-time {
+        @include flex(center);
+        gap: 8px;
+    }
+
+    strong {
+        color: #FFEB00;
+        font-weight: 700;
+    }
+
+    .triangle {
+        width: 0;
+        height: 0;
+        display: block;
+        border-style: solid;
+        border-width: 5px 0 5px 8px;
+        border-color: transparent transparent transparent #FFEB00;
+    }
+
+    .gmt {
+        display: block;
+        font-size: 14px;
+        font-family: 'Roboto';
+    }
+    @at-root .mobile #{&} {
+        @include absolute(65%, 50%);
+        @include font(14, 13);
+        height: 36px;
+        width: 100%;
+        .bn-date-time {
+            gap: 5px;
+        }
+        .triangle {
+            border-width: 3px 0 3px 5px;
+        }
+    }
+}
+
+/* index */
+main {
+    z-index: 0;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    background: #021033;
+    &::after {
+        content: '';
+        background: url(/template/SF-24Jul/banner_img/bg.webp);
+        background-position: bottom;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        @include absolute(0, 0);
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+    }
+    @at-root .mobile #{&} {
+        &::after {
+            content: none;
+        }
+    }
+}
+
+.index {
+    padding-bottom: to-rem(80);
+    position: relative;
+    z-index: 5;
+
+    h2,
+    h3,
+    h4 {
+        @include font(18, 44, bold);
+        color: #EFE256;
+        margin: 0 auto to-rem(32);
+        text-align: center;
+        text-shadow: 0px 0px 6px #000000CC;
+        max-width: 480px;
+        background: linear-gradient(90deg, rgba(3, 37, 102, 0) 0%, #03438F 30%, #03438F 70%, rgba(3, 37, 102, 0) 100%);
+
+    }
+
+    @at-root .mobile #{&} {
+
+        h2,
+        h3,
+        h4 {
+            @include font(18, 38, bold);
+            width: 100%;
+        }
+
+        background: none;
+    }
+}
+
+.list-icon {
+    display: inline-block;
+    width: to-rem(20);
+}
+
+/* tournament list */
+$block-max-width: 984px;
+$tournamentTab_borderRadius: 20px;
+$tournamentTab_borderRadius_Mob: 5px;
+$tournament_bg: #1c1c1c;
+
+.tournament-block {
+    max-width: $block-max-width;
+    margin: -4vw auto 0;
+    border-radius: $tournamentTab_borderRadius;
+    position: relative;
+    background: linear-gradient(180deg, rgba(33 36 48 / 15%) 0%, rgb(11 42 97 / 35%) 100%);
+
+    @at-root .mobile #{&} {
+        margin: -40vw auto 0;
+        width: 95%;
+        background: #02013d68;
+    }
+}
+
+.tournament-nav {
+    @include flex(center, end);
+    gap: 1px;
+    border-radius: $tournamentTab_borderRadius;
+    overflow: hidden;
+}
+
+.tournament-tab {
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    @include flex(center);
+    flex-direction: column;
+    height: 77px;
+    gap: to-rem(5);
+    position: relative;
+    @extend %transition-03s;
+    z-index: 1;
+
+    >* {
+        z-index: 1;
+    }
+
+    .heading {
+        color: #F3E601;
+        text-shadow: 0px 0px 5px #000000CC;
+        font-weight: 900;
+        @include font-size(18);
+        @include flex(center);
+        gap: 8px;
+    }
+
+    .date {
+        @include font-size(16);
+        display: inline-block;
+    }
+
+    .date-box {
+        @include flex(center);
+        gap: 7px;
+        font-weight: 400;
+    }
+
+    .triangle {
+        width: 0;
+        height: 0;
+        display: block;
+        border-style: solid;
+        border-width: 3px 0 3px 5px;
+        border-color: transparent transparent transparent #FFF;
+    }
+
+    &:not(.active, .disable):hover {
+        filter: brightness(1.4);
+    }
+
+    &:not(.active) {
+        background: linear-gradient(180deg, #013F89 0%, #02105C 100%);
+
+    }
+
+    &.active {
+        background: linear-gradient(180deg, #28A9F5 0%, #0135D8 100%);
+    }
+
+    &.mobile {
+        width: 100%;
+        align-items: flex-start;
+        height: 54px;
+        padding-left: 20px;
+        padding-right: 40px;
+        margin-bottom: 1px;
+        border-radius: 0;
+
+        &::after {
+            content: "";
+            @include flex(center);
+            @include absolute(50%, null, 16px);
+            background: url(/template/SF-24Jul/deco/arrow.svg);
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 16px;
+            aspect-ratio: 1/1;
+            transition: transform ease-in 0.3s;
+            transform: translateY(-50%);
+            color: #fbf625;
+        }
+
+        &:not(.active) {
+            background: #34363B;
+        }
+
+        &:not(.active, .disable):hover {
+            filter: brightness(1);
+        }
+
+        &:nth-child(1) {
+            border-radius: 5px 5px 0 0;
+        }
+
+        .date-box {
+            opacity: initial;
+        }
+
+        .heading {
+            opacity: initial;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &.active {
+            margin-bottom: initial;
+
+            &::after {
+                transform: translateY(-50%) scaleY(-1);
+            }
+        }
+    }
+
+    &.disable {
+        filter: brightness(0.5);
+        cursor:not-allowed;
+    }
+}
+
+.disable-mask {
+    display: block;
+    pointer-events: none;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    @include font(13, 25);
+    z-index: 2;
+    background: linear-gradient(90deg, #00000000 0%, #221a0b2e 5%, #7c5f27 48%, #221a0b2f 95%, #00000000 100%);
+}
+
+.tournament-content {
+    text-align: center;
+    color: #fff;
+    @extend %transition-02s;
+    display: none;
+    z-index: 1;
+    position: relative;
+
+    &.active {
+        display: block;
+    }
+
+    @at-root .mobile #{&} {
+        display: block;
+        max-height: 0;
+        overflow: hidden;
+
+        &.active {
+            @extend %transition-03s;
+            max-height: 1000px;
+        }
+    }
+}
+
+.tournament-item-gmt {
+    @include absolute(0, 50%);
+    font-size: 11px;
+    line-height: 24px;
+    width: 76px;
+    color: #ffffff;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 120%;
+        background: #032FB5;
+        border-radius: 0 0 6px 6px;
+        transform: perspective(10px) rotateX(-5deg);
+        transform-origin: top;
+        z-index: -1;
+        @include absolute(0, 0);
+    }
+}
+
+.tournament-item {
+    padding: 1rem 1% 110px;
+    display: inline-block;
+    position: relative;
+    @include flex(space-evenly, center);
+    gap: 10px;
+
+    &::after {
+        content: "";
+        width: 118%;
+        height: 142px;
+        background: url(/template/SF-24Jul/deco/img_weekBG.webp);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        @include absolute(null, -9%, null, 0);
+    }
+
+    >div {
+        flex: 1;
+    }
+}
+
+.mobile .tournament-item {
+    opacity: 1;
+    flex-direction: column;
+    padding: 35px 0;
+    gap: 10px;
+
+    &::after {
+        content: none;
+    }
+
+    .tournament-item-gmt {
+        display: block;
+        font-size: 11px;
+    }
+}
+
+.list-order {
+    min-height: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    @include font(20, 28);
+    color: #F3E601;
+    text-shadow: 0px 0px 5px #000000CC;
+
+    .number {
+        display: inline-block;
+        margin-left: 0.25em;
+    }
+
+    .time {
+        display: block;
+        color: #fff;
+        @include font(14, 16);
+        font-weight: 400;
+        letter-spacing: 1.2px;
+    }
+}
+
+.mobile .list-order {
+    width: 60px;
+    text-align: center;
+    @include flex(center);
+    background: linear-gradient(180deg, #2991E1 0%, #5326D4 100%);
+
+    .number {
+        font-size: 25px;
+        display: block;
+        text-align: center;
+        margin-right: 0px;
+    }
+
+    .round {
+        font-size: 1rem;
+    }
+}
+
+.date-item {
+    flex: 1;
+    font-size: 1rem;
+    font-weight: bold;
+    max-width: to-rem(184);
+    min-height: to-rem(198);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: url(/template/SF-24Jul/deco/img_dateBG.webp);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        @include absolute(0, 0);
+        z-index: -1;
+    }
+    &.disable {
+        filter: grayscale(1);
+    }
+
+    .date-dash {
+        transform: rotate(90deg);
+        display: inline-block;
+        font-size: 25px;
+    }
+}
+
+.mobile .date-item {
+    @include flex(center);
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 90%;
+    min-height: 0px;
+    max-height: 54px;
+    background: #D9D9D9;
+
+    &::after {
+        content: none;
+    }
+
+    .date-dash {
+        transform: initial;
+        font-size: 15px;
+    }
+
+    &.active-date {
+        opacity: 1;
+    }
+}
+
+.date-content {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    padding: 0 0 to-rem(20);
+    color: #FFFFFF;
+    filter: drop-shadow(0px 2px 2px #00000080);
+    font-size: 35px;
+
+
+    @at-root .mobile #{&} {
+        padding: 0;
+        @include flex(space-evenly);
+        color: #010A55;
+        filter: drop-shadow(0px 0px 0px #00000080);
+    }
+}
+
+.date-item-box {
+    @include font-size(28);
+    line-height: to-rem(25);
+
+    .date {
+        display: inline-block;
+    }
+
+    .time {
+        display: inline-block;
+    }
+}
+
+.mobile .date-item-box {
+    min-width: 70px;
+    font-size: 14px;
+    line-height: 20px;
+
+    .date {
+        display: block;
+    }
+
+    .time {
+        display: block;
+        font-weight: 400;
+        font-size: 12px;
+    }
+
+    .gmt {
+        font-size: 10px;
+        margin-left: 3px;
+    }
+}
+
+.tournament-info {
+    text-align: center;
+    width: 100%;
+    color: #25FFE5;
+    @include absolute(null, 0, null, 0);
+    line-height: 55px;
+    font-size: 13px;
+
+    @at-root .mobile #{&} {
+        position: static;
+        font-size: 11px;
+        line-height: 16px;
+        text-align: left;
+        margin-top: 6px;
+        color: #FFFFFF;
+    }
+}
+
+.event-rules {
+    color: #F3E601;
+    font-size: 12px;
+}
+
+.tournament-text {
+    @at-root .mobile #{&} {
+        padding: 15px 20px;
+        background: linear-gradient(0deg, #263047 0%, #414F5D 100%);
+        border-radius: 0 0 5px 5px;
+    }
+}
+
+/* points table*/
+.points-block {
+    table {
+        width: 100%;
+        text-align: center;
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
+
+    .table,
+    .points-colume-table {
+        max-width: to-rem(1000);
+        margin: 0 auto to-rem(70);
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .box:nth-child(1) {
+        background: #1523d6;
+        height: 38px;
+        @include flex(center);
+        gap: 0.5em;
+        border-bottom: solid 1px var(--bg);
+        border-radius: 10px 10px 0 0;
+
+        .head,
+        .value {
+            display: inline;
+            height: initial;
+            background: initial;
+            color: #ececec;
+            flex: initial;
+            border: none;
+            @include font(15);
+            line-height: 38px;
+        }
+
+        .head {
+            &::after {
+                content: ":";
+            }
+        }
+    }
+    .box:nth-last-child(1) {
+        border-radius: 0 0 10px 0;
+        overflow: hidden;
+    }
+    .box:nth-last-child(2) {
+        border-radius: 0 0 0 10px;
+        overflow: hidden;
+    }
+
+
+    th,
+    .head {
+        grid-column: 2 span;
+        text-align: center;
+        background: #035bc0;
+        color: #f5f0f0;
+        height: 40px;
+        @include font-size(15);
+    }
+
+    td,
+    .value {
+        @include font-size(13);
+        height: 40px;
+        background: #011b6f;
+        color: #fff;
+    }
+}
+
+/* currency table */
+$th-h: 60px;
+.currency-block {
+    position: relative;
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 10px;
+        overflow: hidden;
+        color: #000000;
+    }
+
+    .curr-table {
+        position: relative;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+
+        th:nth-child(1) {
+            width: to-rem(62);
+        }
+
+        thead {
+            background: linear-gradient(180deg, #0188DC 0%, #0C3BB5 100%);
+            z-index: 1;
+            position: relative;
+
+            &:first-child {
+                tr {
+                    th {
+                        &:last-child {
+                            @include font-size(15);
+                        }
+                    }
+                }
+            }
+        }
+
+        th {
+            height: to-rem(40);
+            border: solid 1px #00000029;
+            @include font-size(14);
+            color: #ffffff;
+        }
+
+        tbody {
+            background: #c8d5d8;
+
+            tr {
+                @extend %transition-015s;
+
+                &:nth-of-type(even) {
+                    background: #d9e6ea;
+                }
+
+                &:hover {
+                    background-color: #88b5d968;
+                }
+            }
+        }
+
+        td {
+            @include font-size(13);
+            border-width: 0 1px 0 1px;
+            border-style: solid;
+            border-color: #bbb;
+            height: to-rem(40);
+            text-align: center;
+            position: relative;
+            transition: all 0.2s;
+            z-index: 0;
+
+            &:hover {
+                color: #934DEC;
+                font-weight: bold;
+                font-size: 14px;
+
+                &::after {
+                    content: "";
+                    height: 1000vh;
+                    width: 100%;
+                    background: #88b5d968;
+                    @include absolute(-100vh, 0);
+                    pointer-events: none;
+                    z-index: -1;
+                }
+            }
+
+        }
+
+        %td_img {
+            color: transparent;
+            background-position: center;
+            background-size: 28px;
+            background-repeat: no-repeat;
+        }
+
+        @at-root .mobile #{&} {
+            table-layout: fixed;
+
+            .table-index {
+                width: auto;
+            }
+
+            %td_img {
+                background-size: 22px;
+            }
+
+            td:after {
+                display: none;
+            }
+
+            td {
+                font-size: 1rem;
+                pointer-events: none;
+            }
+
+            th {
+                width: 50%;
+                height: $th-h;
+                border: none;
+                font-size: 13px;
+                &:nth-child(1) {
+                    width: 20%;
+                }
+
+                .flex-box {
+                    width: 100%;
+                    font-size: 13px;
+                    @include flex(space-evenly, center);
+                }
+            }
+        }
+    }
+}
+
+.curr-table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.currency-select {
+    z-index: 5;
+
+    .list {
+        @include absolute($th-h, 0);
+        background: #ffffff;
+        box-shadow: 0px 3px 8px #0000005c;
+        border-radius: 5px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 16px;
+        gap: 16px;
+        max-height: 0;
+        width: 100%;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        @extend %transition-02s;
+
+        li {
+            padding: 6px;
+            @include font-size(16);
+            color: #000000b3;
+            white-space: nowrap;
+            text-align: center;
+
+            &.active {
+                color: #c4801b;
+            }
+        }
+
+        &.active {
+            pointer-events: initial;
+            opacity: 1;
+            max-height: 1000px;
+            padding: 16px;
+        }
+    }
+
+    .default {
+        height: 30px;
+        padding: 0 5px;
+        color: #feffc3;
+        background: #0554ab;
+        border: 1px solid #5493ca;
+        border-radius: 5px;
+        @include flex(center);
+        @include font-size(15);
+        gap: 10px;
+        text-align: center;
+        position: relative;
+        z-index: 3;
+
+        &::after {
+            content: "";
+            width: 0;
+            height: 0;
+            display: block;
+            border-style: solid;
+            border-width: 8px 5px 0 5px;
+            border-color: #FFF transparent transparent transparent;
+        }
+
+    }
+}
+
+/* go top btn */
+.go-top-btn {
+    width: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    position: fixed;
+    bottom: 6vh;
+    right: calc((100% - $containerW) / 2 - 50px);
+    @include font-size(20);
+    color: #fff;
+    background: #062e5e;
+    box-shadow: 0px 3px 4px #0000008b;
+    border: 1px solid #0a5ebf;
+    border-radius: 8px;
+    @include flex(center);
+    opacity: 0;
+    pointer-events: none;
+    @extend %transition-03s;
+    z-index: 2;
+
+    &:hover {
+        background: #0a5ebf;
+
+        i {
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    @include RWD($smallWeb) {
+        right: 10px;
+    }
+
+    @include RWD($break_point) {
+        bottom: 2vh;
+        right: 10px;
+        width: 45px;
+    }
+}
+
+/* T&C */
+.btn-more {
+    background: #0f3d9a;
+    border: 1px solid #2760d3;
+    color: #fff;
+
+    &:hover {
+        filter: brightness(1.2);
+    }
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    @include flex(center);
+    flex-direction: column;
+}
+
+/* game list */
+.game-list-block {
+    background: url(/template/SF-24Jul/bg/img_AvailableGamesBG.webp) no-repeat center/contain;
+    margin: to-rem(70) 0;
+
+    p {
+        @include flex(center);
+        gap: 4%;
+        max-width: to-rem(1000);
+        margin: to-rem(50) auto 0;
+    }
+
+    @at-root .mobile #{&} {
+        padding: initial;
+        background: none;
+
+        p {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: to-rem(10);
+            row-gap: to-rem(30);
+            margin: initial;
+        }
+    }
+
+    img {
+        flex: 1;
+        max-width: to-rem(216);
+        justify-self: center;
+        filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.4));
+    }
+}

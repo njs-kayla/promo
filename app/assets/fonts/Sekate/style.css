@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Sekate';
+    src: url('./Sekate.eot');
+    src: url('./Sekate.eot?#iefix') format('embedded-opentype'),
+        url('./Sekate.woff2') format('woff2'),
+        url('./Sekate.ttf') format('truetype'),
+        url('./Sekate.svg#Sekate') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

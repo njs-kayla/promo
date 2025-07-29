@@ -1,0 +1,493 @@
+
+header {
+    height: 54px;
+    top: 0;
+    z-index: 8;
+}
+
+/* footer */
+footer {
+    @include flex(center);
+    background: #0E0046;
+    height: 48px;
+    font-family: "Roboto";
+}
+
+.copy-right {
+    color: #fff;
+    opacity: 0.8;
+    @include font-size(12);
+}
+
+body {
+    font-family: 'Roboto';
+}
+
+/* banner */
+.banner {
+    width: 100%;
+    position: relative;
+    margin-top: 54px;
+
+    @at-root .mobile #{&} {
+        width: 100%;
+        height: auto;
+        min-height: 30vh;
+    }
+}
+
+.bn-bg {
+    width: 100%;
+    @at-root .mobile #{&} {
+        width: 100%;
+    }
+}
+.logo-area {
+    @include absolute(5%, 50%) ;
+    transform: translateX(-50%);
+    width: 26%;
+}
+.logo {
+    width: 100%;
+}
+.sparkles {
+    @include absolute(38%, 50%);
+    transform: translate(-50%, -50%);
+    width: 60%;
+    animation: light 3s infinite ease-in-out;
+}
+// title-area
+.title-area {
+    @include absolute(15%, 50%) ;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 30vw;
+    z-index: 2;
+}
+.bn-title {
+    width: 100%;
+    @include absolute(unset, 0, unset, 0)
+}
+.role-group {
+    @include flex(center, flex-end);
+    @include absolute(0, 50%);
+    transform: translateX(-50%);
+    width: 90%;
+    z-index: -1;
+    img {
+        position: relative;
+        height: auto; 
+    }
+}
+.cowboy_L {
+    top: 15px;
+    left: 170px;
+    z-index: 1;
+    width: 40%;
+}
+.cat {
+    z-index: 2;
+    width: 33%;
+    left: 60px;
+}
+
+.cowboy_R {
+    right: 95px;
+    z-index: 1;
+    width: 55%;
+}
+@include RWD($laptop) {
+    .cowboy_L {
+        top: 15px;
+        left: 120px;
+    }
+    .cat {
+        left: 35px;
+    }
+    
+    .cowboy_R {
+        right: 50px;
+    }
+}
+
+/* heading date*/
+.bn-date-heading {
+    display: block;
+    text-align: center;
+    font-family: 'Rodfat Two Demo';
+    @include font-size(38);
+    line-height: to-rem(65);
+    color: #FFFA88;
+    text-shadow: 0px 3px 4px #000000BC;
+    .small {
+        @include font-size(28);
+    }
+    @include RWD($break_point) {
+        @include font-size(36);
+        font-weight: normal;
+        .small {
+            @include font-size(26);
+        }
+    }
+
+}
+.ko-KR .bn-date-heading {
+    font-family: 'BM HANNA';
+    font-weight: normal;
+    @include RWD($break_point) {
+        @include font-size(30);
+    }
+}
+.ko-KR .gmt {
+    font-family: 'BM HANNA';
+    font-weight: normal;
+}
+.gmt {
+    color: #FFFFFF;
+    text-shadow: 0px 3px 4px #000000BC;
+    font-family: 'Rodfat Two Demo';
+    text-align: center;
+    display: block;
+    @include font-size(28);
+}
+.bn-time {
+    color: #FFFFFF;
+    font-family: 'Rodfat Two Demo';
+    text-align: center;
+    font-weight: normal;
+    @include font-size(26);
+    span {
+        @include font-size(16);
+    }
+    .gmt {
+        @include font-size(16);
+        display: inline;
+        margin-left: 10px;
+    }
+}
+.bn-date {
+    @include RWD($break_point) {
+        margin-top: 35px;
+    }
+}
+
+/* index */
+main {
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(/template/FO-24Apr3/web_content_bg.webp) no-repeat;
+        background-position: bottom center;
+        opacity: 0.25;
+        z-index: -1;
+    }
+}
+.container {
+    padding: 0 10px;
+}
+
+.index {
+    position: relative;
+    z-index: 2;
+    margin-top: -11%;
+    margin-bottom: to-rem(90);
+    @extend .container;
+    @at-root .mobile #{&} {
+        margin-top: -32%;
+    }
+}
+
+%text {
+    @include font-size(15);
+    color: #D9DBDB;
+    line-height: to-rem(30);
+    margin: 0 auto to-rem(25);
+    text-align: center;
+    font-family: "Roboto";
+    max-width: 85%;
+    @include RWD($break_point) {
+        max-width: 100%;
+        @include font-size(12);
+    }
+}
+
+.points-block {
+    margin: to-rem(100) auto;
+    min-height: 100px;
+    p {
+        @extend %text;
+    }
+    @include RWD($break_point) {
+        margin: to-rem(80) auto;
+    }
+}
+h3 {
+    @include font-size(26);
+    text-align: center;
+    font-family: 'Rodfat Two Demo';
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: to-rem(32);
+    color: #F2BE4B;
+    margin-bottom: to-rem(25);
+    @include RWD($break_point) {
+        @include font-size(20);
+    }
+}
+.ko-KR h3 {
+    font-family: 'BM HANNA';
+    font-weight: normal;
+    @include font-size(30);
+    letter-spacing: 2px;
+    @include RWD($break_point) {
+        @include font-size(24);
+    }
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: to-rem(40) auto to-rem(80);
+    overflow: hidden;
+    @include font-size(14);
+    position: relative;
+    text-align: center;
+    table-layout: fixed;
+    font-family: sans-serif;
+    th {
+        height: to-rem(50);
+        border: none;
+        &.key {
+            width: 20%;
+        }
+    }
+    thead {
+        position: relative;
+        background: transparent linear-gradient(90deg, #2A0490 0%, #4A2E90 30%, #290390 100%) 0% 0% no-repeat padding-box;
+        color: #C5C3FF;
+        text-transform: uppercase;
+    }
+
+    tbody {
+        background: #1A035B;
+    }
+    tr {
+        &:first-child {
+            td {
+                &:last-child {
+                    border-right: none;
+                }
+                &:nth-child(n + 3) {
+                    border-bottom: none;
+                }
+            }
+        }
+        &:last-child {
+            td {
+                border-bottom: none;
+            }
+        }
+    }
+
+    td {
+        text-align: center;
+        height: to-rem(42);
+        color: #FFF;
+        font-weight: 600;
+        border-right: 1px solid #39188F;
+        border-bottom: 1px solid #39188F;
+    }
+}
+@include RWD($break_point) {
+    .ko-KR {
+        .table {
+            writing-mode: sideways-rl;
+        }
+        table {
+            transform: scaleX(-1);
+            th, td {
+                transform: scaleX(-1);
+                writing-mode: horizontal-tb;
+                width: 30%;
+                padding: 0 3%;
+                line-height: 1.2rem;
+            }
+        }
+    }
+    .table {
+        writing-mode: vertical-rl;
+    }
+    table {
+        transform: scaleX(-1);
+        @include font-size(13);
+        line-height: 1rem;
+        margin: to-rem(40) auto to-rem(15);
+        th, td {
+            height: 5rem;
+            width: 50%;
+            text-align: center;
+            transform: rotate(90deg) scaleX(-1);
+        }
+        thead {
+            color: #C5C3FF;
+            width: 30vw;
+            background: transparent linear-gradient(to top, #2A0490 0%, #4A2E90 30%, #290390 100%) 0% 0% no-repeat padding-box;
+        }
+        tbody {
+            width: 60vw;
+        }
+        tr {
+            &:first-child {
+                td {
+                    &:last-child {
+                        border-right: 1px solid #39188F;
+                    }
+                    &:nth-child(n + 3) {
+                        border-bottom: 1px solid #39188F;
+                    }
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+            &:last-child {
+                td {
+                    border-bottom: 1px solid #39188F;
+                }
+            }
+        }
+    }
+}
+h4 {
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 10px #FF00FF;
+    font-family: 'Rodfat Two Demo', 'Impact';
+    font-weight: normal;
+    @include font-size(24);
+    line-height:  to-rem(40);
+    -webkit-text-stroke: 1px #A700FF;
+    strong {
+        display: block;
+        font-weight: normal;
+        @include font-size(40);
+        text-shadow: 2px 2px 10px #FF00FF;
+    }
+    @include RWD($break_point) {
+        @include font-size(20);
+        strong {
+            @include font-size(28);
+        }
+    }
+}
+.ko-KR h4 {
+    font-family: 'BM HANNA';
+    font-weight: normal;
+    @include font-size(28);
+    letter-spacing: 2px;
+    strong {
+        @include font-size(42);
+    }
+    @include RWD($break_point) {
+        @include font-size(22);
+        strong {
+            @include font-size(36);
+        }
+    }
+}
+/* info */
+.title {
+    @include font-size(26);
+    text-align: center;
+    font-family: 'Rodfat Two Demo';
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: to-rem(32);
+    color: #F2BE4B;
+    margin-bottom: to-rem(25);
+    font-family: 'Rodfat Two Demo', 'Impact';
+    @include RWD($break_point) {
+        @include font-size(20);
+    }
+}
+.content {
+    color: #D9DBDB;
+    @include font-size(15);
+    line-height: to-rem(30);
+    font-family: "Roboto";
+    width: 90%;
+    margin: auto;
+    @include RWD($break_point) {
+        @include font-size(12);
+        width: 100%;
+    }
+}
+
+.content li {
+    list-style: decimal;
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+    padding-left: 0.5em;
+}
+/* go top btn */
+.go-top-btn {
+    width: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    position: fixed;
+    bottom: 6vh;
+    right: calc((100% - $containerW) / 2 - 100px);
+    @include font-size(20);
+    color: #E8DEDE;
+    background: rgba(14, 14, 14, 0.5);
+    box-shadow: 0px 3px 4px #0000008B;
+    border: 1px solid #FFFFFF29;
+    border-radius: 8px;
+    @include flex(center);
+    opacity: 0;
+    pointer-events: none;
+    @extend %transition-03s;
+    z-index: 4;
+
+    &:hover {
+        background-color: rgba(14, 14, 14, 1);
+        border-color: #FFDDDD38;
+        color: #fff;
+
+        i {
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    @include RWD($smallWeb) {
+        right: 10px;
+    }
+
+    @include RWD($break_point) {
+        bottom: 2vh;
+        right: 10px;
+        width: 45px;
+    }
+}
+
+/* T&C */
+.btn-more {
+    background: #FFFFFF17;
+    border: 1px solid #FFFFFF1f;
+    color: #BCBCBC;
+
+    &:hover {
+        background: #FFFFFF3B;
+        color: #fff;
+    }
+}

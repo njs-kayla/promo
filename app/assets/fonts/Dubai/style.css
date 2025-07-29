@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Dubai';
+    src: url('./Dubai-Bold.woff2') format('woff2'),
+        url('./Dubai-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dubai';
+    src: url('./Dubai-Regular.woff2') format('woff2'),
+        url('./Dubai-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dubai';
+    src: url('./Dubai-Medium.woff2') format('woff2'),
+        url('./Dubai-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+

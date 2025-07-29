@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Noto Serif Tamil';
+    src: url('./NotoSerifTamil-Black.woff2') format('woff2'),
+        url('./NotoSerifTamil-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+

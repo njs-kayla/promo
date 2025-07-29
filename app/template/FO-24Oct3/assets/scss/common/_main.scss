@@ -1,0 +1,507 @@
+/* footer */
+footer {
+    @include flex(center);
+    background: #11145799;
+    height: 48px;
+    position: relative;
+}
+
+.copy-right {
+    color: #FFFFFF;
+    opacity: 0.6;
+    text-align: center !important;
+    @include font-size(12);
+
+    @at-root .mobile #{&} {
+        @include font-size(13);
+    }
+}
+
+header {
+    &.FS {
+        background: rgba($color: #000000, $alpha: 0.25);
+        box-shadow: 0px 0px 0px #0000004d;
+    }
+
+    .nav-logo {
+        background: url(/template/FO-24Oct3/logo_fs.svg) center no-repeat !important;
+    }
+}
+
+main {
+    position: relative;
+    overflow: hidden;
+}
+
+/* banner */
+.banner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    transition: transform 0.8s, filter 1.2s;
+    &.active {
+        transform: translateY(-30px);
+        filter: brightness(0.5) opacity(0);
+    }
+    @at-root .mobile #{&} {
+        height: auto;
+        z-index: 2;
+    }
+}
+
+.bn-bg {
+    width: 100%;
+    height: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-fit: cover
+    }
+}
+
+.bn-money {
+    @include absolute(62vh, 0);
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+    img {
+        width: 45%;
+        margin: auto;
+        animation: flicker 4s infinite;
+    }
+}
+%gradient {
+    background-image: linear-gradient(to bottom, #FFAA00, #FFF200);
+    color: transparent;
+    background-clip: text;
+}
+
+.bn-date {
+    @include absolute(81vh, 0);
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    font-size: 30px;
+    letter-spacing: 0.6px;
+    line-height: 28px;
+    filter: drop-shadow(0px 3px 5px #1B0600);
+    font-weight: bold;
+    font-family: 'Sekate';
+
+    .gmt {
+        margin-left: 5px;
+    }
+
+    .date {
+        @extend %gradient;
+        line-height: 45px;
+    }
+
+    .time {
+        display: block;
+        @extend %gradient;
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    @at-root .mobile #{&} {
+        @include absolute(97%, 0);
+        font-size: 20px;
+        width: 100%;
+        line-height: 15px;
+        letter-spacing: 0px;
+
+        .time {
+            font-size: 18px;
+        }
+    }
+}
+.bn-center {
+    @include absolute(null, null, 0, 0);
+    height: 60%;
+    transition: transform 1s;
+    img {
+        width: 100%;
+        display: block;
+    }
+    &.active {
+        transform: translateY(-80%);
+    } 
+}
+.bn-front {
+    @include absolute(0, 0);
+    transform: translateY(-110%);
+    height: 32%;
+    img {
+        width: 100%;
+        display: block;
+    }
+}
+main {
+    position: relative;
+    @at-root .mobile #{&} {
+        background-image: linear-gradient(to bottom, #041225 93%, #0D283A);
+    }
+}
+
+/* index */
+.index {
+    @include absolute(0, 0);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: transform 1.5s;
+    transform: translateY(100%);
+    background-color: #081025;
+    &.active {
+        transform: translateY(0);
+        z-index: 2;
+    }
+    &::after {
+        content: "";
+        @include absolute(null, 0, null, 0);
+        width: 100%;
+        height: 655px;
+        background: url(/template/FO-24Oct3/deco/bottom.webp);
+        background-position: bottom;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        z-index: 1;
+        opacity: 0.2;
+        pointer-events: none;
+        transition: all 0.5s;
+    }
+    @at-root .mobile #{&} {
+        position: static;
+        height: auto;
+        transform: translateY(0);
+        margin-top: 30%;
+        background-color: transparent;
+        &::after {
+            display: none;
+        }
+    }
+}
+.container {
+    flex: 1;
+    overflow: hidden auto;
+    transition: padding-top 0.8s, margin-top 0.8s;
+    margin-top: -10px;
+    &::webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    scrollbar-width: none;
+    &.active {
+        padding-top: 150px;
+        margin-top: 0px;
+    }
+    @at-root .mobile #{&} {
+        overflow: unset;
+        margin-top: 0;
+    }
+}
+.content-block {
+    position: relative;
+    z-index: 5;
+    padding: 30px 55px;
+    background-image: linear-gradient(to top, rgba(6,2,64,0.75), rgba(35,51,123,0.75));
+    max-width: 760px;
+    margin: 0 auto;
+    border-radius: 15px;
+    border: 3px solid #23337B;
+    box-sizing: border-box;
+
+    p {
+        color: #fff;
+        opacity: 0.85;
+        font-size: 14px;
+        line-height: 28px;
+        max-width: 680px;
+        margin: auto;
+        text-align: center;
+
+        @include RWD($mobile) {
+            width: 90%;
+            line-height: 24px;
+            font-size: 12px;
+        }
+    }
+
+    h2 {
+        width: fit-content;
+        text-align: center;
+        font-size: 24px;
+        font-family: 'Sekate';
+        margin: 0 auto 18px;
+        background-image: linear-gradient( to bottom, #4AFF5F, #FFFF00);
+        background-clip: text;
+        color: transparent;
+        filter: drop-shadow(0 0 6px #00B30F);
+        letter-spacing: 0.5px;
+        @include RWD($mobile) {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+    ul {
+        li {
+            font-size: 12px;
+            color: #fff;
+            opacity: 0.6;
+            text-align: left;
+            width: 90%;
+            max-width: 660px;
+            margin: auto;
+            @include flex(flex-start, flex-start);
+            gap: 5px;
+            margin-top: 25px;
+            line-height: 20px;
+
+            strong {
+                white-space: nowrap;
+            }
+        
+            @include RWD($mobile) {
+                display: block;
+                width: 100%;
+                font-size: 11px;
+                margin-top: 20px;
+            }
+        }
+    }
+    &:nth-child(1) {
+        &::after {
+            content: "";
+            width: 135px;
+            height: 113px;
+            background: url(/template/FO-24Oct3/deco/bat.webp) no-repeat;
+            background-position: center;
+            background-size: cover;
+            transform: translate(-50%, -50%) scaleX(-1);
+            @include absolute(50%, 0);
+            z-index: 3;
+        }
+    }
+    &:nth-child(2) {
+        &::after {
+            content: "";
+            width: 104px;
+            height: 88px;
+            background: url(/template/FO-24Oct3/deco/bat.webp) no-repeat;
+            background-position: center;
+            background-size: cover;
+            @include absolute(3%, null, -6%);
+            z-index: 3;
+        }
+    }
+
+    @at-root .mobile #{&} {
+        padding: 30px 15px;
+        &:nth-child(1) {
+            &::after {
+                content: "";
+                width: 81px;
+                height: 69px;
+                background: url(/template/FO-24Oct3/deco/bat.webp) no-repeat;
+                background-position: center;
+                background-size: cover;
+                transform: translate(0, 0) scaleX(-1);
+                @include absolute(-13%, 2%);
+                z-index: 3;
+            }
+        }
+        &:nth-child(2) {
+            &::after {
+                content: "";
+                width: 75px;
+                height: 64px;
+                background: url(/template/FO-24Oct3/deco/bat.webp) no-repeat;
+                background-position: center;
+                background-size: cover;
+                @include absolute(-3%, null, 2%);
+                z-index: 3;
+            }
+        }
+    }
+}
+.content-block + .content-block {
+    margin-top: 60px;
+    @at-root .mobile #{&} {
+        margin-top: 50px;
+    }
+}
+
+
+/* info table */
+table {
+    width: 90%;
+    max-width: 660px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    border-radius: 10px;
+    --cell-h: 46px;
+    --cell: 45px;
+    outline: 1px solid rgba(137,196,255,0.4);
+
+
+    thead {
+        background-image: linear-gradient(to bottom, rgba(54,198,217,0.3), rgba(21,71,170,0.3));
+    }
+
+    tbody {
+        background: transparent;
+    }
+    tr {
+        border-bottom: 1px solid rgba(137,196,255,0.4);
+    }
+
+    th {
+        color: #FFFFFF;
+        height: var(--cell-h);
+        font-weight: bold;
+        font-size: 14px;
+    }
+    td, th {
+        border-right: 1px solid rgba(137,196,255,0.4);
+        &:nth-child(3) {
+            border: none;
+        }
+    }
+
+    td {
+        text-align: center;
+        height: var(--cell);
+        font-size: 14px;
+        font-weight: 500;
+        color: #FFFFFF;
+
+        strong {
+            background-image: linear-gradient(to bottom, #FFF0AE, #FFD000, #FF9000);
+            background-clip: text;
+            color: transparent;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: 'Fugaz One';
+            filter: drop-shadow(-1px -1px 0 #A50000) drop-shadow(1px -1px 0 #A50000) drop-shadow(-1px 1px 0 #A50000) drop-shadow(1px 1px 0 #A50000);
+        }
+    }
+
+    @at-root .mobile #{&} {
+        width: 100%;
+        th, td {
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+}
+
+
+/* go top btn */
+.go-top-btn {
+    width: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    position: fixed;
+    bottom: 6vh;
+    right: calc((100% - $containerW) / 2 - 50px);
+    @include font-size(20);
+    color: #E8DEDE;
+    background: rgba(14, 14, 14, 0.5);
+    box-shadow: 0px 3px 4px #0000008B;
+    border: 1px solid #FFFFFF29;
+    border-radius: 8px;
+    @include flex(center);
+    opacity: 0;
+    pointer-events: none;
+    @extend %transition-03s;
+    z-index: 5;
+
+    &:hover {
+        background-color: rgba(14, 14, 14, 1);
+        border-color: #FFDDDD38;
+        color: #fff;
+
+        i {
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    @include RWD($smallWeb) {
+        right: 10px;
+    }
+
+    @include RWD($break_point) {
+        bottom: 2vh;
+        right: 10px;
+        width: 45px;
+    }
+}
+
+body:has(.modal) {
+    @include RWD($break_point) {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+    }
+}
+
+.modal-box {
+    background-color: #2c3473;
+    .title {
+        color: #fff;
+    }
+    .btn-close { 
+        color: #fff;
+    }
+    .content {
+        color: #cecece;
+    }
+    @include RWD($break_point) {
+        max-height: 600px;
+        .content {
+            max-height: 500px;
+            overflow: auto;
+            padding-left: 10px;
+        }
+    }
+}
+
+.btn-more {
+    background: linear-gradient(to bottom, rgba($color: #fff, $alpha: 0.25), rgba($color: #000000, $alpha: 0.20));
+    color: #fff;
+    margin: 60px auto;
+    box-shadow: 0 4px 4px 0 rgba($color: #000000, $alpha: 0.4);
+    cursor: none;
+
+    &:hover {
+        background: linear-gradient(to bottom, #4760bd, #22267b);
+    }
+    @at-root .mobile #{&} {
+        margin: 50px auto;
+    }
+}
+
+.cursor {
+    position: absolute;
+    width: 43px;
+    height: 40px;
+    scale: 0.6;
+    z-index: 3;
+    pointer-events: none;
+    transition: transform 0.2s;
+}

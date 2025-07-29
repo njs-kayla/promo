@@ -1,0 +1,409 @@
+/* footer */
+footer {
+    @include flex(center);
+    background: linear-gradient(90deg, #1f0605 0%, #330b09 49%, #1f0605 100%);
+    height: 48px;
+    position: relative;
+}
+
+.copy-right {
+    color: rgba(255, 255, 255, 0.9);
+    @include font-size(12);
+
+    @at-root .mobile #{&} {
+        @include font-size(13);
+    }
+}
+
+/* banner */
+.banner {
+    width: 100%;
+    min-height: 25vw;
+    position: relative;
+    z-index: 1;
+}
+
+.bn-bg {
+    width: 100%;
+    z-index: 0;
+}
+
+.bn-money {
+    width: 50%;
+    @include absolute(43%, 0, 0);
+    margin: 0 auto;
+    z-index: 2;
+
+    img {
+        width: 100%;
+        animation: slogan 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    @at-root .mobile #{&} {
+        width: 100%;
+        top: 63%;
+    }
+}
+
+.bn-title {
+    width: 28%;
+    @include absolute(22%, 0, 0);
+    margin: 0 auto;
+    z-index: 2;
+
+    img {
+        width: 100%;
+    }
+}
+
+.bn-info {
+    width: 35%;
+    @include absolute(77%, 0, 0);
+    margin: 0 auto;
+    z-index: 3;
+
+    img {
+        width: 100%;
+    }
+}
+
+.heading-date {
+    --shadow: rgba(0, 0, 0, 0.3);
+    @include absolute(83%, 0, 0);
+    margin: 0 auto;
+    width: fit-content;
+    z-index: 1;
+    filter: drop-shadow(1px 1px 2px var(--shadow)) drop-shadow(-1px -1px 2px var(--shadow))
+        drop-shadow(1px -1px 2px var(--shadow)) drop-shadow(-1px 1px 2px var(--shadow))
+        drop-shadow(1px 0px 2px var(--shadow)) drop-shadow(-1px 0px 2px var(--shadow))
+        drop-shadow(0px 1px 2px var(--shadow)) drop-shadow(0px -1px 2px var(--shadow));
+    font-size: clamp(20px, 3.5vw, 34px);
+    font-family: "AgencyFB";
+    text-transform: uppercase;
+    text-align: center;
+
+    strong,
+    .gmt {
+        white-space: nowrap;
+        background: linear-gradient(to bottom, #ffd400, #ff6000);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-weight: 900;
+        letter-spacing: 1px;
+    }
+
+    .gmt {
+        font-size: clamp(12px, 2vw, 20px);
+    }
+
+    @at-root .mobile #{&} {
+        top: 85%;
+        font-size: clamp(12px, 6vw, 34px);
+
+        .gmt {
+            display: block;
+        }
+    }
+}
+
+/* index */
+main {
+    position: relative;
+    min-height: calc(100vh - to-rem(48));
+}
+
+.index {
+    padding: to-rem(90) 0 to-rem(130);
+    position: relative;
+    background: url(/template/SO-23Nov2/bg.webp) center/cover no-repeat;
+    z-index: 1;
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #ffef52;
+        @include font(38, 46, bold);
+        margin-bottom: to-rem(25);
+        text-align: center;
+        font-family: "AgencyFB";
+        text-transform: uppercase;
+    }
+
+    p {
+        color: #ffffff;
+        @include font(16, 40, 600);
+        margin: 0 auto to-rem(90);
+        max-width: to-rem(900);
+        text-align: center;
+    }
+
+    /* info table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: to-rem(120);
+        font-size: 1.1rem;
+        position: relative;
+        @include font(16, 25, 600);
+        border-radius: to-rem(10);
+        overflow: hidden;
+        box-shadow: 0px 15px 15px #00000034;
+
+        p {
+            color: inherit;
+            margin: initial;
+        }
+
+        th {
+            height: to-rem(50);
+            padding: 0 to-rem(10);
+            color: #fff8de;
+
+            &:nth-child(1) {
+                width: 15%;
+            }
+
+            &[rowspan] {
+                width: 50%;
+            }
+        }
+
+        thead {
+            background: linear-gradient(90deg, #86201a 0%, #bd2b24 49%, #86201a 100%);
+        }
+
+        tbody {
+            background: #d1d1d1;
+
+            tr {
+                @extend %transition-02s;
+
+                &:nth-of-type(odd) {
+                    background: #c8c8c8;
+                }
+            }
+        }
+
+        td {
+            text-align: center;
+            height: to-rem(50);
+            color: #262626;
+            font-size: 1.1rem;
+
+            &:nth-child(1) {
+                background: #d1d1d1;
+            }
+
+            &[rowspan] {
+                background: #e2e2e2;
+                padding: to-rem(27);
+                text-align: center;
+            }
+        }
+    }
+
+    @at-root .mobile #{&} {
+        padding: to-rem(60) 0;
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            @include font(24, 35, normal);
+            margin-bottom: to-rem(16);
+        }
+
+        p {
+            @include font(18, 30, normal);
+            padding: 0 to-rem(10);
+        }
+
+        table {
+            @include font-size(18);
+            table-layout: fixed;
+
+            td[rowspan] {
+                padding: to-rem(14);
+            }
+
+            th:nth-child(1) {
+                width: auto;
+            }
+
+            td:nth-child(1) {
+                background: initial;
+            }
+        }
+    }
+}
+
+.tournament-main {
+    width: 100%;
+    @include flex(center);
+    gap: to-rem(20);
+    margin-bottom: to-rem(100);
+
+    @at-root .mobile #{&} {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: to-rem(600);
+        margin: 0 auto to-rem(70);
+    }
+}
+
+.event-item {
+    font-family: "Arial";
+    max-width: to-rem(260);
+    $border-radius: to-rem(10);
+    box-shadow: 0px 3px 6px #360907;
+    border-radius: $border-radius;
+    text-align: center;
+    border: solid 1px #e8e8e8;
+    flex: 1;
+    background: transparent radial-gradient(closest-side at 50% 50%, #e8e8e8 0%, #b9b9b9 100%) 0% 0% no-repeat
+        padding-box;
+
+    .date {
+        display: block;
+        padding: to-rem(10);
+        @include font(23, 27, bold);
+        z-index: 1;
+        color: #ac2d28;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+
+    .time-box {
+        border-radius: 0 0 $border-radius $border-radius;
+        background: transparent linear-gradient(180deg, #741b16 60%, #86201a 100%) 0% 0% no-repeat padding-box;
+        padding: 0 to-rem(12) to-rem(12);
+    }
+
+    .gmt {
+        display: block;
+        width: fit-content;
+        margin: 0 auto to-rem(10);
+        color: #86201a;
+        @include font(12, 18, bold);
+        background: #e5e5e5;
+        padding: 0 to-rem(10);
+        box-shadow: 0px 3px 6px #00000029;
+        clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+    }
+
+    .time {
+        @include font(20, 23, bold);
+        color: #e2e2e2;
+        text-shadow: 0px 3px 6px #2b0404;
+        letter-spacing: to-rem(1);
+    }
+
+    @at-root .mobile #{&} {
+        max-width: initial;
+    }
+}
+
+.info-content {
+    @include font(15, 25);
+    color: #ffffff;
+    margin: 0 auto;
+    max-width: to-rem(900);
+
+    li {
+        list-style: decimal;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        padding-left: 0.5em;
+
+        &:nth-last-child(1) {
+            margin-bottom: initial;
+        }
+    }
+}
+
+/* go top btn */
+.go-top-btn {
+    width: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    position: fixed;
+    bottom: 6vh;
+    right: calc((100% - $containerW) / 2 - 50px);
+    @include font-size(20);
+    color: #e8dede;
+    background: rgba(14, 14, 14, 0.5);
+    box-shadow: 0px 3px 4px #0000008b;
+    border: 1px solid #ffffff29;
+    border-radius: 8px;
+    @include flex(center);
+    opacity: 0;
+    pointer-events: none;
+    @extend %transition-03s;
+    z-index: 2;
+
+    &:hover {
+        background-color: rgba(14, 14, 14, 1);
+        border-color: #ffdddd38;
+        color: #fff;
+
+        i {
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    @include RWD($smallWeb) {
+        right: 10px;
+    }
+
+    @include RWD($break_point) {
+        bottom: 2vh;
+        right: 10px;
+        width: 45px;
+    }
+}
+
+/* decorate */
+[class^="deco-img-"] {
+    animation: uptodown 1s infinite alternate;
+    position: absolute;
+    z-index: 2;
+
+    @include RWD($containerW) {
+        display: none;
+    }
+}
+
+.deco-img-1 {
+    width: 25%;
+    top: 5vw;
+    left: 0;
+}
+
+.deco-img-2 {
+    width: 30%;
+    top: 10vw;
+    right: -2vw;
+}
+
+// 文字滾動效果
+[data-aos="texting-title"] {
+    opacity: 0;
+    text-shadow: 0 0 to-rem(40) #fcf151;
+
+    &.aos-animate {
+        opacity: 1;
+        text-shadow: initial;
+    }
+}

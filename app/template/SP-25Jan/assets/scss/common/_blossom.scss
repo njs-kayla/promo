@@ -1,0 +1,113 @@
+.blossom-area {
+    @include absolute(0, 0);
+    z-index: 1;
+    width: 100vw;
+    height: 110vh;
+    overflow: hidden;
+    pointer-events: none;
+
+    .flower {
+        position: absolute;
+    }
+}
+
+@function random_range($min, $max) {
+    $rand: random();
+    $random_range: $min + floor($rand * (($max - $min) + 1));
+    @return $random_range;
+}
+
+.front {
+    width: #{random_range(50, 70)}px;
+    @include RWD($break_point) {
+        width: #{random_range(30, 50)}px;
+    }
+}
+
+.back {
+    width: #{random_range(20, 40)}px;
+    filter: blur(2px);
+    @include RWD($break_point) {
+        width: #{random_range(10, 30)}px;
+    }
+    
+}
+
+$blossom-h: 100vh;
+
+@include RWD($break_point) {
+    $blossom-h: 80vh;
+}
+
+[class^="flower"] {
+    $total: 30;
+    position: absolute;
+    will-change: transform, opacity;
+
+    @for $i from 1 through $total {
+        $random-x: clamp(-10vw, calc(random(80) * 1vw), 80vw);
+        $random-offset: random_range(-100000, 100000) * 0.0001vw;
+        $random-x-end: $random-x + $random-offset;
+        $random-x-end-yoyo: clamp(5vw, $random-x * 2, 120vw);
+        $random-yoyo-time: calc(random_range(30000, 80000) / 100000);
+        $random-yoyo-y: $random-yoyo-time * 100vh;
+        $random-rotation-x: random_range(-180, 180);
+        $random-rotation-y: random_range(-180, 180);
+        $random-rotation-z: random_range(-180, 180);
+        $fall-duration: random_range(12, 20) * 1s;
+        $fall-delay: random(30) * -1s;
+
+        &:nth-child(#{$i}) {
+            transform: translate($random-x, -100px) rotate3d($random-rotation-x, $random-rotation-y, $random-rotation-z, 0deg);
+            animation: fall-#{$i} $fall-duration $fall-delay linear infinite;
+        }
+
+        @keyframes fall-#{$i} {
+            #{percentage($random-yoyo-time)} {
+                transform: translate($random-x-end, $random-yoyo-y) rotate3d(0);
+                opacity: 1;
+            }
+
+            95% {
+                opacity: 0;
+            }
+            100% {
+                transform: translate($random-x-end-yoyo, $blossom-h) rotate3d($random-rotation-x, $random-rotation-y, $random-rotation-z, 360deg);
+                opacity: 0;
+            }
+        }
+    }
+
+    @include RWD($break_point) {
+        @for $i from 1 through $total {
+            $random-x: clamp(-10vw, calc(random(80) * 1vw), 80vw);
+            $random-offset: random_range(-100000, 100000) * 0.0001vw;
+            $random-x-end: $random-x + $random-offset;
+            $random-x-end-yoyo: clamp(5vw, $random-x * 2, 120vw);
+            $random-yoyo-time: calc(random_range(30000, 80000) / 100000);
+            $random-yoyo-y: $random-yoyo-time * 100vh;
+            $fall-duration: random_range(12, 20) * 1s;
+            $fall-delay: random(30) * -1s;
+    
+            &:nth-child(#{$i}) {
+                transform: translate($random-x, -100px);
+                animation: fall-#{$i} $fall-duration $fall-delay linear infinite;
+            }
+    
+            @keyframes fall-#{$i} {
+                #{percentage($random-yoyo-time)} {
+                    transform: translate($random-x-end, $random-yoyo-y);
+                    opacity: 1;
+                }
+    
+                95% {
+                    opacity: 0;
+                }
+                100% {
+                    transform: translate($random-x-end-yoyo, $blossom-h);
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Sansita';
+    src: url('./Sansita-Medium.eot');
+    src: url('./Sansita-Medium.eot?#iefix') format('embedded-opentype'),
+        url('./Sansita-Medium.woff2') format('woff2'),
+        url('./Sansita-Medium.ttf') format('truetype'),
+        url('./Sansita-Medium.svg#Sansita-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sansita';
+    src: url('./Sansita-Bold.eot');
+    src: url('./Sansita-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./Sansita-Bold.woff2') format('woff2'),
+        url('./Sansita-Bold.ttf') format('truetype'),
+        url('./Sansita-Bold.svg#Sansita-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sansita';
+    src: url('./Sansita-BoldItalic.eot');
+    src: url('./Sansita-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('./Sansita-BoldItalic.woff2') format('woff2'),
+        url('./Sansita-BoldItalic.ttf') format('truetype'),
+        url('./Sansita-BoldItalic.svg#Sansita-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sansita';
+    src: url('./Sansita-Regular.eot');
+    src: url('./Sansita-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./Sansita-Regular.woff2') format('woff2'),
+        url('./Sansita-Regular.ttf') format('truetype'),
+        url('./Sansita-Regular.svg#Sansita-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

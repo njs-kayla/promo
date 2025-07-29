@@ -1,0 +1,342 @@
+$block-max-width: 1280px;
+
+/* tournament list */
+
+$event-deco-width: to-rem(150);
+
+@supports (-webkit-touch-callout: none) {
+    @include RWD($break_point) {
+        .tournament-tab {
+            .heading {
+                font-weight: bold !important;
+            }
+        }
+
+        .date-item {
+            font-weight: 700 !important;
+        }
+    }
+}
+
+.tournament-block {
+    margin: 100px auto 50px;
+    position: relative;
+    max-width: $block-max-width;
+    min-height: 400px;
+
+    @include RWD($break_point) {
+        width: 100%;
+        z-index: 2;
+        margin-top: 8%;
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+}
+
+.tournament-nav {
+    @include flex(center);
+    width: 75%;
+    margin: auto;
+    gap: 30px;
+
+    @include RWD($break_point) {
+        top: 0;
+        justify-content: center;
+    }
+}
+
+.tournament-tab {
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    @include flex(center);
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+    background: url(/template/FP-25Jun/deco/time_tab.webp) no-repeat;
+    background-size: 100%;
+    aspect-ratio: 300/71;
+    font-family: 'Dread Ringer Expanded', '微软雅黑';
+    border-radius: 15px;
+
+    .heading {
+        color: #2A1600;
+        filter: drop-shadow(-1px -1px 0 #E7C897) drop-shadow(1px -1px 0 #E7C897) drop-shadow(-1px 1px 0 #E7C897) drop-shadow(1px 1px 0 #E7C897);
+        letter-spacing: 0.5px;
+        font-size: 22px;
+        @include flex(center);
+        transition: all 0.3s;
+        white-space: nowrap;
+
+        @at-root .zh-CN #{&} {
+            font-weight: bold;
+        }
+
+        @at-root .ko-KR #{&} {
+            font-weight: bold;
+        }
+
+        @at-root .vi-VN #{&} {
+            font-family: 'Archivo Narrow';
+            font-weight: 700;
+        }
+
+        @at-root .th-TH #{&} {
+            font-family: 'Archivo Narrow';
+            font-weight: 700;
+        }
+
+        @at-root .sa-IN #{&} {
+            font-weight: bold;
+        }
+    }
+
+    &.disable {
+        cursor: not-allowed;
+        pointer-events: none;
+        overflow: hidden;
+
+        &::after {
+            display: none;
+        }
+
+        .disable-mask {
+            display: block;
+        }
+    }
+
+    &:not(.active) {
+        .heading {
+            color: #2A1600 !important;
+            filter: none;
+        }
+
+        filter: brightness(0.6);
+
+        &:hover {
+            filter: brightness(1.1);
+        }
+    }
+
+    @at-root .vi-VN #{&} {
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.disable-mask {
+    display: none;
+    pointer-events: none;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: to-rem(10);
+    @include font-size(13);
+    line-height: 20px;
+    @include absolute(50%, 0);
+    z-index: 2;
+    background: linear-gradient(90deg, #00000000 0%, #221a0b2e 5%, #7c5f27 48%, #221a0b2f 95%, #00000000 100%);
+}
+
+.tournament-content {
+    text-align: center;
+    display: none;
+    position: relative;
+    margin-top: 40px;
+
+    &.active {
+        display: block;
+    }
+
+    @at-root .mobile #{&} {
+        display: block;
+        padding: 30px 0;
+        margin-top: 0px;
+    }
+}
+
+.tournament-item {
+    position: relative;
+    @include flex(space-between, stretch);
+}
+
+$date-item-border-radius: 15px;
+
+.date-item {
+    flex: 1;
+    @include flex(center);
+    flex-direction: column;
+    gap: 2px;
+    overflow: hidden;
+    font-family: 'Dread Ringer Expanded';
+    letter-spacing: 1px;
+    position: relative;
+    aspect-ratio: 49/39;
+    max-width: calc(($block-max-width / 5) - 1%);
+
+    &::before {
+        content: "";
+        background: url(/template/FP-25Jun/deco/time_bg.webp) no-repeat;
+        background-size: 100%;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        @include absolute(50%, 50%);
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    &:nth-child(odd) {
+        transform: rotate(-5deg);
+    }
+
+    &:nth-child(even) {
+        transform: rotate(5deg) translateY(30px);
+    }
+
+
+    &:not(.active) {
+        &::before {
+            opacity: 0.5;
+        }
+
+        .date-content {
+            color: #2F1919B2;
+        }
+
+        .time-content {
+            color: #291F1FB2;
+        }
+    }
+}
+
+.date-content {
+    @include flex(center);
+    font-size: 28px;
+    line-height: 45px;
+    gap: 2px;
+    border-radius: 50px;
+    color: #840404;
+    white-space: nowrap;
+    padding: 0 10px;
+    letter-spacing: 0.3px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10px;
+}
+
+.time-content {
+    color: #000000;
+    letter-spacing: 0.3px;
+    font-size: 18px;
+}
+
+.list-order {
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Dread Ringer Expanded', 'Roboto', '微软雅黑';
+    color: #3B1E1E;
+    @include flex(center);
+    gap: 8px;
+
+    @at-root .zh-CN #{&} {
+        font-weight: bold;
+        font-family: '微软雅黑';
+    }
+
+    @at-root .th-TH #{&} {
+        font-weight: bold;
+    }
+
+    @at-root .ko-KR #{&} {
+        font-weight: bold;
+    }
+}
+
+.mobile .list-order {
+    font-size: 18px;
+
+    @include RWD($break_point) {
+        font-family: 'Roboto';
+        font-weight: 900;
+    }
+}
+
+.mobile .tournament-tab {
+    width: 70%;
+    margin: auto;
+
+    .heading {
+        font-size: 20px;
+        font-family: 'Roboto';
+        font-weight: 900;
+        letter-spacing: 0.5px;
+    }
+}
+
+.mobile .date-content {
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 5px;
+
+    @include RWD($break_point) {
+        font-family: 'Roboto';
+        font-weight: 900;
+    }
+}
+
+.mobile .time-content {
+    font-size: 16px;
+
+    .gmt {
+        font-size: 14px;
+    }
+
+    @include RWD($break_point) {
+        font-family: 'Roboto';
+        font-weight: 900;
+    }
+}
+
+.swiper-slide {
+    .date-item {
+        transform: none;
+    }
+
+    &.odd {
+        transform: rotate(-5deg);
+    }
+
+    &.even {
+        transform: rotate(5deg);
+    }
+}
+
+.button-prev,
+.button-next {
+    background: url(/template/FP-25Jun/deco/arrow.png);
+    background-size: cover;
+    width: 40px;
+    aspect-ratio: 1/1;
+    background-position: center;
+    transition: filter 0.2s;
+    z-index: 3;
+
+    &:hover {
+        filter: brightness(1.2);
+    }
+}
+
+.button-prev {
+    @include absolute(null, 2%, null, -1%);
+    transform: scaleX(-1) translateY(-50%);
+}
+
+.button-next {
+    @include absolute(null, null, 2%, -1%);
+    transform: translateY(-50%);
+}

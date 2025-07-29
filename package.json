@@ -3,14 +3,37 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "dev:fs": "env-cmd -f .env.fs.local next dev",
+    "dev:sg": "env-cmd -f .env.sg.local next dev",
+    "build:fs": "npm run postinstall & env-cmd -f .env.fs.local next build",
+    "build:sg": "npm run postinstall & env-cmd -f .env.sg.local next build",
     "start": "next start",
-    "lint": "next lint"
+    "postinstall": "node scripts/copy-template-assets.js",
+    "update:assets": "node scripts/updateIncludePaths.js"
   },
   "dependencies": {
+    "@pixi/react": "^8.0.2",
+    "@reduxjs/toolkit": "^2.8.2",
+    "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
+    "cookie": "^1.0.2",
+    "dotenv": "^17.2.0",
+    "html-react-parser": "^5.2.6",
+    "i18next": "^25.3.2",
+    "js-cookie": "^2.2.1",
+    "next": "15.4.3",
+    "next-i18next": "^15.4.2",
+    "pixi.js": "^8.11.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.4.3"
+    "react-i18next": "^15.6.1",
+    "react-redux": "^9.2.0",
+    "react-wow": "^1.0.0",
+    "swiper": "^11.2.10"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.89.2"
   }
 }
