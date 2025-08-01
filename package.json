@@ -5,8 +5,7 @@
   "scripts": {
     "dev:fs": "env-cmd -f .env.fs.local next dev",
     "dev:sg": "env-cmd -f .env.sg.local next dev",
-    "build:fs": "env-cmd -f .env.fs.local next build",
-    "build:sg": "env-cmd -f .env.sg.local next build",
+    "build:fs": "next build",
     "start": "next start -H 0.0.0.0"
   },
   "dependencies": {
