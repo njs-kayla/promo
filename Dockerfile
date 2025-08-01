@@ -10,7 +10,7 @@ COPY . .
 
 RUN npm install
 
-RUN npm run build:$BRAND
+RUN npm run build
 
 FROM node:18-alpine AS runner
 
