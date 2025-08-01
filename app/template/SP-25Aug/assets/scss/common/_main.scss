@@ -836,18 +836,6 @@ main {
         width: 86%;
         margin: auto;
         position: relative;
-
-        &::after {
-            content: '';
-            background: url(/template/SP-25Aug/deco/img_rank.webp) no-repeat;
-            background-position: 0 3px;
-            background-size: 100%;
-            width: 96px;
-            height: 72px;
-            @include absolute(0%, null, 0, null);
-            transform: translateY(-44%);
-            filter: brightness(1.1);
-        }
     }
 
     .prize-box {

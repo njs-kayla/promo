@@ -5,11 +5,8 @@
   "scripts": {
     "dev:fs": "env-cmd -f .env.fs.local next dev",
     "dev:sg": "env-cmd -f .env.sg.local next dev",
-    "build:fs": "npm run postinstall & env-cmd -f .env.fs.local next build",
-    "build:sg": "npm run postinstall & env-cmd -f .env.sg.local next build",
-    "start": "next start",
-    "postinstall": "node scripts/copy-template-assets.js",
-    "update:assets": "node scripts/updateIncludePaths.js"
+    "build": "next build",
+    "start": "next start -H 0.0.0.0"
   },
   "dependencies": {
     "@pixi/react": "^8.0.2",
