@@ -10,7 +10,7 @@ const api = () => {
     const HOST_URL = typeof window !== 'undefined'
         ? (isLocalhost
             ? `${process.env.NEXT_PUBLIC_API_HOST}${process.env.NEXT_PUBLIC_API_BASE_HREF || ''}`
-            : `${window.location.origin}${process.env.NEXT_PUBLIC_API_BASE_HREF || ''}`)
+            : `${process.env.NEXT_PUBLIC_API_HOST}${process.env.NEXT_PUBLIC_API_BASE_HREF || ''}`)
         : '';
 
     const fetchData = (apiUrl) => {
