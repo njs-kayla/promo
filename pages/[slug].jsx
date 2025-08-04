@@ -35,11 +35,12 @@ export async function getServerSideProps({ params, query, req }) {
   return {
     props: {
       ogImage: process.env.NEXT_PUBLIC_API_HOST + process.env.NEXT_PUBLIC_API_BASE_HREF.slice(0, -1) + data?.og_img || null,
+      heading: data?.heading,
       icon: favicon
     },
   }
 }
-export default function PromoPage({ ogImage, icon }) {
+export default function PromoPage({ ogImage, icon, heading }) {
   const router = useRouter()
   const { slug, lang: queryLang } = router.query
   const dispatch = useDispatch()
@@ -128,6 +129,8 @@ export default function PromoPage({ ogImage, icon }) {
           <>
             <meta property="og:image" content={ogImage} />
             <meta property="twitter:image" content={ogImage} />
+            <meta property="og:title" content={heading} />
+            <meta name="twitter:title" content={heading} />
           </>
         )}
       </Head>
